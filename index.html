@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/jaikisaan/logo-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JaiKisaan Solar — Precision Solar Engineering</title>
+    <!-- Google Fonts: Sora & DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <!-- Single Page Apps redirect handler for GitHub Pages -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <!-- Auto-fallback for asset paths under GitHub Pages /jaikisaan/ -->
+    <script type="text/javascript">
+      window.addEventListener('error', function(e) {
+        if (e.target && e.target.tagName === 'IMG') {
+          var src = e.target.getAttribute('src');
+          var basePath = '/jaikisaan/';
+          if (src && src.startsWith('/') && !src.startsWith(basePath) && !e.target.dataset.retried) {
+            e.target.dataset.retried = 'true';
+            e.target.src = basePath + src.slice(1);
+          }
+        }
+      }, true);
+    </script>
+    <script type="module" crossorigin src="/jaikisaan/assets/index-DQ7li2b2.js"></script>
+    <link rel="stylesheet" crossorigin href="/jaikisaan/assets/index-8uXVmt6W.css">
+  </head>
+  <body class="bg-surface-page text-text-primary font-body antialiased selection:bg-brand-lime selection:text-surface-dark">
+    <div id="root"></div>
+  </body>
+</html>
+
