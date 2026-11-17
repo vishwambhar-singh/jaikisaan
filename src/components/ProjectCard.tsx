@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Zap, Building2, ArrowRight } from 'lucide-react';
 import { cn } from '../lib/cn';
+import { asset } from '../lib/assets';
 
 interface ProjectCardProps {
   title: string;
@@ -36,7 +37,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       <div className="relative overflow-hidden h-52">
         {image ? (
           <img
-            src={image}
+            src={asset(image)}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />

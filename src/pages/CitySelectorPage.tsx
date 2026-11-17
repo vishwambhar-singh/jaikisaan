@@ -5,6 +5,7 @@ import {
   Clock, MessageCircle
 } from 'lucide-react';
 import { useCity, CITIES, CITY_DETAILS, City } from '../context/CityContext';
+import { asset } from '../lib/assets';
 
 // ─── Local Installations Data ────────────────────────────────────────────────
 const LOCAL_INSTALLATIONS = [
@@ -731,7 +732,7 @@ const CitySelectorPage: React.FC = () => {
               <div key={inst.title} className="bg-white rounded-3xl border border-[#E8EAE3] overflow-hidden shadow-card group">
                 <div className="h-48 relative overflow-hidden bg-[#E8EAE3]">
                   <img
-                    src={inst.image}
+                    src={asset(inst.image)}
                     alt={inst.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />

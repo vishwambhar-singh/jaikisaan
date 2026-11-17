@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star, CheckCircle } from 'lucide-react';
 import { cn } from '../lib/cn';
+import { asset } from '../lib/assets';
 
 interface TestimonialCardProps {
   quote: string;
@@ -49,7 +50,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       {/* Author */}
       <div className="flex items-center gap-3 pt-2 border-t border-border-light">
         {image ? (
-          <img src={image} alt={name} className="w-10 h-10 rounded-full object-cover flex-shrink-0" />
+          <img src={asset(image)} alt={name} className="w-10 h-10 rounded-full object-cover flex-shrink-0" />
         ) : (
           <div className="w-10 h-10 rounded-full bg-brand-forest/10 flex items-center justify-center flex-shrink-0">
             <span className="font-heading font-semibold text-brand-forest text-sm">

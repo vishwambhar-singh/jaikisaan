@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { asset } from '../lib/assets';
 import { 
   ArrowRight, MessageCircle, Zap, Sun, TrendingUp, Shield, Award, CheckCircle, 
   ChevronRight, Leaf, Phone, Mail, MapPin, Star, Building2, Battery, Cpu 
@@ -10,7 +11,7 @@ const HeroSection: React.FC = () => (
     {/* High-quality 2.5K solar array background photo with spatial gradients */}
     <div className="absolute inset-0 z-0 overflow-hidden">
       <img
-        src="/assets/images/hero_solar_panels_dusk.jpg"
+        src={asset('/assets/images/hero_solar_panels_dusk.jpg')}
         alt="High-resolution utility-scale solar panel farm"
         className="w-full h-full object-cover opacity-50 scale-100 transform motion-safe:transition-transform motion-safe:duration-700"
       />
@@ -161,7 +162,7 @@ const AboutSection: React.FC = () => (
         <div className="lg:col-span-6 flex flex-col gap-6">
           <div className="relative rounded-3xl overflow-hidden shadow-card border border-[#E8EAE3] h-80 sm:h-96">
             <img
-              src="/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg"
+              src={asset('/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg')}
               alt="JaiKisaan Solar modern commercial installation"
               className="w-full h-full object-cover"
             />
@@ -311,7 +312,7 @@ const SolutionsSection: React.FC = () => (
                 {/* Image Column (5 cols) */}
                 <div className={`lg:col-span-5 h-72 sm:h-80 lg:h-full relative overflow-hidden ${isReversed ? 'lg:order-2' : ''}`}>
                   <img
-                    src={item.image}
+                    src={asset(item.image)}
                     alt={item.title}
                     className="w-full h-full object-cover"
                   />
@@ -468,7 +469,7 @@ const ProjectShowcaseSection: React.FC = () => {
           <div className="lg:col-span-7 rounded-3xl overflow-hidden bg-white border border-[#E8EAE3] shadow-card hover:shadow-elevated transition-shadow flex flex-col group">
             <div className="h-80 sm:h-96 lg:h-[460px] relative overflow-hidden">
               <img
-                src="/assets/images/91fff17c130fbfe7684a3e0e7fe83e3d5ca439c3.jpg"
+                src={asset('/assets/images/91fff17c130fbfe7684a3e0e7fe83e3d5ca439c3.jpg')}
                 alt="SunScope Agro-Park 50 MWp"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -501,7 +502,7 @@ const ProjectShowcaseSection: React.FC = () => {
             <div className="rounded-3xl overflow-hidden bg-white border border-[#E8EAE3] shadow-card hover:shadow-elevated transition-shadow flex flex-col group flex-1">
               <div className="h-48 sm:h-56 relative overflow-hidden">
                 <img
-                  src="/assets/images/aa80d82cedafbd1508c328b9e5f2754a3eb14919.jpg"
+                  src={asset('/assets/images/aa80d82cedafbd1508c328b9e5f2754a3eb14919.jpg')}
                   alt="Commercial Cold Storage Complex 120 kWp"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -532,7 +533,7 @@ const ProjectShowcaseSection: React.FC = () => {
             <div className="rounded-3xl overflow-hidden bg-white border border-[#E8EAE3] shadow-card hover:shadow-elevated transition-shadow flex flex-col group flex-1">
               <div className="h-48 sm:h-56 relative overflow-hidden">
                 <img
-                  src="/assets/images/9232e3c12d228af8636d84a34e8fdea09b42a4b1.jpg"
+                  src={asset('/assets/images/9232e3c12d228af8636d84a34e8fdea09b42a4b1.jpg')}
                   alt="EcoHeights Luxury Township 85 kWp"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
@@ -632,7 +633,7 @@ const CEOSection: React.FC = () => (
           <div className="lg:col-span-5 flex flex-col gap-4">
             <div className="relative rounded-2xl overflow-hidden shadow-elevated h-96 sm:h-[440px]">
               <img
-                src="/assets/images/a6038c0baabb8acaa28c36ba0b8fed83d553aaea.jpg"
+                src={asset('/assets/images/a6038c0baabb8acaa28c36ba0b8fed83d553aaea.jpg')}
                 alt="Sanjeev Kumar — Founder & CEO"
                 className="w-full h-full object-cover object-top"
               />
@@ -745,7 +746,7 @@ const InsightsSection: React.FC = () => (
           >
             <div className="h-52 overflow-hidden relative">
               <img
-                src={wp.image}
+                src={asset(wp.image)}
                 alt={wp.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />

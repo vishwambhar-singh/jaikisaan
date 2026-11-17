@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
 import { cn } from '../lib/cn';
+import { asset } from '../lib/assets';
 import { CITIES, useCity } from '../context/CityContext';
 
 const NAV_LINKS = [
@@ -48,7 +49,7 @@ const Header: React.FC = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0 group">
             <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white flex items-center justify-center p-1 sm:p-1.5 shadow-sm flex-shrink-0">
-              <img src="/logo.svg" alt="JaiKisaan Solar" className="w-full h-full object-contain" />
+              <img src={asset('/logo.svg')} alt="JaiKisaan Solar" className="w-full h-full object-contain" />
             </div>
             <div className="flex flex-col leading-none">
               <span className="font-heading font-extrabold text-xs sm:text-sm tracking-tight text-white group-hover:text-brand-lime transition-colors">

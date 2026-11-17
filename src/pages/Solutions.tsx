@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, CheckCircle, Zap, Sun, Battery, Droplets, Building2, Home as HomeIcon, MessageCircle } from 'lucide-react';
+import { asset } from '../lib/assets';
 import SectionHeading from '../components/SectionHeading';
 import Badge from '../components/Badge';
 import StatTile from '../components/StatTile';
@@ -161,7 +162,7 @@ const Solutions: React.FC = () => (
     <section className="relative bg-surface-dark py-24 md:py-32 overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img
-          src="/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg"
+          src={asset('/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg')}
           alt="Solar farm panorama"
           className="w-full h-full object-cover"
         />
@@ -271,7 +272,7 @@ const Solutions: React.FC = () => (
               <div className={`flex flex-col gap-4 ${!isEven ? 'lg:order-1' : ''}`}>
                 <div className="rounded-2xl overflow-hidden h-60 sm:h-72 md:h-96">
                   <img
-                    src={sol.image}
+                    src={asset(sol.image)}
                     alt={sol.title}
                     className="w-full h-full object-cover"
                   />

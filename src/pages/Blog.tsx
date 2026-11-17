@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { asset } from '../lib/assets';
 import { 
   Search, ArrowRight, Clock, Shield, CheckCircle, 
   Phone, MessageCircle, TrendingUp, Sparkles, Zap
@@ -218,7 +219,7 @@ const Blog: React.FC = () => {
               {/* Left Image Placeholder/Visual */}
               <div className="lg:col-span-6 rounded-2xl overflow-hidden h-56 sm:h-72 md:h-80 relative bg-[#E8EAE3]">
                 <img
-                  src="/assets/images/86f4a949d08f6296a12f8e095d8f906c5f5481b1.jpg"
+                  src={asset('/assets/images/86f4a949d08f6296a12f8e095d8f906c5f5481b1.jpg')}
                   alt="Solar Plants Spotlight Briefing"
                   className="w-full h-full object-cover"
                 />
@@ -306,7 +307,7 @@ const Blog: React.FC = () => {
                 <div>
                   <div className="h-48 overflow-hidden relative bg-[#E8EAE3]">
                     <img
-                      src={article.image}
+                      src={asset(article.image)}
                       alt={article.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '../lib/cn';
+import { asset } from '../lib/assets';
 
 interface ArticleCardProps {
   category: string;
@@ -35,7 +36,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
       {image && (
         <div className="relative overflow-hidden h-48">
           <img
-            src={image}
+            src={asset(image)}
             alt={title}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />

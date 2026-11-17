@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Badge from '../components/Badge';
+import { asset } from '../lib/assets';
 
 const NAV_TABS = [
   { id: 'facility', label: 'Executive Summary' },
@@ -215,7 +216,7 @@ const CaseStudy: React.FC = () => {
         <div className="max-w-[1248px] mx-auto px-6 py-8">
           <div className="relative rounded-2xl overflow-hidden h-72 md:h-[460px] border border-[#E8EAE3] shadow-card">
             <img
-              src="/assets/images/aa80d82cedafbd1508c328b9e5f2754a3eb14919.jpg"
+              src={asset('/assets/images/aa80d82cedafbd1508c328b9e5f2754a3eb14919.jpg')}
               alt="Mr. Vikas Data 220 kW Plant Aerial"
               className="w-full h-full object-cover"
             />
@@ -456,7 +457,7 @@ const CaseStudy: React.FC = () => {
               <div className="flex flex-col rounded-2xl overflow-hidden bg-surface-card border border-border-card shadow-card">
                 <div className="h-56 overflow-hidden">
                   <img
-                    src="/assets/images/aa80d82cedafbd1508c328b9e5f2754a3eb14919.jpg"
+                    src={asset('/assets/images/aa80d82cedafbd1508c328b9e5f2754a3eb14919.jpg')}
                     alt="Elevated Bifacial Rooftop Array"
                     className="w-full h-full object-cover"
                   />
@@ -470,7 +471,7 @@ const CaseStudy: React.FC = () => {
               <div className="flex flex-col rounded-2xl overflow-hidden bg-surface-card border border-border-card shadow-card">
                 <div className="h-56 overflow-hidden">
                   <img
-                    src="/assets/images/4bb4436fda7c0f69c46e53acc7f3be717b2b1624.jpg"
+                    src={asset('/assets/images/4bb4436fda7c0f69c46e53acc7f3be717b2b1624.jpg')}
                     alt="Dual 110 kW Inverter Shed & LT Panel"
                     className="w-full h-full object-cover"
                   />
@@ -484,7 +485,7 @@ const CaseStudy: React.FC = () => {
               <div className="flex flex-col rounded-2xl overflow-hidden bg-surface-card border border-border-card shadow-card">
                 <div className="h-56 overflow-hidden">
                   <img
-                    src="/assets/images/f6c2c108dd52dc2c204bdca8c39b34e0a10f7816.jpg"
+                    src={asset('/assets/images/f6c2c108dd52dc2c204bdca8c39b34e0a10f7816.jpg')}
                     alt="Solar Single-Line Diagram (SLD)"
                     className="w-full h-full object-cover"
                   />
@@ -556,7 +557,7 @@ const CaseStudy: React.FC = () => {
               {RELATED_PROJECTS.map((rel) => (
                 <div key={rel.title} className="flex flex-col rounded-2xl overflow-hidden bg-surface-card border border-border-card shadow-card">
                   <div className="h-44 overflow-hidden relative">
-                    <img src={rel.image} alt={rel.title} className="w-full h-full object-cover" />
+                    <img src={asset(rel.image)} alt={rel.title} className="w-full h-full object-cover" />
                     <div className="absolute top-3 left-3 bg-brand-forest/90 text-brand-lime text-xs font-mono px-3 py-1 rounded-full font-semibold">
                       {rel.capacity}
                     </div>

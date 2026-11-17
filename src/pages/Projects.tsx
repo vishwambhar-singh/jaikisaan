@@ -4,6 +4,7 @@ import {
   Star, Award, Shield, Compass, Radio, Droplets, Sun, Layers 
 } from 'lucide-react';
 import { useCity } from '../context/CityContext';
+import { asset } from '../lib/assets';
 
 // ─── 9 Verified Landmark Projects matching Figma Frame 4 ───────────────────────
 const ALL_PROJECTS = [
@@ -223,7 +224,7 @@ const Projects: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="rounded-3xl overflow-hidden shadow-elevated border border-[#E8EAE3] h-80 sm:h-96 relative">
                 <img
-                  src="/assets/images/86f4a949d08f6296a12f8e095d8f906c5f5481b1.jpg"
+                  src={asset('/assets/images/86f4a949d08f6296a12f8e095d8f906c5f5481b1.jpg')}
                   alt="Utility solar farm"
                   className="w-full h-full object-cover"
                 />
@@ -342,7 +343,7 @@ const Projects: React.FC = () => {
               >
                 <div className="h-56 relative overflow-hidden">
                   <img
-                    src={project.image}
+                    src={asset(project.image)}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />

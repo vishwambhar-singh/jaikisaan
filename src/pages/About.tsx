@@ -1,4 +1,5 @@
 import React from 'react';
+import { asset } from '../lib/assets';
 import { 
   ArrowRight, Award, Shield, TrendingUp, Users, Sun, CheckCircle, Zap, Leaf, 
   Atom, Gauge, Wrench, Factory, Cpu, Phone, Mail, MapPin, MessageCircle, Star 
@@ -192,7 +193,7 @@ const About: React.FC = () => {
             <div className="lg:col-span-5">
               <div className="rounded-3xl overflow-hidden shadow-elevated border border-[#E8EAE3] h-80 sm:h-96 relative">
                 <img
-                  src="/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg"
+                  src={asset('/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg')}
                   alt="JaiKisaan Solar field installation sunset"
                   className="w-full h-full object-cover"
                 />
@@ -471,7 +472,7 @@ const About: React.FC = () => {
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               <div className="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-elevated h-96 sm:h-[460px]">
                 <img
-                  src="/assets/images/a6038c0baabb8acaa28c36ba0b8fed83d553aaea.jpg"
+                  src={asset('/assets/images/a6038c0baabb8acaa28c36ba0b8fed83d553aaea.jpg')}
                   alt="Sanjeev Kumar — Founder & CEO"
                   className="w-full h-full object-cover object-top"
                 />
@@ -534,7 +535,7 @@ const About: React.FC = () => {
               >
                 <div className="h-60 overflow-hidden relative">
                   <img
-                    src={leader.image}
+                    src={asset(leader.image)}
                     alt={leader.name}
                     className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   />

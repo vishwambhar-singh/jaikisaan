@@ -52,3 +52,4 @@ npm run preview
 
 ## License
 Private / Proprietary to JaiKisaan Solar (SunScope Group).
+

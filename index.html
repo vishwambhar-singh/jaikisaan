@@ -22,6 +22,19 @@
         }
       }(window.location))
     </script>
+    <!-- Auto-fallback for asset paths under GitHub Pages /jaikisaan/ -->
+    <script type="text/javascript">
+      window.addEventListener('error', function(e) {
+        if (e.target && e.target.tagName === 'IMG') {
+          var src = e.target.getAttribute('src');
+          var basePath = '/jaikisaan/';
+          if (src && src.startsWith('/') && !src.startsWith(basePath) && !e.target.dataset.retried) {
+            e.target.dataset.retried = 'true';
+            e.target.src = basePath + src.slice(1);
+          }
+        }
+      }, true);
+    </script>
   </head>
   <body class="bg-surface-page text-text-primary font-body antialiased selection:bg-brand-lime selection:text-surface-dark">
     <div id="root"></div>

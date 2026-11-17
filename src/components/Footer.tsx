@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Radio } from 'lucide-react';
+import { asset } from '../lib/assets';
 
 const Footer: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-5 lg:col-span-5">
             <Link to="/" className="flex items-center gap-2.5 group">
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center p-1.5 shadow-sm flex-shrink-0">
-                <img src="/logo.svg" alt="JaiKisaan Solar" className="w-full h-full object-contain" />
+                <img src={asset('/logo.svg')} alt="JaiKisaan Solar" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col leading-none">
                 <span className="font-heading font-extrabold text-base tracking-tight text-white group-hover:text-brand-lime transition-colors">
