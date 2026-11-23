@@ -5,6 +5,12 @@ const ScrollToTop: React.FC = () => {
   const { pathname, search } = useLocation();
 
   useEffect(() => {
+    if (pathname === '/calculator') {
+      setTimeout(() => {
+        document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
+      }, 80);
+      return;
+    }
     // Immediate scroll to top on page change
     window.scrollTo({
       top: 0,

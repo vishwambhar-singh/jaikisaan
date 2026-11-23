@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Zap, Sun, Battery, Droplets, Building2, Home as HomeIcon, MessageCircle } from 'lucide-react';
 import { asset } from '../lib/assets';
 import SectionHeading from '../components/SectionHeading';
@@ -178,12 +179,12 @@ const Solutions: React.FC = () => (
             From 3 HP agricultural pump sets to 10 MWp industrial captive plants — JaiKisaan Solar delivers bankable, MNRE-certified solar solutions engineered for India&apos;s diverse energy needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-brand-forest text-white font-body font-semibold text-sm hover:bg-brand-forestLight transition-colors border border-brand-forest w-full sm:w-auto"
             >
               Get Free Feasibility Report <ArrowRight size={15} />
-            </a>
+            </Link>
             <a
               href="https://wa.me/917239992778"
               target="_blank"
@@ -256,8 +257,8 @@ const Solutions: React.FC = () => (
                   ))}
                 </div>
 
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className={`mt-2 inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl font-body font-semibold text-sm transition-colors w-full sm:w-auto self-start ${
                     isEven
                       ? 'bg-brand-forest text-white hover:bg-brand-forestLight border border-brand-forest'
@@ -265,7 +266,7 @@ const Solutions: React.FC = () => (
                   }`}
                 >
                   {sol.ctaLabel} <ArrowRight size={14} />
-                </a>
+                </Link>
               </div>
 
               {/* Image + stats side */}

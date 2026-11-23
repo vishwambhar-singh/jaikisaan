@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { label: 'About Us', href: '/about' },
   { label: 'Solutions', href: '/solutions' },
   { label: 'Projects', href: '/projects' },
+  { label: 'Calculator', href: '/calculator' },
   { label: 'City Engine', href: '/city-selector' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact Us', href: '/contact' },
@@ -110,12 +111,12 @@ const Header: React.FC = () => {
             </a>
 
             {/* CTA */}
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-flex items-center gap-2 h-10 px-5 rounded-xl bg-brand-forest text-white text-sm font-body font-semibold hover:bg-brand-forestLight transition-colors border border-brand-forest shadow-card"
             >
               Get Free Feasibility
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Right: Quick City Pill + Hamburger Button */}
@@ -194,12 +195,13 @@ const Header: React.FC = () => {
                   </a>
                 </div>
 
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
+                  onClick={() => setMenuOpen(false)}
                   className="flex items-center justify-center h-12 rounded-xl bg-brand-lime hover:bg-[#d6f799] text-[#17231D] text-xs font-heading font-extrabold uppercase tracking-wider shadow-glow-lime mt-1 transition-colors"
                 >
                   Request Free Feasibility
-                </a>
+                </Link>
               </div>
             </div>
           </div>

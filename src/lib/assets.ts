@@ -14,3 +14,4 @@ export function asset(path: string): string {
 }
 
 export default asset;
+

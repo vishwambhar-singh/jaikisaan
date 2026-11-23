@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { asset } from '../lib/assets';
 import { 
   ArrowRight, Award, Shield, TrendingUp, Users, Sun, CheckCircle, Zap, Leaf, 
@@ -174,12 +175,12 @@ const About: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-brand-forest hover:bg-brand-forestLight text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors shadow-card w-full sm:w-auto"
                 >
                   Connect with Engineers <ArrowRight size={15} />
-                </a>
+                </Link>
                 <a
                   href="#heritage"
                   className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-white hover:bg-[#F3F4EE] text-[#1A1C19] font-heading font-semibold text-xs uppercase tracking-wider transition-colors border border-[#E8EAE3] w-full sm:w-auto"
@@ -619,12 +620,12 @@ const About: React.FC = () => {
                   <MessageCircle size={15} />
                   WhatsApp Quick Assessment
                 </a>
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-brand-forest hover:bg-brand-forestLight text-white font-heading font-semibold text-xs uppercase tracking-wider transition-colors border border-brand-forest w-full"
                 >
                   Get a Free Solar Quote
-                </a>
+                </Link>
               </div>
             </div>
           </div>

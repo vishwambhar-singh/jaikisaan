@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { asset } from '../lib/assets';
+import AutoScroller from '../components/AutoScroller';
+import SolarSavingsCalculator from '../components/SolarSavingsCalculator';
 import { 
   ArrowRight, MessageCircle, Zap, Sun, TrendingUp, Shield, Award, CheckCircle, 
   ChevronRight, Leaf, Phone, Mail, MapPin, Star, Building2, Battery, Cpu 
@@ -44,17 +47,17 @@ const HeroSection: React.FC = () => (
           {/* CTAs matching Figma exact styles */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
             <a
-              href="#feasibility"
+              href="#calculator"
               className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-brand-lime hover:bg-brand-limeHover text-[#17231D] font-heading font-bold text-xs sm:text-sm tracking-wide transition-all shadow-glow-lime text-center"
             >
-              Request Feasibility <ArrowRight size={16} />
+              Calculate Solar Savings <ArrowRight size={16} />
             </a>
-            <a
-              href="/solutions"
+            <Link
+              to="/solutions"
               className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-transparent hover:bg-white/8 text-white font-heading font-semibold text-xs sm:text-sm tracking-wide transition-colors border border-white/20 text-center"
             >
               Explore Specifications
-            </a>
+            </Link>
           </div>
 
           {/* Telemetry quick metrics strip */}
@@ -226,12 +229,12 @@ const AboutSection: React.FC = () => (
           </div>
 
           <div className="pt-2">
-            <a
-              href="/about"
+            <Link
+              to="/about"
               className="inline-flex items-center gap-2 font-heading font-semibold text-sm text-brand-forest hover:text-brand-forestLight transition-colors"
             >
               Explore our company heritage &amp; leadership <ArrowRight size={15} />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -291,12 +294,12 @@ const SolutionsSection: React.FC = () => (
             Powering every Possibility.
           </h2>
         </div>
-        <a
-          href="/solutions"
+        <Link
+          to="/solutions"
           className="inline-flex items-center gap-2 font-heading font-semibold text-sm text-brand-forest hover:text-brand-forestLight transition-colors"
         >
           View all technical specifications <ArrowRight size={15} />
-        </a>
+        </Link>
       </div>
 
       {/* 4 Alternating Horizontal Cards matching Figma exact design */}
@@ -344,12 +347,12 @@ const SolutionsSection: React.FC = () => (
                   </div>
 
                   <div className="pt-4 border-t border-[#E8EAE3] flex items-center justify-between">
-                    <a
-                      href="/solutions"
+                    <Link
+                      to="/solutions"
                       className="inline-flex items-center gap-2 font-heading font-semibold text-xs uppercase tracking-wider text-brand-forest hover:text-brand-forestLight transition-colors"
                     >
                       Explore Specifications <ArrowRight size={14} />
-                    </a>
+                    </Link>
                     <a
                       href="#feasibility"
                       className="text-xs font-body font-semibold text-[#3F4942] hover:text-brand-forest"
@@ -488,9 +491,9 @@ const ProjectShowcaseSection: React.FC = () => {
                   <span>•</span>
                   <span>481,000 MWh Lifetime</span>
                   <span>•</span>
-                  <a href="/projects" className="text-brand-lime font-bold hover:underline ml-auto">
+                  <Link to="/projects" className="text-brand-lime font-bold hover:underline ml-auto">
                     View Project Dossier →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -522,9 +525,9 @@ const ProjectShowcaseSection: React.FC = () => {
                 </div>
                 <div className="pt-3 border-t border-[#E8EAE3] flex items-center justify-between text-xs font-mono">
                   <span className="text-brand-forest font-semibold">68% Bill Cut</span>
-                  <a href="/projects/vikas-cold-storage" className="text-brand-forest font-bold hover:underline">
+                  <Link to="/projects/vikas-cold-storage" className="text-brand-forest font-bold hover:underline">
                     Read Case Study →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -553,9 +556,9 @@ const ProjectShowcaseSection: React.FC = () => {
                 </div>
                 <div className="pt-3 border-t border-[#E8EAE3] flex items-center justify-between text-xs font-mono">
                   <span className="text-brand-forest font-semibold">₹1.4L / mo Saved</span>
-                  <a href="/projects" className="text-brand-forest font-bold hover:underline">
+                  <Link to="/projects" className="text-brand-forest font-bold hover:underline">
                     View Blueprint →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -676,12 +679,12 @@ const CEOSection: React.FC = () => (
                 <div className="font-heading font-bold text-sm text-[#1A1C19]">Sanjeev Kumar</div>
                 <div className="text-xs font-body text-[#3F4942]">Founder &amp; Chief Executive Officer</div>
               </div>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="text-xs font-heading font-semibold text-brand-forest hover:underline"
               >
                 Read full leadership letter →
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -730,12 +733,12 @@ const InsightsSection: React.FC = () => (
             Actionable technical briefs, regulatory subsidies deep-dives, and financial playbooks curated by SunScope solar engineers.
           </p>
         </div>
-        <a
-          href="/blog"
+        <Link
+          to="/blog"
           className="inline-flex items-center gap-2 font-heading font-semibold text-sm text-brand-forest hover:text-brand-forestLight transition-colors"
         >
           View all technical publications <ArrowRight size={15} />
-        </a>
+        </Link>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
@@ -765,12 +768,12 @@ const InsightsSection: React.FC = () => (
                 </p>
               </div>
               <div className="pt-4 border-t border-[#E8EAE3]">
-                <a
-                  href="/blog"
+                <Link
+                  to="/blog"
                   className="font-heading font-bold text-xs uppercase tracking-wider text-brand-forest hover:text-brand-forestLight transition-colors flex items-center gap-1"
                 >
                   READ WHITEPAPER ↗
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -843,9 +846,9 @@ const TestimonialsSection: React.FC = () => (
                 <div className="text-xs font-body text-[#3F4942]">{t.role}</div>
                 <div className="text-[11px] font-mono text-brand-forest mt-0.5">{t.location}</div>
               </div>
-              <a href="/projects" className="text-xs font-heading font-semibold text-brand-forest hover:underline">
+              <Link to="/projects" className="text-xs font-heading font-semibold text-brand-forest hover:underline">
                 Read review ↗
-              </a>
+              </Link>
             </div>
           </div>
         ))}
@@ -867,7 +870,12 @@ const ConversionSection: React.FC = () => {
   };
 
   return (
-    <section id="feasibility" className="scroll-mt-28 bg-[#17231D] py-20 md:py-28 relative overflow-hidden">
+    <section id="feasibility" className="scroll-mt-28 bg-[#17231D] py-20 md:py-28 relative overflow-hidden border-t border-[#23352B]">
+      {/* 1. Interactive Solar Savings Calculator */}
+      <div className="max-w-[1248px] mx-auto px-4 sm:px-6 mb-20 pb-16 border-b border-[#2B4234]">
+        <SolarSavingsCalculator />
+      </div>
+
       <div className="max-w-[1248px] mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Direct Helplines */}
@@ -1057,6 +1065,7 @@ const ConversionSection: React.FC = () => {
 const Home: React.FC = () => (
   <>
     <HeroSection />
+    <AutoScroller />
     <AboutSection />
     <SolutionsSection />
     <WhyChooseUsSection />

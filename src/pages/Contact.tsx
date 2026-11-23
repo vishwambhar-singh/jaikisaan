@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
-import { 
-  Phone, Mail, MapPin, MessageCircle, CheckCircle, Clock, ArrowRight, 
+import {
+  Phone, Mail, MapPin, MessageCircle, CheckCircle, Clock, ArrowRight,
   Building2, Shield, Radio, ExternalLink, Zap
 } from 'lucide-react';
 
@@ -208,7 +209,7 @@ const Contact: React.FC = () => {
       <section className="bg-[#F9FAF4] py-16 md:py-20 border-b border-[#E8EAE3]">
         <div className="max-w-[1248px] mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-8 items-start">
-            
+
             {/* Left: Engineering Feasibility Desk Form */}
             <div className="lg:col-span-7 bg-white rounded-3xl border border-[#E8EAE3] p-5 sm:p-8 md:p-10 shadow-card">
               <span className="text-[11px] font-mono font-semibold text-[#6E776F] uppercase tracking-widest block mb-2">
@@ -364,7 +365,7 @@ const Contact: React.FC = () => {
 
             {/* Right: Immediate Technical Desk & Grievance */}
             <div className="lg:col-span-5 flex flex-col gap-6">
-              
+
               {/* Card 1: Immediate Technical Desk */}
               <div className="bg-white rounded-3xl border border-[#E8EAE3] p-7 shadow-card">
                 <div className="flex items-center gap-2.5 mb-1">
@@ -497,11 +498,10 @@ const Contact: React.FC = () => {
               <button
                 key={tab}
                 onClick={() => setActiveFilter(tab)}
-                className={`px-4 py-2 rounded-xl text-xs font-heading font-semibold transition-all border whitespace-nowrap flex-shrink-0 ${
-                  activeFilter === tab
+                className={`px-4 py-2 rounded-xl text-xs font-heading font-semibold transition-all border whitespace-nowrap flex-shrink-0 ${activeFilter === tab
                     ? 'bg-[#005733] text-white border-[#005733] shadow-card'
                     : 'bg-white text-[#4E564F] border-[#E8EAE3] hover:border-[#005733]'
-                }`}
+                  }`}
               >
                 {tab}
               </button>
@@ -517,9 +517,8 @@ const Contact: React.FC = () => {
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className={`text-[10px] font-mono font-semibold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${
-                      hub.badgeStyle || 'bg-[#F3F4EE] text-[#4E564F]'
-                    }`}>
+                    <span className={`text-[10px] font-mono font-semibold px-2.5 py-0.5 rounded-full uppercase tracking-wider ${hub.badgeStyle || 'bg-[#F3F4EE] text-[#4E564F]'
+                      }`}>
                       {hub.badge}
                     </span>
                     <Building2 size={14} className="text-[#6E776F]" />
