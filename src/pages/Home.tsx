@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { asset } from '../lib/assets';
 import SolarSavingsCalculator from '../components/SolarSavingsCalculator';
-import { 
-  ArrowRight, MessageCircle, Zap, Sun, TrendingUp, Shield, Award, CheckCircle, 
-  ChevronRight, ChevronLeft, Leaf, Phone, Mail, MapPin, Star, Building2, Battery, Cpu 
+import {
+  ArrowRight, MessageCircle, Zap, Sun, TrendingUp, Shield, Award, CheckCircle,
+  ChevronRight, ChevronLeft, Leaf, Phone, Mail, MapPin, Star, Building2, Battery, Cpu
 } from 'lucide-react';
 
 // ─── Section 01: Hero Slideshow Section ────────────────────────────────────────
@@ -203,7 +203,7 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section 
+    <section
       className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#17231D] pt-24 pb-16"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
@@ -213,9 +213,8 @@ const HeroSection: React.FC = () => {
         {HERO_SLIDES.map((s, idx) => (
           <div
             key={s.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === currentSlide ? 'opacity-40 scale-100' : 'opacity-0 scale-105 pointer-events-none'
-            } transform transition-transform duration-[6000ms]`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentSlide ? 'opacity-40 scale-100' : 'opacity-0 scale-105 pointer-events-none'
+              } transform transition-transform duration-[6000ms]`}
           >
             <img
               src={asset(s.image)}
@@ -297,9 +296,8 @@ const HeroSection: React.FC = () => {
                     type="button"
                     onClick={() => setCurrentSlide(idx)}
                     aria-label={`Go to slide ${idx + 1}`}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                      idx === currentSlide ? 'w-8 bg-brand-lime' : 'w-2 bg-white/20 hover:bg-white/40'
-                    }`}
+                    className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide ? 'w-8 bg-brand-lime' : 'w-2 bg-white/20 hover:bg-white/40'
+                      }`}
                   />
                 ))}
               </div>
@@ -343,7 +341,7 @@ const HeroSection: React.FC = () => {
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
             <div className="w-full max-w-[420px] rounded-2xl p-4 sm:p-6 bg-[#1A2820]/95 backdrop-blur-md border border-[#2B4234] shadow-elevated relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-brand-lime/10 rounded-full blur-2xl pointer-events-none" />
-              
+
               {/* Header */}
               <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
                 <div className="flex items-center gap-2">
@@ -731,11 +729,10 @@ const ProjectShowcaseSection: React.FC = () => {
               <button
                 key={item}
                 onClick={() => setFilter(item)}
-                className={`px-4 py-2 rounded-xl text-xs font-heading font-semibold transition-colors whitespace-nowrap flex-shrink-0 ${
-                  filter === item
+                className={`px-4 py-2 rounded-xl text-xs font-heading font-semibold transition-colors whitespace-nowrap flex-shrink-0 ${filter === item
                     ? 'bg-brand-forest text-white'
                     : 'bg-white text-[#3F4942] border border-[#E8EAE3] hover:border-brand-forest'
-                }`}
+                  }`}
               >
                 {item}
               </button>
