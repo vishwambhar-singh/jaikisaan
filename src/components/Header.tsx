@@ -10,7 +10,6 @@ const NAV_LINKS = [
   { label: 'About Us', href: '/about' },
   { label: 'Solutions', href: '/solutions' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Calculator', href: '/calculator' },
   { label: 'City Engine', href: '/city-selector' },
   { label: 'Blog', href: '/blog' },
   { label: 'Contact Us', href: '/contact' },

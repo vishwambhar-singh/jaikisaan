@@ -1,160 +1,437 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { asset } from '../lib/assets';
-import AutoScroller from '../components/AutoScroller';
 import SolarSavingsCalculator from '../components/SolarSavingsCalculator';
 import { 
   ArrowRight, MessageCircle, Zap, Sun, TrendingUp, Shield, Award, CheckCircle, 
-  ChevronRight, Leaf, Phone, Mail, MapPin, Star, Building2, Battery, Cpu 
+  ChevronRight, ChevronLeft, Leaf, Phone, Mail, MapPin, Star, Building2, Battery, Cpu 
 } from 'lucide-react';
 
-// ─── Section 01: Hero Section (Matching Node 64:91) ───────────────────────────
-const HeroSection: React.FC = () => (
-  <section className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#17231D] pt-24 pb-16">
-    {/* High-quality 2.5K solar array background photo with spatial gradients */}
-    <div className="absolute inset-0 z-0 overflow-hidden">
-      <img
-        src={asset('/assets/images/hero_solar_panels_dusk.jpg')}
-        alt="High-resolution utility-scale solar panel farm"
-        className="w-full h-full object-cover opacity-50 scale-100 transform motion-safe:transition-transform motion-safe:duration-700"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#17231D] via-[#17231D]/80 to-[#17231D]/35" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#17231D] via-transparent to-black/30" />
-    </div>
+// ─── Section 01: Hero Slideshow Section ────────────────────────────────────────
+interface HeroSlide {
+  id: string;
+  image: string;
+  eyebrow: string;
+  headlineFirst: string;
+  headlineHighlight: string;
+  subhead: string;
+  hubTag: string;
+  peakValue: string;
+  peakUnit: string;
+  waveD: string;
+  scada: {
+    activeExport: string;
+    efficiency: string;
+    yield: string;
+    co2: string;
+    discom: string;
+    status: string;
+  };
+  metrics: {
+    val1: string;
+    label1: string;
+    val2: string;
+    label2: string;
+    val3: string;
+    label3: string;
+  };
+}
 
-    <div className="relative z-10 max-w-[1248px] mx-auto px-4 sm:px-6 w-full">
-      <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        {/* Left Column (7 cols) */}
-        <div className="lg:col-span-7 flex flex-col gap-5 sm:gap-6">
-          {/* Eyebrow badge */}
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] sm:text-[11px] font-mono tracking-wider sm:tracking-widest text-brand-lime uppercase bg-brand-lime/10 border border-brand-lime/25 px-2.5 sm:px-3 py-1 rounded-full leading-snug">
-              ENGINEERED FOR INDIA&apos;S AGRICULTURAL &amp; INDUSTRIAL BACKBONE
-            </span>
+const HERO_SLIDES: HeroSlide[] = [
+  {
+    id: 'sovereign',
+    image: '/assets/images/hero_solar_panels_dusk.jpg',
+    eyebrow: "ENGINEERED FOR INDIA'S AGRICULTURAL & INDUSTRIAL BACKBONE",
+    headlineFirst: "Powering Today.",
+    headlineHighlight: "Sustaining Tomorrow.",
+    subhead: "Delivering utility-scale solar EPC, decentralized agricultural pumping, and heavy industrial microgrids across India. Built for extreme heat, verified generation, and uncompromised grid security.",
+    hubTag: "Jodhpur Hub 500 kWp",
+    peakValue: "480",
+    peakUnit: "kW",
+    waveD: "M0,36 Q15,32 25,22 T50,6 T75,18 T100,32",
+    scada: {
+      activeExport: "412 kW Inverter",
+      efficiency: "98.4% Sync",
+      yield: "2,410 kWh Yield",
+      co2: "1.8t CO₂ Mitigated",
+      discom: "DISCOM: JVVNL / RRECL",
+      status: "● 50.02 Hz Stable"
+    },
+    metrics: {
+      val1: "50 MW+",
+      label1: "Installed Capacity",
+      val2: "1,420+",
+      label2: "Projects Delivered",
+      val3: "₹18 Cr+",
+      label3: "Monthly Savings"
+    }
+  },
+  {
+    id: 'utility',
+    image: '/assets/images/91fff17c130fbfe7684a3e0e7fe83e3d5ca439c3.jpg',
+    eyebrow: "50 MWP UTILITY GROUND-MOUNT ARRAY · RAJASTHAN",
+    headlineFirst: "Utility-Scale EPC.",
+    headlineHighlight: "Extreme Heat Resilience.",
+    subhead: "Massive 50 MWp ground-mount solar infrastructure engineered for high-irradiance desert zones with bifacial tracker arrays and high-voltage grid synchronization.",
+    hubTag: "Churu 132kV Substation",
+    peakValue: "48.2",
+    peakUnit: "MW",
+    waveD: "M0,38 Q20,30 35,16 T60,4 T85,14 T100,28",
+    scada: {
+      activeExport: "46.8 MW Active Export",
+      efficiency: "99.2% Sync",
+      yield: "210,000 kWh Yield",
+      co2: "162t CO₂ Mitigated",
+      discom: "DISCOM: JVVNL High Tension",
+      status: "● 50.01 Hz Stable"
+    },
+    metrics: {
+      val1: "481k MWh",
+      label1: "Lifetime Evacuation",
+      val2: "132 kV",
+      label2: "Substation Link",
+      val3: "25 Years",
+      label3: "Linear Guarantee"
+    }
+  },
+  {
+    id: 'industrial',
+    image: '/assets/images/aa80d82cedafbd1508c328b9e5f2754a3eb14919.jpg',
+    eyebrow: "120 KWP INDUSTRIAL COLD STORAGE DECARBONIZATION",
+    headlineFirst: "Slashing Peak Tariffs.",
+    headlineHighlight: "Heavy Industry Power.",
+    subhead: "Heavy C&I solar engineering offsetting up to 70% daytime grid power for cold storage warehouses, textile mills, and manufacturing plants with 1:1 net metering.",
+    hubTag: "Jaipur NH-48 Hub",
+    peakValue: "118",
+    peakUnit: "kW",
+    waveD: "M0,35 Q18,28 30,18 T55,8 T80,20 T100,34",
+    scada: {
+      activeExport: "110 kW String Inverter",
+      efficiency: "98.7% Sync",
+      yield: "580 kWh Yield",
+      co2: "0.45t CO₂ Mitigated",
+      discom: "DISCOM: JVVNL Net-Metered",
+      status: "● 50.00 Hz Stable"
+    },
+    metrics: {
+      val1: "68%",
+      label1: "Peak Bill Reduction",
+      val2: "₹2.6L",
+      label2: "Monthly Cost Shaved",
+      val3: "3.2 Yrs",
+      label3: "Capex Payback"
+    }
+  },
+  {
+    id: 'agriculture',
+    image: '/assets/images/8cf9afdfdade266942ddb840b554b0834187be15.jpg',
+    eyebrow: "PM-KUSUM DECENTRALIZED AGRI SOLAR PUMPING",
+    headlineFirst: "Empowering Bharat.",
+    headlineHighlight: "Zero-Diesel Agriculture.",
+    subhead: "Decentralized solar feeder plants and high-discharge submersible water pumps under PM-KUSUM Component A & C, powering farmers with reliable daytime 3-phase energy.",
+    hubTag: "Chomu Rural Feeder",
+    peakValue: "14.2",
+    peakUnit: "kW",
+    waveD: "M0,36 Q22,32 38,15 T62,7 T82,19 T100,30",
+    scada: {
+      activeExport: "15 HP VFD Drive",
+      efficiency: "97.9% Efficiency",
+      yield: "12,000 L / hr Water",
+      co2: "0.12t CO₂ Mitigated",
+      discom: "Decentralized Agro Feeder",
+      status: "● Continuous Flow"
+    },
+    metrics: {
+      val1: "100%",
+      label1: "Zero Diesel Dependency",
+      val2: "12,000 L",
+      label2: "Hourly Water Yield",
+      val3: "5 Years",
+      label3: "Comprehensive AMC"
+    }
+  },
+  {
+    id: 'residential',
+    image: '/assets/images/9232e3c12d228af8636d84a34e8fdea09b42a4b1.jpg',
+    eyebrow: "85 KWP NET-METERED RESIDENTIAL COMMUNITY ROOFTOP",
+    headlineFirst: "Smart Solar Living.",
+    headlineHighlight: "Direct PM Surya Subsidy.",
+    subhead: "Grid-connected solar rooftop systems for high-rise gated societies and luxury villas, integrating PM Surya Ghar Muft Bijli Yojana subsidies and net metering.",
+    hubTag: "Lucknow Operational Hub",
+    peakValue: "82",
+    peakUnit: "kW",
+    waveD: "M0,37 Q15,30 28,19 T52,9 T78,22 T100,35",
+    scada: {
+      activeExport: "80 kW Inverter Bank",
+      efficiency: "98.9% Sync",
+      yield: "390 kWh Yield",
+      co2: "0.32t CO₂ Mitigated",
+      discom: "DISCOM: MVVNL 1:1 Banking",
+      status: "● 50.02 Hz Stable"
+    },
+    metrics: {
+      val1: "₹1.4L / mo",
+      label1: "Society Savings",
+      val2: "₹78,000",
+      label2: "Central DBT Subsidy",
+      val3: "90%",
+      label3: "Common Area Offset"
+    }
+  }
+];
+
+const HeroSection: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 5500);
+    return () => clearInterval(timer);
+  }, [isPaused]);
+
+  const slide = HERO_SLIDES[currentSlide];
+
+  const handlePrev = () => {
+    setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+  };
+
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  };
+
+  return (
+    <section 
+      className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#17231D] pt-24 pb-16"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      {/* Background Slideshow Images with crossfade */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        {HERO_SLIDES.map((s, idx) => (
+          <div
+            key={s.id}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === currentSlide ? 'opacity-40 scale-100' : 'opacity-0 scale-105 pointer-events-none'
+            } transform transition-transform duration-[6000ms]`}
+          >
+            <img
+              src={asset(s.image)}
+              alt={s.headlineFirst}
+              className="w-full h-full object-cover"
+            />
           </div>
+        ))}
+        {/* Spatial Gradients */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#17231D] via-[#17231D]/80 to-[#17231D]/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#17231D] via-transparent to-black/30" />
+      </div>
 
-          {/* Headline matching Figma exact font and leading */}
-          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-[3.85rem] leading-[1.1] sm:leading-[1.08] text-white tracking-tight">
-            Powering Today.<br />
-            <span className="text-brand-lime">Sustaining Tomorrow.</span>
-          </h1>
-
-          {/* Subhead */}
-          <p className="font-body text-sm sm:text-base md:text-lg text-[#A3B3AA] leading-relaxed max-w-xl">
-            Delivering utility-scale solar EPC, decentralized agricultural pumping, and heavy industrial microgrids across India. Built for extreme heat, verified generation, and uncompromised grid security.
-          </p>
-
-          {/* CTAs matching Figma exact styles */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
-            <a
-              href="#calculator"
-              className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-brand-lime hover:bg-brand-limeHover text-[#17231D] font-heading font-bold text-xs sm:text-sm tracking-wide transition-all shadow-glow-lime text-center"
-            >
-              Calculate Solar Savings <ArrowRight size={16} />
-            </a>
-            <Link
-              to="/solutions"
-              className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-transparent hover:bg-white/8 text-white font-heading font-semibold text-xs sm:text-sm tracking-wide transition-colors border border-white/20 text-center"
-            >
-              Explore Specifications
-            </Link>
-          </div>
-
-          {/* Telemetry quick metrics strip */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-4 border-t border-white/10 max-w-lg">
-            <div>
-              <div className="font-heading font-bold text-xl sm:text-2xl text-white">50 MW+</div>
-              <div className="text-[9px] sm:text-[11px] font-mono text-[#A3B3AA] uppercase mt-0.5 leading-tight">Installed Capacity</div>
-            </div>
-            <div>
-              <div className="font-heading font-bold text-xl sm:text-2xl text-brand-lime">1,420+</div>
-              <div className="text-[9px] sm:text-[11px] font-mono text-[#A3B3AA] uppercase mt-0.5 leading-tight">Projects Delivered</div>
-            </div>
-            <div>
-              <div className="font-heading font-bold text-xl sm:text-2xl text-white">₹18 Cr+</div>
-              <div className="text-[9px] sm:text-[11px] font-mono text-[#A3B3AA] uppercase mt-0.5 leading-tight">Monthly Savings</div>
-            </div>
-          </div>
-        </div>
-
-        {/* Right Column: Floating SCADA Telemetry Widget (5 cols) matching Figma */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end">
-          <div className="w-full max-w-[420px] rounded-2xl p-4 sm:p-6 bg-[#1A2820]/95 backdrop-blur-md border border-[#2B4234] shadow-elevated relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-40 h-40 bg-brand-lime/10 rounded-full blur-2xl pointer-events-none" />
-            
-            {/* Header */}
-            <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-brand-lime animate-pulse" />
-                <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-white uppercase tracking-wider">
-                  LIVE SCADA TELEMETRY
-                </span>
-              </div>
-              <span className="text-[10px] sm:text-[11px] font-mono text-brand-lime px-2 py-0.5 rounded bg-brand-lime/10 border border-brand-lime/25">
-                Jodhpur Hub 500 kWp
+      <div className="relative z-10 max-w-[1248px] mx-auto px-4 sm:px-6 w-full">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          {/* Left Column (7 cols) */}
+          <div className="lg:col-span-7 flex flex-col gap-5 sm:gap-6">
+            {/* Eyebrow badge */}
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] sm:text-[11px] font-mono tracking-wider sm:tracking-widest text-brand-lime uppercase bg-brand-lime/10 border border-brand-lime/25 px-2.5 sm:px-3 py-1 rounded-full leading-snug flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-brand-lime animate-pulse" />
+                {slide.eyebrow}
               </span>
             </div>
 
-            {/* Peak generation display */}
-            <div className="flex items-baseline gap-2 mb-3">
-              <span className="font-heading font-extrabold text-4xl sm:text-5xl text-brand-lime">480</span>
-              <span className="font-heading font-semibold text-xl sm:text-2xl text-white">kW</span>
-              <span className="text-[11px] sm:text-xs font-mono text-[#A3B3AA] ml-auto">Real-Time Output</span>
+            {/* Headline with smooth text rendering */}
+            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-[3.85rem] leading-[1.1] sm:leading-[1.08] text-white tracking-tight min-h-[4.2rem] sm:min-h-[7.5rem] transition-all duration-500">
+              {slide.headlineFirst}<br />
+              <span className="text-brand-lime">{slide.headlineHighlight}</span>
+            </h1>
+
+            {/* Subhead */}
+            <p className="font-body text-sm sm:text-base md:text-lg text-[#A3B3AA] leading-relaxed max-w-xl min-h-[4rem] sm:min-h-[4.8rem] transition-all duration-500">
+              {slide.subhead}
+            </p>
+
+            {/* CTAs and Slide Nav Controls */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+              <a
+                href="#calculator"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-brand-lime hover:bg-brand-limeHover text-[#17231D] font-heading font-bold text-xs sm:text-sm tracking-wide transition-all shadow-glow-lime text-center"
+              >
+                Calculate Solar Savings <ArrowRight size={16} />
+              </a>
+              <Link
+                to="/solutions"
+                className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-transparent hover:bg-white/8 text-white font-heading font-semibold text-xs sm:text-sm tracking-wide transition-colors border border-white/20 text-center"
+              >
+                Explore Specifications
+              </Link>
             </div>
 
-            {/* SVG Generation Waveform Curve */}
-            <div className="relative h-20 mb-4 bg-black/25 rounded-xl p-2 flex items-end overflow-hidden border border-white/8">
-              <svg className="w-full h-full overflow-visible" viewBox="0 0 100 40" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="scadaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#C5F176" stopOpacity="0.5" />
-                    <stop offset="100%" stopColor="#C5F176" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M0,36 Q15,32 25,22 T50,6 T75,18 T100,32 L100,40 L0,40 Z"
-                  fill="url(#scadaGrad)"
-                />
-                <path
-                  d="M0,36 Q15,32 25,22 T50,6 T75,18 T100,32"
-                  fill="none"
-                  stroke="#C5F176"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                />
-              </svg>
+            {/* Slideshow Progress Bar & Dots */}
+            <div className="flex items-center gap-4 pt-2">
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={handlePrev}
+                  aria-label="Previous Slide"
+                  className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 text-white flex items-center justify-center transition-colors"
+                >
+                  <ChevronLeft size={16} />
+                </button>
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  aria-label="Next Slide"
+                  className="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/15 border border-white/10 text-white flex items-center justify-center transition-colors"
+                >
+                  <ChevronRight size={16} />
+                </button>
+              </div>
+
+              {/* Slide dots */}
+              <div className="flex items-center gap-2">
+                {HERO_SLIDES.map((s, idx) => (
+                  <button
+                    key={s.id}
+                    type="button"
+                    onClick={() => setCurrentSlide(idx)}
+                    aria-label={`Go to slide ${idx + 1}`}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      idx === currentSlide ? 'w-8 bg-brand-lime' : 'w-2 bg-white/20 hover:bg-white/40'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Slide index counter */}
+              <span className="text-[11px] font-mono text-[#A3B3AA]">
+                0{currentSlide + 1} / 0{HERO_SLIDES.length}
+              </span>
             </div>
 
-            {/* 4 Telemetry Metrics */}
-            <div className="grid grid-cols-2 gap-2.5 pt-1">
-              <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
-                <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Active Grid Export</span>
-                <span className="font-heading font-bold text-sm text-brand-lime">412 kW Inverter</span>
+            {/* Telemetry quick metrics strip (Dynamic per slide) */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-4 border-t border-white/10 max-w-lg">
+              <div>
+                <div className="font-heading font-bold text-xl sm:text-2xl text-white transition-all duration-300">
+                  {slide.metrics.val1}
+                </div>
+                <div className="text-[9px] sm:text-[11px] font-mono text-[#A3B3AA] uppercase mt-0.5 leading-tight">
+                  {slide.metrics.label1}
+                </div>
               </div>
-              <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
-                <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Grid Sync Efficiency</span>
-                <span className="font-heading font-bold text-sm text-white">98.4% Sync</span>
+              <div>
+                <div className="font-heading font-bold text-xl sm:text-2xl text-brand-lime transition-all duration-300">
+                  {slide.metrics.val2}
+                </div>
+                <div className="text-[9px] sm:text-[11px] font-mono text-[#A3B3AA] uppercase mt-0.5 leading-tight">
+                  {slide.metrics.label2}
+                </div>
               </div>
-              <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
-                <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Daily Generation</span>
-                <span className="font-heading font-bold text-sm text-brand-lime">2,410 kWh Yield</span>
-              </div>
-              <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
-                <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Carbon Offset</span>
-                <span className="font-heading font-bold text-sm text-white">1.8t CO₂ Mitigated</span>
+              <div>
+                <div className="font-heading font-bold text-xl sm:text-2xl text-white transition-all duration-300">
+                  {slide.metrics.val3}
+                </div>
+                <div className="text-[9px] sm:text-[11px] font-mono text-[#A3B3AA] uppercase mt-0.5 leading-tight">
+                  {slide.metrics.label3}
+                </div>
               </div>
             </div>
+          </div>
 
-            <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#A3B3AA]">
-              <span>DISCOM: JVVNL / RRECL</span>
-              <span className="text-brand-lime font-medium">● 50.02 Hz Stable</span>
+          {/* Right Column: Floating SCADA Telemetry Widget (Dynamic per slide) */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="w-full max-w-[420px] rounded-2xl p-4 sm:p-6 bg-[#1A2820]/95 backdrop-blur-md border border-[#2B4234] shadow-elevated relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-brand-lime/10 rounded-full blur-2xl pointer-events-none" />
+              
+              {/* Header */}
+              <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-brand-lime animate-pulse" />
+                  <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-white uppercase tracking-wider">
+                    LIVE SCADA TELEMETRY
+                  </span>
+                </div>
+                <span className="text-[10px] sm:text-[11px] font-mono text-brand-lime px-2 py-0.5 rounded bg-brand-lime/10 border border-brand-lime/25 transition-all duration-300">
+                  {slide.hubTag}
+                </span>
+              </div>
+
+              {/* Peak generation display */}
+              <div className="flex items-baseline gap-2 mb-3">
+                <span className="font-heading font-extrabold text-4xl sm:text-5xl text-brand-lime transition-all duration-300">
+                  {slide.peakValue}
+                </span>
+                <span className="font-heading font-semibold text-xl sm:text-2xl text-white">
+                  {slide.peakUnit}
+                </span>
+                <span className="text-[11px] sm:text-xs font-mono text-[#A3B3AA] ml-auto">Real-Time Output</span>
+              </div>
+
+              {/* SVG Generation Waveform Curve */}
+              <div className="relative h-20 mb-4 bg-black/25 rounded-xl p-2 flex items-end overflow-hidden border border-white/8">
+                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 40" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="scadaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stopColor="#C5F176" stopOpacity="0.5" />
+                      <stop offset="100%" stopColor="#C5F176" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d={`${slide.waveD} L100,40 L0,40 Z`}
+                    fill="url(#scadaGrad)"
+                    className="transition-all duration-700"
+                  />
+                  <path
+                    d={slide.waveD}
+                    fill="none"
+                    stroke="#C5F176"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    className="transition-all duration-700"
+                  />
+                </svg>
+              </div>
+
+              {/* 4 Telemetry Metrics */}
+              <div className="grid grid-cols-2 gap-2.5 pt-1">
+                <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
+                  <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Active Grid Export</span>
+                  <span className="font-heading font-bold text-sm text-brand-lime transition-all duration-300">
+                    {slide.scada.activeExport}
+                  </span>
+                </div>
+                <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
+                  <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Grid Sync Efficiency</span>
+                  <span className="font-heading font-bold text-sm text-white transition-all duration-300">
+                    {slide.scada.efficiency}
+                  </span>
+                </div>
+                <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
+                  <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Daily Generation</span>
+                  <span className="font-heading font-bold text-sm text-brand-lime transition-all duration-300">
+                    {slide.scada.yield}
+                  </span>
+                </div>
+                <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
+                  <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Carbon Offset</span>
+                  <span className="font-heading font-bold text-sm text-white transition-all duration-300">
+                    {slide.scada.co2}
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#A3B3AA]">
+                <span className="transition-all duration-300">{slide.scada.discom}</span>
+                <span className="text-brand-lime font-medium transition-all duration-300">{slide.scada.status}</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 // ─── Section 02: About Jai Kisaan (Meet Pure Energy) ─────────────────────────
 const AboutSection: React.FC = () => (
@@ -783,6 +1060,15 @@ const InsightsSection: React.FC = () => (
   </section>
 );
 
+// ─── Section 09.5: Solar Savings Calculator (Above Testimonials) ─────────────
+const CalculatorSection: React.FC = () => (
+  <section id="calculator" className="bg-[#17231D] py-20 md:py-28 relative overflow-hidden border-b border-[#23352B] scroll-mt-24">
+    <div className="max-w-[1248px] mx-auto px-4 sm:px-6 relative z-10">
+      <SolarSavingsCalculator />
+    </div>
+  </section>
+);
+
 // ─── Section 10: Customer Testimonials (Matching Image 9) ─────────────────────
 const TESTIMONIALS = [
   {
@@ -871,11 +1157,6 @@ const ConversionSection: React.FC = () => {
 
   return (
     <section id="feasibility" className="scroll-mt-28 bg-[#17231D] py-20 md:py-28 relative overflow-hidden border-t border-[#23352B]">
-      {/* 1. Interactive Solar Savings Calculator */}
-      <div className="max-w-[1248px] mx-auto px-4 sm:px-6 mb-20 pb-16 border-b border-[#2B4234]">
-        <SolarSavingsCalculator />
-      </div>
-
       <div className="max-w-[1248px] mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Left Column: Direct Helplines */}
@@ -1065,7 +1346,6 @@ const ConversionSection: React.FC = () => {
 const Home: React.FC = () => (
   <>
     <HeroSection />
-    <AutoScroller />
     <AboutSection />
     <SolutionsSection />
     <WhyChooseUsSection />
@@ -1073,6 +1353,7 @@ const Home: React.FC = () => (
     <SustainabilitySection />
     <CEOSection />
     <InsightsSection />
+    <CalculatorSection />
     <TestimonialsSection />
     <ConversionSection />
   </>
