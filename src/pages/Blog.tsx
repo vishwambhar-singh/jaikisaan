@@ -81,7 +81,7 @@ const ARTICLES: Article[] = [
   },
   {
     tag: 'PREVENTIVE O&M',
-    date: '06 Feb 2024',
+    date: '06 Feb 2026',
     readTime: '4 min read',
     title: 'Maintenance Tips After Solar Panel Installation',
     excerpt: 'Key thermal drone audit protocols and automated string monitoring strategies to protect PV cell lifecycle in semi-arid zones across North and West India.',
@@ -90,7 +90,7 @@ const ARTICLES: Article[] = [
   },
   {
     tag: 'C&I DECARBONIZATION',
-    date: '10 March 2024',
+    date: '19 March 2026',
     readTime: '8 min read',
     title: 'Solar Panel Installation in Factories: Save Electricity,...',
     excerpt: 'Mitigating midday peak demand charges and tapping 40% Section 32 IT depreciation for commercial manufacturing plants in industrial corridors.',
@@ -99,7 +99,7 @@ const ARTICLES: Article[] = [
   },
   {
     tag: 'REGIONAL ECONOMICS',
-    date: '8 May 2024',
+    date: '9 June 2026',
     readTime: '6 min read',
     title: 'How Much Can You Save With Solar Panels in Mohali Homes',
     excerpt: 'PSPCL tariff escalation analysis, payback modeling, and sovereign energy economics for Mohali and Punjab residential clusters.',

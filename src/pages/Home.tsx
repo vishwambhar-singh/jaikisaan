@@ -481,7 +481,7 @@ const AboutSection: React.FC = () => (
             </h2>
           </div>
           <p className="font-body text-base text-[#3F4942] leading-relaxed">
-            JaiKisaan Solar (JKS) is an engineering powerhouse committed to sovereign energy resilience for North India&apos;s agricultural, commercial cold chain, and industrial sectors. We build infrastructure that eliminates diesel reliance and protects margins against volatile power tariffs.
+            We are building reliable &amp; affordable energy in power supply and renewable energy solutions. At Jai Kisaan Solar, we offer eco-friendly energy solutions including solar panel installation, energy solutions, and maintenance for residential and commercial clients, promoting renewable energy across North and West India.
           </p>
 
           <div className="flex flex-col gap-3.5 pt-2">
@@ -648,16 +648,16 @@ const SolutionsSection: React.FC = () => (
 // ─── Section 05: Why Choose Us (Dark Spatial Sanctuary) ───────────────────────
 const WHY_US_CARDS = [
   {
-    title: 'End-to-End Solar Solutions',
-    desc: 'Turnkey EPC delivering feasibility audit, 3D shadow analysis, DPR engineering, DISCOM liaison, procurement, and synchronisation under one sovereign roof.',
+    title: 'Solar Panel Installation',
+    desc: 'Delivering reliable and sustainable solar energy solutions — rooftop, ground-mount, and utility-scale — with full turnkey execution from DPR to DISCOM net-metering.',
   },
   {
-    title: 'Tier-1 Module Technology',
-    desc: 'Strict procurement protocol using exclusively Waaree, Adani, and Vikram Solar Mono-PERC bifacial panels with certified Indian DCR compliance.',
+    title: 'Fast Technical Services',
+    desc: 'Swift and reliable technical support for all your needs. Dedicated district liaison officers and 48-hour rapid dispatch field engineering cells across UP and Rajasthan.',
   },
   {
-    title: 'Uncompromising Quality & Safety',
-    desc: 'Hot-dip galvanised structural framing (min 80 microns) tested to withstand 160 km/h wind shear, paired with IP65-rated string inverters.',
+    title: 'Safety and Reliability',
+    desc: 'Prioritizing safety and delivering reliable solutions you can trust. Hot-dip galvanised structural framing tested to withstand 160 km/h wind shear, with IP65-rated inverters.',
   },
   {
     title: 'Turnkey Delivery & Strict SLA',
@@ -938,20 +938,20 @@ const CEOSection: React.FC = () => (
               VISION &amp; MISSION STATEMENT
             </span>
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#1A1C19] leading-tight">
-              &ldquo;Accelerating India&apos;s Decarbonization: How Distributed Solar and Intelligent Grids are Redefining Sovereign Energy Resilience.&rdquo;
+              &ldquo;At SunScope Group of Companies, we believe in the power of innovation, sustainability, and collaboration to create a brighter future.&rdquo;
             </h2>
             <div className="flex flex-col gap-3.5 text-sm md:text-base font-body text-[#3F4942] leading-relaxed">
               <p>
-                Energy independence is not an abstract ecological theory; it is the fundamental economic bedrock of India&apos;s next industrial chapter. By combining high-yield photovoltaics with distributed microgrid storage, we give our farmers, factory heads, and developers absolute sovereignty over their power costs.
+                Our journey has been driven by a simple yet powerful vision—to bring clean energy, advanced technology, and financial empowerment to businesses and communities worldwide. Each of our group companies plays a key role: Jaikisaan Solar delivers EPC services for solar projects of all scales, eSunScope leads go-to-market strategy, and CityScene Global drives digital transformation.
               </p>
               <p>
-                From replacing noisy diesel gensets on rural farms in Barabanki to engineering 120 kWp captive microgrids for cold chain logistics in Jaipur, JaiKisaan Solar delivers institutional rigor, bankable warranties, and zero-compromise engineering execution.
+                Delivering quality with the highest professional standards is at the core of everything we do. We are committed to excellence in every aspect of our operations—from design and execution to service delivery and stakeholder engagement. Our approach is built on precision, reliability, and continuous improvement.
               </p>
             </div>
             <div className="pt-4 border-t border-[#E8EAE3] flex items-center justify-between">
               <div>
                 <div className="font-heading font-bold text-sm text-[#1A1C19]">Sanjeev Kumar</div>
-                <div className="text-xs font-body text-[#3F4942]">Founder &amp; Chief Executive Officer</div>
+                <div className="text-xs font-body text-[#3F4942]">Group CEO, SunScope Group of Companies</div>
               </div>
               <Link
                 to="/about"
