@@ -79,19 +79,25 @@ const Footer: React.FC = () => {
             <div className="text-xs font-mono font-semibold text-white uppercase tracking-widest">HEADQUARTERS</div>
             <div className="flex flex-col gap-3 text-xs font-body text-[#A3B3AA] leading-relaxed">
               <div>
-                <strong className="text-white block font-medium">SunScope Group</strong>
-                5-P, Tower, 150, Shri Balaji Officers Campus Colony, Jaipur, Rajasthan 302012
+                <strong className="text-white block font-medium">Head Office - Jaipur</strong>
+                Jai Kisaan Solar Pvt. Ltd., S.P Tower, 150, Sirsi Rd, Officers Campus Colony, Jaipur, Rajasthan 302012
               </div>
               <div className="flex flex-col gap-1.5 pt-1">
                 <a href="tel:+917239992778" className="hover:text-brand-lime transition-colors flex items-center gap-2">
-                  <Phone size={13} className="text-brand-lime" /> +91 72399 92778
+                  <Phone size={13} className="text-brand-lime" /> +91 72399 92778 / +91 85299 99277
                 </a>
                 <a href="mailto:info@jaikisaansolar.com" className="hover:text-brand-lime transition-colors flex items-center gap-2">
                   <Mail size={13} className="text-brand-lime" /> info@jaikisaansolar.com
                 </a>
+                <div className="text-[11px] text-[#A3B3AA] pt-1">
+                  <span>Support: </span>
+                  <a href="mailto:welisten@jaikisaansolar.com" className="hover:text-brand-lime text-white">welisten@jaikisaansolar.com</a>
+                  <span> · </span>
+                  <a href="tel:+917239999277" className="hover:text-brand-lime text-white">+91 7239999277</a>
+                </div>
               </div>
               <div className="text-[11px] text-[#7C8F83] pt-1 border-t border-[#23352B]">
-                <span className="text-white font-medium">Regional Operations:</span> Jaipur, Lucknow, Varanasi, Gorakhpur, Jodhpur, Udaipur, Ahmedabad, Hyderabad
+                <span className="text-white font-medium">Operational Offices:</span> Jaipur, Begun, Nawalgarh, Lucknow, Agra, Kanpur, Indore, Hyderabad, Amritsar, Delhi NCR, Udaipurwati
               </div>
             </div>
           </div>

@@ -10,37 +10,37 @@ import {
 const EVOLUTION_PHASES = [
   {
     phase: 'Phase 01',
-    year: '2018',
-    title: 'Inception & UP Rooftop Mandate',
-    desc: 'Founded in Lucknow with a dedicated mission to deliver precision rooftop solar engineering for regional institutions, textile hubs, and commercial complexes.',
+    year: '2015',
+    title: 'Expanding Horizons in C&I Solar',
+    desc: 'Powering businesses since 2015 with tailored solar solutions for offices and factories — delivering cost savings, sustainability, and expert EPC service with every project.',
     isDark: false,
   },
   {
     phase: 'Phase 02',
-    year: '2020',
-    title: 'PM-KUSUM Solar Pumping',
-    desc: 'Empanelled with UPNEDA and RRECL under PM-KUSUM. Commissioned over 850+ solar irrigation pumps across rural Barabanki, Jodhpur, and Gorakhpur.',
+    year: '2018',
+    title: 'Scaling Up Utility-Scale Solar',
+    desc: 'Leading the way in utility-scale solar from our first 20 MWp plant to our milestone 120 MWp project, fueled by engineering innovation and flawless execution.',
     isDark: false,
   },
   {
     phase: 'Phase 03',
     year: '2022',
-    title: 'Industrial Cold Storage & C&I',
-    desc: 'Pioneered custom high-surge solar microgrids for agro-cold storage chains, eliminating diesel generator dependence and cutting operational tariffs by 68%.',
+    title: 'Lighting Up India & PM Surya Ghar',
+    desc: 'Lighting up India since 2022 — slashing power bills, protecting the planet, and accelerating solar adoption through government schemes like PM Surya Ghar Muft Bijli Yojana.',
     isDark: false,
   },
   {
     phase: 'Phase 04',
     year: '2024',
-    title: 'Green Hydrogen R&D',
-    desc: 'Initiated advanced pilot studies in biomass-assisted green hydrogen synthesis and decentralized solar-powered proton exchange membrane (PEM) electrolysers.',
+    title: 'Transmission Lines & EV Networks',
+    desc: 'Powering the future with solar, high-voltage transmission lines, substations, and EV charging stations — fast, efficient, and built for a sustainable tomorrow.',
     isDark: false,
   },
   {
     phase: 'Phase 05',
     year: '2026',
-    title: 'State-wide IoT Telemetry Grid',
-    desc: 'Scaling automated real-time SCADA telemetry networks across 1,200+ distributed clean energy installations in 7 regional operational hubs.',
+    title: '300+ Projects & Green Hydrogen',
+    desc: 'With 300+ projects delivered successfully, our 5-year green hydrogen roadmap pioneers scalable clean hydrogen production for transport, industry, and energy storage.',
     isDark: true, // Dark sanctuary card in Figma
   },
 ];
@@ -112,8 +112,8 @@ const WHY_CHOOSE_JKS = [
 const LEADERSHIP = [
   {
     name: 'Sanjeev Kumar',
-    role: 'Founder & CEO',
-    bio: '15+ years in rural energy access. Former MNRE policy consultant. Leads corporate strategy, capital allocation, and government nodal agency relations.',
+    role: 'Group CEO, SunScope Group',
+    bio: 'Leads SunScope Group of Companies (eSunScope, Jai Kisaan Solar, CityScene Global). Directs corporate strategy, process intelligence, and green hydrogen innovations.',
     image: '/assets/images/f439653e2658caf4155cc9059936c76b64dfc801.jpg',
   },
   {
@@ -246,27 +246,27 @@ const About: React.FC = () => {
               </div>
             </div>
 
-            {/* 4 Stats Grid matching Figma Frame 2 exactly: 2018, 520+, ₹180Cr+, 99.4% */}
+            {/* 4 Stats Grid matching Figma Frame 2 exactly: 2015, 300+, 120 MWp, 99.4% */}
             <div className="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4">
               <div className="p-4 sm:p-6 rounded-2xl bg-[#F9FAF4] border border-[#E8EAE3]">
-                <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-brand-forest">2018</div>
-                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A1C19] mt-2">Year of Inception</div>
-                <p className="font-body text-[11px] sm:text-xs text-[#3F4942] mt-1">Founded in Lucknow, UP</p>
+                <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-brand-forest">2015</div>
+                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A1C19] mt-2">Powering Businesses</div>
+                <p className="font-body text-[11px] sm:text-xs text-[#3F4942] mt-1">Solar &amp; EPC Heritage</p>
               </div>
               <div className="p-4 sm:p-6 rounded-2xl bg-[#F9FAF4] border border-[#E8EAE3]">
-                <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-brand-forest">520+</div>
-                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A1C19] mt-2">Commercial Plants</div>
-                <p className="font-body text-[11px] sm:text-xs text-[#3F4942] mt-1">Operating across 7 cities</p>
+                <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-brand-forest">300+</div>
+                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A1C19] mt-2">Delivered Projects</div>
+                <p className="font-body text-[11px] sm:text-xs text-[#3F4942] mt-1">Endless happy customers</p>
               </div>
               <div className="p-4 sm:p-6 rounded-2xl bg-[#F9FAF4] border border-[#E8EAE3]">
-                <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-brand-forest">₹180Cr+</div>
-                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A1C19] mt-2">Clean Power Savings</div>
-                <p className="font-body text-[11px] sm:text-xs text-[#3F4942] mt-1">Client retained alpha</p>
+                <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-brand-forest">120 MWp</div>
+                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A1C19] mt-2">Utility Plant Scale</div>
+                <p className="font-body text-[11px] sm:text-xs text-[#3F4942] mt-1">From 20 MWp to 120 MWp</p>
               </div>
               <div className="p-4 sm:p-6 rounded-2xl bg-[#F9FAF4] border border-[#E8EAE3]">
-                <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-brand-forest">99.4%</div>
-                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A1C19] mt-2">System Reliability</div>
-                <p className="font-body text-[11px] sm:text-xs text-[#3F4942] mt-1">SCADA monitored uptime</p>
+                <div className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-brand-forest">6+ States</div>
+                <div className="font-heading font-bold text-xs sm:text-sm text-[#1A1C19] mt-2">National Footprint</div>
+                <p className="font-body text-[11px] sm:text-xs text-[#3F4942] mt-1">RJ, UP, MP, TS, PB, DL</p>
               </div>
             </div>
           </div>
@@ -347,10 +347,10 @@ const About: React.FC = () => {
                 </div>
                 <span className="text-xs font-mono font-semibold text-[#4B6D00] uppercase tracking-wider">OUR MISSION</span>
                 <h3 className="font-heading font-extrabold text-2xl text-[#1A1C19] mt-2">
-                  Energy Sovereignty for Agrarian &amp; Industrial Bharat
+                  Accessible, Reliable &amp; Sustainable Clean Energy
                 </h3>
                 <p className="font-body text-base text-[#3F4942] leading-relaxed mt-4">
-                  To engineer bankable, subsidy-optimised clean energy sovereignty for rural enterprises, farmers, and commercial facilities across North and West India — eliminating fuel dependence forever.
+                  Our mission is to empower individuals and communities by providing accessible, reliable, and sustainable green energy solutions right at their doorstep — reducing carbon footprints and fostering energy sovereignty.
                 </p>
               </div>
             </div>
@@ -363,10 +363,10 @@ const About: React.FC = () => {
                 </div>
                 <span className="text-xs font-mono font-semibold text-brand-lime uppercase tracking-wider">OUR VISION</span>
                 <h3 className="font-heading font-extrabold text-2xl text-white mt-2">
-                  Pioneering Bharat’s Decentralized Clean Energy Utility
+                  Vertically Integrated EPC Excellence
                 </h3>
                 <p className="font-body text-base text-[#A3B3AA] leading-relaxed mt-4">
-                  To establish India as the global benchmark of sovereign decentralized clean energy by 2030 — uniting heavy solar EPC with next-generation green hydrogen microgrids.
+                  To establish ourselves as a vertically integrated EPC company renowned for delivering exceptional quality and excellence across all facets of our operations — from rooftop solar to utility plants and green hydrogen.
                 </p>
               </div>
             </div>

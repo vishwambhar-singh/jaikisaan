@@ -34,9 +34,9 @@ const HUBS: Hub[] = [
     badgeStyle: 'bg-[#E8F5E9] text-[#005733]',
     name: 'Begun Office',
     division: 'Rural Grid Solar Energy Division',
-    address: 'Near HDFC Bank, New Sabji Mandi, Begun, Rajasthan - 312023',
-    phoneLabel: 'Direct Phone:',
-    phone: '+91 7665330166',
+    address: 'Sunorient Solar Energy, Near HDFC Bank, New Sabji Mandi, Begun, Rajasthan - 312023',
+    phoneLabel: 'Contact Person:',
+    phone: 'Babulal Dhaker (+91 7568836166 / +91 7665330166)',
     state: 'Rajasthan',
   },
   {
@@ -44,9 +44,9 @@ const HUBS: Hub[] = [
     badgeStyle: 'bg-[#E8F5E9] text-[#005733]',
     name: 'Nawalgarh Hub',
     division: 'Residential & Tube-well Projects',
-    address: 'Near Jaipuria Hospital, Nawalgarh, Jhunjhunu, Rajasthan - 333042',
-    phoneLabel: 'Direct Phone:',
-    phone: '+91 9629466424',
+    address: 'Near Jaipuriya Hospital, Nawalgarh, Jhunjhunu, Rajasthan - 333042',
+    phoneLabel: 'Contact Person:',
+    phone: 'Rakesh Kumar Saini (+91 9529466424)',
     state: 'Rajasthan',
   },
   {
@@ -63,7 +63,7 @@ const HUBS: Hub[] = [
     badgeStyle: 'bg-[#E8F5E9] text-[#005733]',
     name: 'Lucknow Office',
     division: 'Central UP Operations & EPC',
-    address: 'Hall 1st Floor, House No. 355/24, Part of Khasra No. 18, Near Paltan Tiraha, Rajajipuram, Lucknow, UP - 226017',
+    address: 'Hall, 1st Floor, House No. 355/2A, Part of Khasra No. 18, Near Pal Tiraha, Rajajipuram, Lucknow, UP – 226017',
     phoneLabel: 'Regional Desk:',
     phone: '+91 81309 60888',
     state: 'Uttar Pradesh',
@@ -72,7 +72,7 @@ const HUBS: Hub[] = [
     badge: 'Braj Region Command',
     name: 'Agra Office',
     division: 'Industrial Rooftop & Cold Storage',
-    address: '8th Floor, Corporate Park, Zudio / Adhar Building Opposite GG Hospital, Sanjay Place, Civil Lines, Agra, UP - 282002',
+    address: '8th Floor, Corporate Park, Zudio Building / Adhar Building, Opposite GG Hospital, Sanjay Palace, Civil Lines, Agra, UP – 282002',
     phoneLabel: 'Corporate Direct:',
     phone: '+91 7239992778',
     state: 'Uttar Pradesh',
@@ -81,7 +81,7 @@ const HUBS: Hub[] = [
     badge: 'Industrial Belt UP',
     name: 'Kanpur Office',
     division: 'Heavy Manufacturing & Captive Plants',
-    address: '127/720, Canal Colony, Vinoba Nagar, Juhi Kalan, Kidwai Nagar, Kanpur, Uttar Pradesh - 208014',
+    address: '127/T/25, Canal Colony, Vinoba Nagar, Juhi Kalan, Kidwai Nagar, Kanpur, Uttar Pradesh – 208014',
     phoneLabel: 'Regional Line:',
     phone: '+91 7239992778',
     state: 'Uttar Pradesh',
@@ -90,16 +90,16 @@ const HUBS: Hub[] = [
     badge: 'Central India Command',
     name: 'Indore Office',
     division: 'Malwa & Central India EPC',
-    address: 'Office No. 206, Indraprastha Tower, MG Road, Palasia, Indore, Madhya Pradesh - 452001',
+    address: 'Office No. 236, Indraprastha Tower, MG Road, Palasia, Indore, Madhya Pradesh – 452001',
     phoneLabel: 'MP Operations Desk:',
-    phone: '+91 6349296639',
+    phone: '+91 8349296639',
     state: 'Madhya Pradesh',
   },
   {
     badge: 'South India Hub',
     name: 'Hyderabad Office',
     division: 'Industrial Rooftop & Green Hydrogen',
-    address: 'Floor 3, Oyster Complex, AWFIS, Greenlands Road, Somajiguda, Hyderabad, Telangana - 500016',
+    address: 'Floor 3, Oyster Complex, Awfis Oyster Complex, Greenlands Road, Somajiguda, Hyderabad, Telangana – 500016',
     phoneLabel: 'South India Desk:',
     phone: '+91 7239992778',
     state: 'Telangana',
@@ -108,7 +108,7 @@ const HUBS: Hub[] = [
     badge: 'North Agri-Grid Hub',
     name: 'Amritsar Office',
     division: 'Agri Microgrids & Cold Storage',
-    address: 'Vrindavan Garden, Fateh Garh Churian Road, Lane No. 2, Amritsar, Punjab',
+    address: 'Vrindavan Garden, Fateh Garh Churiya Road, Lane No. 2, Amritsar, Punjab',
     phoneLabel: 'Punjab Helpdesk:',
     phone: '+91 7239992778',
     state: 'Punjab & Delhi NCR',
@@ -117,7 +117,7 @@ const HUBS: Hub[] = [
     badge: 'Capital Corridor Hub',
     name: 'Surajmal Vihar - Delhi',
     division: 'NCR Rooftop & Corporate Projects',
-    address: 'SF-25, 2nd Floor, Cross River Mall, Surajmal Vihar, Delhi - 110032',
+    address: 'SF-25, 2nd Floor, Cross River Mall, Surajmal Vihar, Delhi – 110032',
     phoneLabel: 'Delhi Liaison:',
     phone: '+91 81309 60888',
     state: 'Punjab & Delhi NCR',
@@ -395,20 +395,20 @@ const Contact: React.FC = () => {
                 <div className="mt-4">
                   <div className="text-[10px] font-mono text-[#6E776F] uppercase tracking-wider mb-2">SECONDARY OPERATIONAL LINES</div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-[#17231D]">
+                    <a href="tel:+918529999277" className="p-2.5 rounded-xl bg-[#F9FAF4] border border-[#E8EAE3] hover:border-[#005733] flex items-center justify-between">
+                      <span>+91 85299 99277</span>
+                      <Phone size={12} className="text-[#6E776F]" />
+                    </a>
                     <a href="tel:+918130960888" className="p-2.5 rounded-xl bg-[#F9FAF4] border border-[#E8EAE3] hover:border-[#005733] flex items-center justify-between">
                       <span>+91 81309 60888</span>
                       <Phone size={12} className="text-[#6E776F]" />
                     </a>
                     <a href="tel:+917239992779" className="p-2.5 rounded-xl bg-[#F9FAF4] border border-[#E8EAE3] hover:border-[#005733] flex items-center justify-between">
-                      <span>+91 7239992779</span>
+                      <span>+91 72399 92779</span>
                       <Phone size={12} className="text-[#6E776F]" />
                     </a>
-                    <a href="tel:+916349296639" className="p-2.5 rounded-xl bg-[#F9FAF4] border border-[#E8EAE3] hover:border-[#005733] flex items-center justify-between">
-                      <span>+91 6349296639</span>
-                      <Phone size={12} className="text-[#6E776F]" />
-                    </a>
-                    <a href="tel:+919629466424" className="p-2.5 rounded-xl bg-[#F9FAF4] border border-[#E8EAE3] hover:border-[#005733] flex items-center justify-between">
-                      <span>+91 9629466424</span>
+                    <a href="tel:+918349296639" className="p-2.5 rounded-xl bg-[#F9FAF4] border border-[#E8EAE3] hover:border-[#005733] flex items-center justify-between">
+                      <span>+91 83492 96639</span>
                       <Phone size={12} className="text-[#6E776F]" />
                     </a>
                   </div>
@@ -436,23 +436,23 @@ const Contact: React.FC = () => {
               <div className="bg-white rounded-3xl border border-[#E8EAE3] p-5 sm:p-7 shadow-card">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-red-500 text-sm">📍</span>
-                  <h3 className="font-heading font-bold text-sm text-[#17231D]">Priority Grievance &amp; Escalation</h3>
+                  <h3 className="font-heading font-bold text-sm text-[#17231D]">Customer Support &amp; Grievance</h3>
                 </div>
                 <p className="text-[11px] font-body text-[#6E776F] mb-4">
-                  Direct oversight from executive management
+                  “Your feedback matters to us — share your concerns anytime.”
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono">
                   <div className="p-3 rounded-xl bg-[#F9FAF4] border border-[#E8EAE3]">
-                    <div className="text-[10px] text-[#6E776F] uppercase">EMAIL GRIEVANCE</div>
-                    <a href="mailto:escalation@jaikisaansolar.com" className="font-bold text-[#17231D] text-[11px] hover:underline block mt-0.5 truncate">
-                      escalation@jaikisaansolar.com
+                    <div className="text-[10px] text-[#6E776F] uppercase">EMAIL SUPPORT</div>
+                    <a href="mailto:welisten@jaikisaansolar.com" className="font-bold text-[#17231D] text-[11px] hover:underline block mt-0.5 truncate">
+                      welisten@jaikisaansolar.com
                     </a>
                   </div>
                   <div className="p-3 rounded-xl bg-[#F9FAF4] border border-[#E8EAE3]">
-                    <div className="text-[10px] text-[#6E776F] uppercase">ESCALATION DESK</div>
-                    <a href="tel:+917239992277" className="font-bold text-[#17231D] text-[11px] hover:underline block mt-0.5">
-                      +91 7239992277
+                    <div className="text-[10px] text-[#6E776F] uppercase">CALL SUPPORT</div>
+                    <a href="tel:+917239999277" className="font-bold text-[#17231D] text-[11px] hover:underline block mt-0.5">
+                      +91 7239999277
                     </a>
                   </div>
                 </div>
