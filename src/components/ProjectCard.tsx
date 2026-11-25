@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Zap, Building2, ArrowRight } from 'lucide-react';
 import { cn } from '../lib/cn';
 import { asset } from '../lib/assets';
@@ -75,12 +76,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               <div className="font-heading font-semibold text-brand-forest text-sm">{monthlySavings}</div>
             </div>
             {slug && (
-              <a
-                href={`/projects/${slug}`}
+              <Link
+                to={`/projects/${slug}`}
                 className="flex items-center gap-1 text-xs font-body font-semibold text-brand-forest hover:text-brand-forestLight transition-colors"
               >
                 View case study <ArrowRight size={12} />
-              </a>
+              </Link>
             )}
           </div>
         )}

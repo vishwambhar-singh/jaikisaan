@@ -4,7 +4,7 @@ import {
   MapPin, Phone, Building2, Sliders, AlertTriangle, ArrowRight, Star,
   Download, Calendar, Share2, Leaf, DollarSign
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Badge from '../components/Badge';
 import { asset } from '../lib/assets';
 
@@ -62,7 +62,110 @@ const RELATED_PROJECTS = [
   },
 ];
 
+const PROJECT_META: Record<string, {
+  title: string;
+  capacity: string;
+  facilityType: string;
+  client: string;
+  city: string;
+  savings: string;
+  discom: string;
+}> = {
+  'vikas-cold-storage': {
+    title: 'Mr. Vikas Data 220 kW Plant',
+    capacity: '220 kWp',
+    facilityType: 'Commercial Cold Storage',
+    client: 'Vikas Enterprises',
+    city: 'Jaipur Industrial Area, Rajasthan',
+    savings: '₹21.8 Lakh/yr',
+    discom: 'JVVNL Net-Metered & Commissioned',
+  },
+  'sharda-flour-mills': {
+    title: 'Sharda Enterprises Commercial Rooftop',
+    capacity: '85 kWp',
+    facilityType: 'C&I Rooftops',
+    client: 'Sharda Industries',
+    city: 'Lucknow, Uttar Pradesh',
+    savings: '₹14.4 Lakh/yr',
+    discom: 'MVVNL Net-Metered & Commissioned',
+  },
+  'kisan-agro-barabanki': {
+    title: 'Rajasthan Premium Farm Pumping Cluster',
+    capacity: '50 HP',
+    facilityType: 'Solar Irrigation Pumps',
+    client: 'Kisan Agro Cooperative',
+    city: 'Barabanki & Churu',
+    savings: '₹54.0 Lakh/yr',
+    discom: 'PM-KUSUM Feeder Synchronized',
+  },
+  'rajputana-warehousing': {
+    title: 'Rajputana Warehousing & Logistics Hub',
+    capacity: '200 kWp',
+    facilityType: 'Industrial Warehousing',
+    client: 'Rajputana Logistics',
+    city: 'Jodhpur, Rajasthan',
+    savings: '₹19.2 Lakh/yr',
+    discom: 'JdVNL Net-Metered & Commissioned',
+  },
+  'soormights-luxury-township': {
+    title: 'Soormights Luxury Township Array',
+    capacity: '65 kWp',
+    facilityType: 'Residential Society',
+    client: 'Soormights RWA',
+    city: 'Lucknow, UP',
+    savings: '₹10.8 Lakh/yr',
+    discom: 'MVVNL Net-Metered & Commissioned',
+  },
+  'awadh-cold-chain': {
+    title: 'Awadh Cold Chain Agro Logistics',
+    capacity: '150 kWp',
+    facilityType: 'Commercial Cold Storage',
+    client: 'Awadh Agro Products',
+    city: 'Varanasi, UP',
+    savings: '₹16.5 Lakh/yr',
+    discom: 'PuVVNL Net-Metered & Commissioned',
+  },
+  'bundelkhand-irrigation': {
+    title: 'Bundelkhand Solar Feeder Irrigation',
+    capacity: '25 HP',
+    facilityType: 'Solar Irrigation Pumps',
+    client: 'Bundelkhand Farmers Union',
+    city: 'Gorakhpur & Jhansi',
+    savings: '₹28.0 Lakh/yr',
+    discom: 'PM-KUSUM Component C Dedicated',
+  },
+  'sardarshahar-agri-park': {
+    title: 'Sardarshahar Agri-Photovoltaic Facility',
+    capacity: '100 kWp',
+    facilityType: 'Agri-PV Systems',
+    client: 'Marwar Solar Agro',
+    city: 'Churu, Rajasthan',
+    savings: '₹13.2 Lakh/yr',
+    discom: 'JdVNL Net-Metered & Commissioned',
+  },
+  'hyderabad-agri-pv': {
+    title: 'Awfis Oyster Complex Decarbonization Array',
+    capacity: '180 kWp',
+    facilityType: 'C&I Rooftops',
+    client: 'Oyster Commercial Infra',
+    city: 'Hyderabad, Telangana',
+    savings: '₹22.5 Lakh/yr',
+    discom: 'TSSPDCL Net-Metered & Commissioned',
+  },
+  'panki-industrial-rooftop': {
+    title: 'Panki Industrial Corridor Heavy Manufacturing',
+    capacity: '320 kWp',
+    facilityType: 'C&I Rooftops',
+    client: 'Kanpur Precision Castings',
+    city: 'Kanpur, UP',
+    savings: '₹38.4 Lakh/yr',
+    discom: 'KESCO Net-Metered & Commissioned',
+  },
+};
+
 const CaseStudy: React.FC = () => {
+  const { slug } = useParams<{ slug: string }>();
+  const currentProject = (slug && PROJECT_META[slug]) || PROJECT_META['vikas-cold-storage'];
   const [activeTab, setActiveTab] = useState('facility');
 
   return (
@@ -77,24 +180,24 @@ const CaseStudy: React.FC = () => {
             <span>/</span>
             <Link to="/projects" className="hover:text-[#005733] transition-colors">Projects</Link>
             <span>/</span>
-            <span className="text-[#3F4942]">Industrial Solar</span>
+            <span className="text-[#3F4942]">{currentProject.facilityType}</span>
             <span>/</span>
-            <span className="text-[#17231D] font-semibold">Mr. Vikas Data 220 kW Plant</span>
+            <span className="text-[#17231D] font-semibold">{currentProject.title}</span>
           </nav>
 
           {/* Badge tags row */}
           <div className="flex flex-wrap items-center gap-2 mb-5">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-semibold bg-[#17231D] text-[#C5F176] uppercase tracking-wider">
               <span className="w-1.5 h-1.5 rounded-full bg-[#C5F176]"></span>
-              CASE STUDY #48 · HEAVY INDUSTRIAL ROOFTOP EPC
+              CASE STUDY · {currentProject.facilityType} EPC
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-[#E8F5E9] text-[#005733] border border-[#B2DFBD] uppercase tracking-wider">
               <CheckCircle size={11} className="flex-shrink-0" />
-              JVVNL Net-Metered &amp; Commissioned
+              {currentProject.discom}
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-white text-[#4E564F] border border-[#E8EAE3] uppercase tracking-wider">
               <MapPin size={11} className="flex-shrink-0" />
-              Jaipur Industrial Area, Rajasthan
+              {currentProject.city}
             </span>
           </div>
 
@@ -103,31 +206,45 @@ const CaseStudy: React.FC = () => {
             {/* Left: Title + Subtitle */}
             <div className="lg:col-span-8 flex flex-col gap-4">
               <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#17231D] leading-[1.1] tracking-tight">
-                Turnkey Cold-Chain &amp; Industrial Decarbonization:
-                <span className="block text-[#005733]">Mr. Vikas Data 220 kW Plant</span>
+                Turnkey Decarbonization &amp; Engineering:
+                <span className="block text-[#005733]">{currentProject.title}</span>
               </h1>
               <p className="font-body text-sm md:text-base text-[#4E564F] leading-relaxed max-w-2xl">
-                How an energy-intensive food processing and cold-chain facility in Jaipur eliminated midday diesel generator reliance, cut electricity costs by 68%, and accelerated capital payback to 4.2 years through high-precision TOPCon bifacial engineering.
+                How an energy-intensive {currentProject.facilityType.toLowerCase()} facility for {currentProject.client} in {currentProject.city} eliminated midday diesel reliance, generated {currentProject.savings} in energy savings, and accelerated capital payback through high-precision bifacial solar engineering.
               </p>
             </div>
 
             {/* Right: 3 CTAs */}
             <div className="lg:col-span-4 flex flex-col gap-2.5 justify-start pt-2">
               <a
-                href="#"
+                href="#download"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.print();
+                }}
                 className="inline-flex items-center gap-2.5 h-11 px-5 rounded-xl bg-[#17231D] hover:bg-[#005733] text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors shadow-card"
               >
                 <Download size={14} />
                 Download Case Study PDF (8.4 MB)
               </a>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-2.5 h-11 px-5 rounded-xl bg-white hover:bg-[#F3F4EE] text-[#17231D] font-heading font-semibold text-xs uppercase tracking-wider transition-colors border border-[#E8EAE3]"
               >
                 <Calendar size={14} />
                 Schedule Plant Walkthrough
-              </a>
-              <button className="inline-flex items-center gap-2.5 h-9 px-2 text-[#4E564F] hover:text-[#005733] font-body text-xs font-medium transition-colors">
+              </Link>
+              <button 
+                onClick={() => {
+                  if (navigator.share) {
+                    navigator.share({ title: currentProject.title, url: window.location.href }).catch(() => {});
+                  } else {
+                    navigator.clipboard.writeText(window.location.href);
+                    alert('Project link copied to clipboard!');
+                  }
+                }}
+                className="inline-flex items-center gap-2.5 h-9 px-2 text-[#4E564F] hover:text-[#005733] font-body text-xs font-medium transition-colors"
+              >
                 <Share2 size={13} />
                 Share Technical Docket
               </button>
@@ -590,12 +707,12 @@ const CaseStudy: React.FC = () => {
               Our engineering team will conduct a complete 3D rooftop simulation, shadow study, and 25-year financial projection for your connected load.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-2 h-12 px-8 rounded-xl bg-brand-lime hover:bg-brand-limeHover text-text-primary font-heading font-bold text-xs uppercase tracking-wider transition-colors shadow-glow-lime"
               >
                 Schedule Site Feasibility
-              </a>
+              </Link>
               <a
                 href="tel:+917239992778"
                 className="inline-flex items-center gap-2 h-12 px-8 rounded-xl bg-brand-forest hover:bg-brand-forestLight text-white font-heading font-semibold text-xs uppercase tracking-wider transition-colors border border-brand-forest"

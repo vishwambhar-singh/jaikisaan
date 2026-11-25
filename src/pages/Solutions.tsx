@@ -353,12 +353,12 @@ const Solutions: React.FC = () => (
           Get a free, no-obligation feasibility report from our engineers — with exact subsidy calculations for your location.
         </p>
         <div className="flex flex-wrap gap-3 justify-center">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 h-12 px-8 rounded-xl bg-white text-brand-forest font-body font-semibold text-sm hover:bg-brand-lime transition-colors"
           >
             Get Free Feasibility Report <ArrowRight size={15} />
-          </a>
+          </Link>
           <a
             href="https://wa.me/917239992778"
             target="_blank"

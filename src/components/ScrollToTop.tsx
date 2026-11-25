@@ -11,6 +11,12 @@ const ScrollToTop: React.FC = () => {
       }, 80);
       return;
     }
+    if (pathname === '/feasibility') {
+      setTimeout(() => {
+        document.getElementById('feasibility')?.scrollIntoView({ behavior: 'smooth' });
+      }, 80);
+      return;
+    }
     // Immediate scroll to top on page change
     window.scrollTo({
       top: 0,

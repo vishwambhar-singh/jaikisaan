@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Phone, Mail, MapPin, MessageCircle, CheckCircle, Clock, ArrowRight,
   Building2, Shield, Radio, ExternalLink, Zap
@@ -686,12 +687,12 @@ const Contact: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-2 w-full sm:w-auto">
-            <a
-              href="/about"
+            <Link
+              to="/about"
               className="h-10 sm:h-9 px-4 rounded-lg bg-white/10 hover:bg-white/15 text-white text-xs font-mono transition-colors inline-flex items-center justify-center gap-1.5 w-full sm:w-auto"
             >
               Founder&apos;s Message
-            </a>
+            </Link>
             <a
               href="https://sunscope.in"
               target="_blank"

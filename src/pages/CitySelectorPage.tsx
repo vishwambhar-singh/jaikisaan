@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   MapPin, CheckCircle, ArrowRight, Sun, Droplets, Zap, Shield, Phone, 
   ExternalLink, Building2, Sliders, Sparkles, AlertCircle, Database, Layers, Code, Check,
@@ -580,18 +581,18 @@ const CitySelectorPage: React.FC = () => {
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="h-11 px-5 rounded-xl bg-[#17231D] text-white text-xs font-heading font-bold uppercase tracking-wider hover:bg-[#005733] transition-colors inline-flex items-center gap-2"
               >
                 Get a free quote
-              </a>
-              <a
-                href="/contact"
+              </Link>
+              <Link
+                to="/contact"
                 className="h-11 px-5 rounded-xl bg-[#005733] text-white text-xs font-heading font-bold uppercase tracking-wider hover:bg-[#004729] transition-colors inline-flex items-center gap-2"
               >
                 Talk to an agricultural engineer
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -669,7 +670,12 @@ const CitySelectorPage: React.FC = () => {
                   <span className="font-mono font-bold text-sm text-[#17231D]">{cityData.subsidyCap}</span>
                 </div>
               </div>
-              <a href="#" className="text-xs font-heading font-semibold text-[#005733] flex items-center gap-1 hover:underline mt-2">
+              <a
+                href="https://pmsuryaghar.gov.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-heading font-semibold text-[#005733] flex items-center gap-1 hover:underline mt-2"
+              >
                 Link to PM Surya Ghar portal <ArrowRight size={12} />
               </a>
             </div>
@@ -779,10 +785,10 @@ const CitySelectorPage: React.FC = () => {
                   Technical guide covering dynamic solar controllers, three phase power stability during summer dips, and DISCOM net metering clearance.
                 </p>
               </div>
-              <a href="/blog" className="text-xs font-heading font-bold text-[#005733] flex items-center gap-1 hover:underline pt-3 border-t border-[#F0F2EB]">
+              <Link to="/blog" className="text-xs font-heading font-bold text-[#005733] flex items-center gap-1 hover:underline pt-3 border-t border-[#F0F2EB]">
                 <span>Read local engineering notes</span>
                 <ArrowRight size={12} />
-              </a>
+              </Link>
             </div>
 
             {/* Customer trust charter (Block 7) */}

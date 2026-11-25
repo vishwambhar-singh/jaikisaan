@@ -183,6 +183,10 @@ const About: React.FC = () => {
                 </Link>
                 <a
                   href="#heritage"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('heritage')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-white hover:bg-[#F3F4EE] text-[#1A1C19] font-heading font-semibold text-xs uppercase tracking-wider transition-colors border border-[#E8EAE3] w-full sm:w-auto"
                 >
                   Explore 5-Phase Roadmap

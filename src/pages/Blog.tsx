@@ -264,6 +264,10 @@ const Blog: React.FC = () => {
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-5">
                   <a
                     href="#archive"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('archive')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     className="inline-flex items-center justify-center gap-2 h-11 px-5 rounded-full bg-[#005733] hover:bg-[#004729] text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors shadow-card w-full sm:w-auto"
                   >
                     <span>Read Technical Analysis</span>
@@ -335,7 +339,11 @@ const Blog: React.FC = () => {
                     {article.readTime}
                   </span>
                   <a
-                    href="#"
+                    href="#archive"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById('archive')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
                     className="text-[#005733] font-bold hover:underline flex items-center gap-1"
                   >
                     <span>Explore More</span>

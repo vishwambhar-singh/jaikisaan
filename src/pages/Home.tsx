@@ -255,6 +255,10 @@ const HeroSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
               <a
                 href="#calculator"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('calculator')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-brand-lime hover:bg-brand-limeHover text-[#17231D] font-heading font-bold text-xs sm:text-sm tracking-wide transition-all shadow-glow-lime text-center"
               >
                 Calculate Solar Savings <ArrowRight size={16} />
@@ -630,6 +634,10 @@ const SolutionsSection: React.FC = () => (
                     </Link>
                     <a
                       href="#feasibility"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById('feasibility')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
                       className="text-xs font-body font-semibold text-[#3F4942] hover:text-brand-forest"
                     >
                       Book Feasibility Survey →

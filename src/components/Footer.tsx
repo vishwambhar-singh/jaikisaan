@@ -109,9 +109,9 @@ const Footer: React.FC = () => {
         <div className="max-w-[1248px] mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs font-body text-[#7C8F83]">
           <p className="text-center md:text-left">© {new Date().getFullYear()} Jai Kisaan Solar (A SunScope Group Company). All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-center">
-            <a href="#" className="hover:text-brand-lime transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-brand-lime transition-colors">Terms of Transmission</a>
-            <a href="#" className="hover:text-brand-lime transition-colors">ESG Disclosure</a>
+            <Link to="/about" className="hover:text-brand-lime transition-colors">Privacy Policy</Link>
+            <Link to="/solutions" className="hover:text-brand-lime transition-colors">Terms of Transmission</Link>
+            <Link to="/about" className="hover:text-brand-lime transition-colors">ESG Disclosure</Link>
           </div>
         </div>
       </div>

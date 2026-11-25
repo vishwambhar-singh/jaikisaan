@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { cn } from '../lib/cn';
 import { asset } from '../lib/assets';
@@ -61,12 +62,12 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
             <span className="font-body text-xs text-text-secondary">{date}</span>
           </div>
           {slug && (
-            <a
-              href={`/blog/${slug}`}
+            <Link
+              to="/blog"
               className="flex items-center gap-1 text-xs font-body font-semibold text-brand-forest hover:text-brand-forestLight transition-colors"
             >
               Read more <ArrowRight size={12} />
-            </a>
+            </Link>
           )}
         </div>
       </div>

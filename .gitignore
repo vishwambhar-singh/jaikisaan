@@ -26,4 +26,9 @@ tsconfig.tsbuildinfo
 
 # Scratch / temp
 scratch/
+scraped_data/
+scratch_home.html
+scripts/scrape_*.py
+scripts/dump_*.py
+scripts/read_*.py
 

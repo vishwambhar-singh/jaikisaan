@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { 
   ArrowRight, MapPin, Zap, Building2, Filter, Phone, CheckCircle, 
   Star, Award, Shield, Compass, Radio, Droplets, Sun, Layers 
@@ -205,14 +206,18 @@ const Projects: React.FC = () => {
               </p>
 
               <div className="flex flex-wrap items-center gap-4 pt-2">
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-brand-forest hover:bg-brand-forestLight text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors shadow-card"
                 >
                   Book Feasibility Survey <ArrowRight size={15} />
-                </a>
+                </Link>
                 <a
                   href="#portfolio"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
                   className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-white hover:bg-[#F3F4EE] text-[#1A1C19] font-heading font-semibold text-xs uppercase tracking-wider transition-colors border border-[#E8EAE3]"
                 >
                   Explore Verified Projects
@@ -385,13 +390,13 @@ const Projects: React.FC = () => {
                       </div>
                     </div>
 
-                    <a
-                      href={`/projects/${project.slug}`}
+                    <Link
+                      to={`/projects/${project.slug}`}
                       className="font-heading font-bold text-xs uppercase tracking-wider text-brand-forest hover:text-brand-forestLight transition-colors flex items-center justify-between"
                     >
                       <span>Explore Case Study</span>
                       <ArrowRight size={14} />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -425,12 +430,12 @@ const Projects: React.FC = () => {
               </div>
 
               <div className="flex items-center pt-2">
-                <a
-                  href="/projects/vikas-cold-storage"
+                <Link
+                  to="/projects/vikas-cold-storage"
                   className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-full bg-[#005733] hover:bg-[#004729] text-white font-heading font-bold text-xs uppercase tracking-wider transition-colors shadow-card flex-shrink-0"
                 >
                   Read Full Case Study (Whitepaper) 📖
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -617,12 +622,12 @@ const Projects: React.FC = () => {
               </div>
 
               <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-brand-lime hover:bg-brand-limeHover text-[#17231D] font-heading font-bold text-xs uppercase tracking-wider transition-colors shadow-glow-lime text-center"
                 >
                   Schedule Site Assessment
-                </a>
+                </Link>
                 <a
                   href="tel:+917239992778"
                   className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-brand-forest hover:bg-brand-forestLight text-white font-heading font-semibold text-xs uppercase tracking-wider transition-colors border border-brand-forest text-center"
