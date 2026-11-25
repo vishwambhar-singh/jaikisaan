@@ -10,7 +10,7 @@ import { asset } from '../lib/assets';
 const ALL_PROJECTS = [
   {
     title: 'Mr. Vikas Data Industrial Cold Plant',
-    capacity: '120 kWp',
+    capacity: '220 kW',
     facilityType: 'Commercial Cold Storage',
     client: 'Vikas Enterprises',
     city: 'Jaipur, Rajasthan',

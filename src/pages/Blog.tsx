@@ -18,7 +18,7 @@ interface Article {
 const ARTICLES: Article[] = [
   {
     tag: 'C&I SOLAR',
-    date: '2 July 2024',
+    date: '3 July 2024',
     readTime: '5 min read',
     title: 'Empowering Industries with Solar Plants: Cost and Energy',
     excerpt: 'As businesses worldwide face rising energy costs and pressure to meet sustainability targets, captive renewable energy and accelerated tax depreciation provide a compelling financial roadmap.',
@@ -36,7 +36,7 @@ const ARTICLES: Article[] = [
   },
   {
     tag: 'O&M TELEMETRY',
-    date: '03 March 2024',
+    date: '03 March 2025',
     readTime: '7 min read',
     title: 'How to Care for Your Solar Energy Plants: A Maintenance',
     excerpt: 'Proper preventive maintenance and pyranometer albedo cleaning are essential to ensure your solar energy plant operates at peak 84%+ Performance Ratio through intense summer heatwaves.',
@@ -45,7 +45,7 @@ const ARTICLES: Article[] = [
   },
   {
     tag: 'SYSTEM ARCHITECTURE',
-    date: '10 June 2024',
+    date: '30 June 2025',
     readTime: '8 min read',
     title: 'Ground or Rooftop? Deciding the Best Placement for Solar...',
     excerpt: 'Should you install solar panels on the rooftop or opt for a ground-mounted system? A comparative engineering breakdown across land footprint, civil anchoring, and string inverter dispatch.',

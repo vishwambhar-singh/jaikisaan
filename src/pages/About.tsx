@@ -228,7 +228,7 @@ const About: React.FC = () => {
                 Engineering Renewable Sovereignty for India&apos;s Future
               </h2>
               <p className="font-body text-base text-[#3F4942] leading-relaxed">
-                What began in 2018 as a targeted engineering consultancy has grown into one of North and West India&apos;s premier decentralized clean energy EPC firms, having delivered 520+ commercial arrays and over 1,420+ agricultural installations.
+                What began in 2015 as a targeted commercial &amp; industrial solar EPC practice has grown into one of North and West India&apos;s premier clean energy companies. Jai Kisaan Solar provides solar panel installation, energy solutions, and maintenance for residential and commercial clients, promoting renewable energy under the SunScope Group umbrella.
               </p>
               <div className="flex flex-col gap-3 pt-2">
                 {[
@@ -490,22 +490,22 @@ const About: React.FC = () => {
                   FOUNDER &amp; CEO&apos;S PERSPECTIVE
                 </span>
                 <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#1A1C19] leading-tight">
-                  &ldquo;Decentralized Solar is Economic Self-Determination for Bharat.&rdquo;
+                  &ldquo;We believe in the power of innovation, sustainability, and collaboration to create a brighter future.&rdquo;
                 </h2>
                 <div className="flex flex-col gap-3.5 text-sm md:text-base font-body text-[#3F4942] leading-relaxed">
                   <p>
-                    When rural enterprises depend entirely on unpredictable grid supplies or high-tariff diesel gensets, their margins are dictated by forces beyond their control.
+                    At SunScope Group of Companies, our journey has been driven by a simple yet powerful vision—to bring clean energy, advanced technology, and financial empowerment to businesses and communities worldwide.
                   </p>
                   <p>
-                    At JaiKisaan Solar, our single objective is engineering institutional-grade clean energy infrastructure right at the point of consumption. Whether it is a 120 kWp cold-storage array in Barabanki or a 750 kWp textile mill rooftop in Udaipur, our clients take control of their power generation costs for the next 25 years.
+                    Delivering quality with the highest professional standards is at the core of everything we do. We are committed to excellence in every aspect of our operations—from design and execution to service delivery and stakeholder engagement.
                   </p>
                   <p>
-                    As we expand into Green Hydrogen and IoT telemetry networks, that core commitment remains unchanged: reliable power, measurable financial ROI, and complete energy sovereignty.
+                    Success is not just about financial growth; it is about creating a positive impact on people and the planet. Through our non-profit &ldquo;Nation First,&rdquo; we provide solar power to rural areas, smart solutions for farmers, and healthcare support through telemedicine to make a meaningful difference in the regions we serve.
                   </p>
                 </div>
                 <div className="pt-4 border-t border-[#E8EAE3]">
                   <div className="font-heading font-bold text-[#1A1C19] italic">— Sanjeev Kumar</div>
-                  <div className="font-body text-xs text-[#3F4942] mt-0.5">Founder &amp; CEO, JaiKisaan Solar Pvt. Ltd.</div>
+                  <div className="font-body text-xs text-[#3F4942] mt-0.5">Group CEO, SunScope Group of Companies</div>
                 </div>
               </div>
             </div>

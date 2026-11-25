@@ -132,28 +132,28 @@ const PROCESS_STEPS = [
 
 const FAQS = [
   {
-    question: 'What is the typical payback period for a commercial solar system?',
-    answer: 'For commercial and industrial systems in North India, the typical payback period is 3–5 years depending on system size, electricity tariff, and subsidy availability. With accelerated depreciation benefits under Section 32 of the Income Tax Act, the effective payback can be as low as 2.5 years.',
+    question: 'How to Choose the Best Solar Panel Technology for Your Rooftop?',
+    answer: 'JaiKisaan provides expert advice to help you select the most suitable solar panels: Monocrystalline Panels are known for their high efficiency and are perfect for rooftops with limited space — while they come at a higher cost, they deliver maximum energy output. Polycrystalline Panels are a budget-friendly option that work well for installations with abundant space and ample sunlight.',
   },
   {
-    question: 'How does PM-KUSUM subsidy work for agricultural solar pumps?',
-    answer: 'PM-KUSUM provides up to 60% central subsidy (30% central + 30% state) for standalone solar pumps (Component B) and solarisation of existing grid-connected pumps (Component C). The farmer pays only 40% of the system cost. JaiKisaan Solar handles the entire application, documentation, and disbursement process.',
+    question: 'What is the Difference Between On-Grid and Off-Grid Solar Systems?',
+    answer: 'On-Grid Systems are connected to the utility grid, enabling you to export surplus energy and earn credits through net metering. However, they do not offer power backup during outages. Off-Grid Systems operate independently from the grid using battery banks for energy storage, ensuring power availability during outages — but they require regular maintenance and are more expensive due to battery costs.',
   },
   {
-    question: 'Do you offer OpEx / RESCO / PPA models?',
-    answer: 'Yes. For large industrial and commercial projects (typically 200 kWp and above), we offer OpEx models where JKS owns the system and you pay a fixed per-unit tariff — typically 30–40% lower than your current grid tariff. No upfront capital required.',
+    question: 'What Is the Difference Between Net Metering, Net Billing, and Gross Metering?',
+    answer: 'Net Metering: Excess electricity is exported to the grid and adjusted against your consumption. A bidirectional meter records both import and export. Gross Metering: All electricity generated is exported to the grid at a fixed feed-in tariff, and you pay the utility for consumed electricity at retail rates. Net Billing: Similar to net metering, but the utility pays you for surplus energy at a fixed rate (usually lower than what you pay for grid electricity).',
   },
   {
-    question: 'What panels and inverters do you use?',
-    answer: 'We use only Tier-1 BIS-certified panels (Waaree, Adani Solar, Vikram Solar) and MNRE-approved inverters (Havells, Growatt, Sungrow). All BOS components are DJM/Havells. We do not use unbranded or uncertified hardware.',
+    question: 'Do Solar Panels Work on Cloudy Days or at Night?',
+    answer: 'On cloudy days, panels can still generate power using diffused sunlight, though output may drop by 10–25%. At night, panels do not generate electricity, but hybrid systems with batteries can supply stored energy throughout the night.',
   },
   {
-    question: 'Which states do you operate in?',
-    answer: 'JaiKisaan Solar is currently operational in Uttar Pradesh (Lucknow, Barabanki, Gorakhpur, Varanasi), Rajasthan (Jaipur, Jodhpur, Udaipur), Madhya Pradesh, and Gujarat. We are empanelled with 8 state nodal agencies including UPNEDA, RRECL, MPUVNL, RREC, KREDL, HAREDA, and GETCO.',
+    question: 'How Much Can You Save with a Solar System?',
+    answer: 'Your savings depend on factors like system size and electricity rates. For example, a 1kW on-grid system generating 120 units per month at a tariff of ₹7.5/unit can save you approximately ₹900 monthly. Larger commercial and industrial systems can save significantly more.',
   },
   {
-    question: 'What warranty and maintenance support do you provide?',
-    answer: 'All systems come with a 25-year panel performance warranty, 5–10 year inverter warranty, and 5-year comprehensive AMC from JKS. Our O&M team provides remote SCADA monitoring, quarterly preventive maintenance, and 72-hour on-site emergency response.',
+    question: 'How to Avail Subsidies from the Government?',
+    answer: 'Subsidies are offered for residential solar installations up to 10kW, subject to state policies. Under PM Surya Ghar Muft Bijli Yojana, households can receive up to ₹78,000 direct bank transfer subsidy. Under PM-KUSUM for agricultural pumps, up to 60% subsidy (30% central + 30% state) is available. JaiKisaan handles the entire application and documentation process.',
   },
 ];
 
