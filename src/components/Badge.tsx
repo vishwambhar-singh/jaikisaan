@@ -21,7 +21,7 @@ const Badge: React.FC<BadgeProps> = ({ variant = 'lime', children, className }) 
   return (
     <span
       className={cn(
-        'inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-body font-semibold tracking-wide uppercase',
+        'w-fit self-start inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-body font-semibold tracking-wide uppercase',
         variantStyles[variant],
         className
       )}

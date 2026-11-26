@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Zap, Sun, Battery, Droplets, Building2, Home as HomeIcon, MessageCircle } from 'lucide-react';
+import { 
+  ArrowRight, CheckCircle, Zap, Sun, Battery, Droplets, Building2, 
+  Home as HomeIcon, MessageCircle, Shield, Award 
+} from 'lucide-react';
 import { asset } from '../lib/assets';
 import SectionHeading from '../components/SectionHeading';
 import Badge from '../components/Badge';
@@ -9,96 +12,142 @@ import FAQAccordion from '../components/FAQAccordion';
 
 const SOLUTIONS = [
   {
-    id: 'agri-pumps',
-    eyebrow: 'PM-KUSUM Component B & C',
-    title: 'Solar Agricultural Pumps',
-    subtitle: 'Subsidised solar pump sets for small and marginal farmers — from 3 HP to 15 HP.',
-    desc: 'JaiKisaan Solar is an MNRE-empanelled installer for PM-KUSUM Component B (standalone solar pumps) and Component C (solarisation of existing grid-connected pumps). We handle the entire lifecycle — DPR preparation, subsidy application, procurement of Tier-1 hardware, installation, and 5-year comprehensive AMC.',
-    image: '/assets/images/8cf9afdfdade266942ddb840b554b0834187be15.jpg',
-    icon: Droplets,
-    stats: [
-      { metric: '60–90%', label: 'Central + State Subsidy' },
-      { metric: '850+', label: 'Pumps Installed' },
-      { metric: '₹0', label: 'Electricity Cost' },
-    ],
-    features: [
-      'PM-KUSUM Component B & C compliant',
-      'MNRE-approved pump controllers',
-      '3 HP to 15 HP capacity range',
-      'Remote monitoring via IoT-enabled SCADA',
-      'Waaree / Adani Tier-1 panels',
-      '5-year comprehensive AMC included',
-    ],
-    ctaLabel: 'Check Subsidy Eligibility',
-  },
-  {
-    id: 'commercial-rooftop',
-    eyebrow: 'Commercial & Residential',
-    title: 'Rooftop Solar Systems',
-    subtitle: 'On-grid net-metered rooftop systems for businesses, institutions, and housing societies.',
-    desc: 'Turnkey rooftop solar EPC for commercial establishments, educational institutions, hospitals, and residential societies. Our systems are designed for maximum self-consumption with net metering, reducing your electricity bill by 70–90%. We handle DISCOM liaison, net metering approvals, and system commissioning.',
+    id: 'rooftop',
+    eyebrow: 'Residential, C&I & Housing Societies',
+    title: 'Rooftop Solar Installation',
+    subtitle: 'Customized on-grid net-metered rooftop systems for homes, factories, and commercial institutions.',
+    desc: 'At JaiKisaan Solar, we take pride in being one of the most trusted solar installers and EPC providers. We offer comprehensive rooftop solar solutions for residential, commercial, and industrial sectors, ensuring sustainable energy, lower electricity bills, and seamless net metering approvals under PM Surya Ghar and state DISCOM regulations.',
     image: '/assets/images/709f7acc5449a720085baaeae6b5d101de5ffa01.jpg',
     icon: HomeIcon,
     stats: [
-      { metric: '30%', label: 'Central Subsidy (Residential)' },
-      { metric: '70–90%', label: 'Bill Reduction' },
-      { metric: '3–4 yrs', label: 'Payback Period' },
+      { metric: 'Up to ₹78,000', label: 'Central DBT Subsidy' },
+      { metric: '70–90%', label: 'Monthly Bill Reduction' },
+      { metric: '25 Yrs', label: 'Linear Output Warranty' },
     ],
     features: [
-      'Net metering compliant (UPPCL, JVVNL, MPEB)',
-      'Grid-tied and hybrid configurations',
-      'Central subsidy eligible for residential',
-      'Turnkey EPC — survey to commissioning',
-      'SCADA remote monitoring dashboard',
-      '25-year performance warranty',
+      'Site assessment, shadow analysis & customized solar design',
+      'Grid connection & government subsidy assistance (PM Surya Ghar)',
+      'Waaree & Adani high-efficiency TOPCon / Mono-PERC bifacial modules',
+      'Net metering synchronization with DISCOM (UPPCL, JVVNL, MVVNL)',
+      'Heavy hot-dip galvanized mounting structures (160 km/h wind shear)',
+      'Turnkey EPC with 5-year comprehensive AMC & SCADA monitoring',
     ],
     ctaLabel: 'Get Rooftop Assessment',
   },
   {
-    id: 'cold-storage',
-    eyebrow: 'Cold Chain & Agri-Processing',
-    title: 'Cold Storage Solar Microgrids',
-    subtitle: 'Purpose-engineered solar + battery microgrids for cold chain operators and agri-processors.',
-    desc: 'Cold storage facilities run 24×7 with high base loads — making them ideal candidates for solar captive power. JaiKisaan Solar designs hybrid solar microgrids that eliminate diesel dependency, reduce per-unit electricity cost by 65–80%, and qualify for carbon credits under VCS (Verra).',
-    image: '/assets/images/4a6b7a1e0185bb9386a7deca9c1a6f11d5176053.jpg',
-    icon: Battery,
-    stats: [
-      { metric: '65–80%', label: 'Electricity Cost Reduction' },
-      { metric: '42', label: 'Cold Storages Energized' },
-      { metric: '99.2%', label: 'Uptime Guarantee' },
-    ],
-    features: [
-      'Hybrid solar + battery + grid configuration',
-      'Ammonia compressor surge load management',
-      'Carbon credit eligible (VCS / Verra)',
-      'Diesel generator elimination',
-      'Cold chain uptime optimised design',
-      'Real-time SCADA telemetry',
-    ],
-    ctaLabel: 'Request Cold Storage DPR',
-  },
-  {
-    id: 'ground-mount',
-    eyebrow: 'Industrial & Captive Power',
-    title: 'Ground-Mount & C&I Systems',
-    subtitle: 'Large-scale ground-mount and rooftop captive power plants for industrial and commercial facilities.',
-    desc: 'For factories, warehouses, textile mills, and industrial parks with high connected loads, JaiKisaan Solar engineers ground-mount and large rooftop captive power plants from 100 kWp to 10 MWp. We offer both CapEx and OpEx (RESCO/PPA) models with detailed DPR, financial modelling, and lender-ready documentation.',
+    id: 'utility',
+    eyebrow: 'Ground-Mount & Captive Open-Access',
+    title: 'Utility-Scale EPC Construction',
+    subtitle: 'Large-scale MW-capacity solar energy solutions engineered to global quality and performance standards.',
+    desc: 'We provide large-scale, efficient, and reliable utility-scale solar EPC projects supporting the national transition to renewable energy. From geotechnical analysis and solar resource assessment to civil engineering, high-voltage substation connectivity, and SCADA dispatch, our turnkey execution ensures maximized generation yield and bankable project IRRs.',
     image: '/assets/images/86f4a949d08f6296a12f8e095d8f906c5f5481b1.jpg',
     icon: Building2,
     stats: [
-      { metric: '10 MWp', label: 'Max System Size' },
-      { metric: '21%+', label: 'Project IRR' },
-      { metric: '₹18 Cr+', label: 'Monthly Client Savings' },
+      { metric: '120 MWp', label: 'Utility Pipeline Capacity' },
+      { metric: '21%+', label: 'Bankable Project IRR' },
+      { metric: '42 Days', label: 'Fast-Track Commissioning' },
     ],
     features: [
-      '100 kWp to 10 MWp system capacity',
-      'CapEx and OpEx (RESCO/PPA) models',
-      'Open-access and wheeling arrangements',
-      'Accelerated depreciation (Section 32)',
-      'Bankable DPR for lender submission',
-      'EPC + 25-year O&M contracts',
+      'Geotechnical analysis, solar irradiance modeling & layout optimization',
+      '33kV / 132kV grid connectivity study & substation interconnection',
+      'Permits, environmental clearances, and CEIG approvals',
+      'Automated tracker arrays and central inverter stations',
+      'Detailed DPR and lender-ready financial models (CapEx & OpEx)',
+      'Full turnkey execution: DPR → Procurement → Synchronization → O&M',
     ],
-    ctaLabel: 'Get Industrial Quote',
+    ctaLabel: 'Request Utility DPR',
+  },
+  {
+    id: 'transmission',
+    eyebrow: 'Power Evacuation & Infrastructure',
+    title: 'Transmission Line Services',
+    subtitle: 'Reliable energy evacuation through expertly engineered transmission lines and efficient substations.',
+    desc: 'We specialize in the seamless execution of transmission line projects and the establishment of high-efficiency substations. Our comprehensive approach ensures optimal transmission routes, right-of-way clearances, tower erection, conductor stringing, and precision testing for dependable energy distribution connecting solar plants to the central grid.',
+    image: '/assets/images/91fff17c130fbfe7684a3e0e7fe83e3d5ca439c3.jpg',
+    icon: Zap,
+    stats: [
+      { metric: '11kV–132kV', label: 'Voltage Evacuation Range' },
+      { metric: '100%', label: 'Grid Synchronization Safety' },
+      { metric: 'Tier-1', label: 'Conductors & Switchgear' },
+    ],
+    features: [
+      'Route survey, terrain analysis, and regulatory approvals',
+      'Tower design, conductor selection, and insulation engineering',
+      'Substation site preparation, transformers, and switchgear installation',
+      'Right-of-way clearing, tower erection, and conductor stringing',
+      'Rigorous insulation, continuity, and earth resistance testing',
+      'Long-term operational safety protocols and maintenance schedules',
+    ],
+    ctaLabel: 'Consult Transmission Engineers',
+  },
+  {
+    id: 'ev-charging',
+    eyebrow: 'Clean Mobility & Smart Microgrids',
+    title: 'EV Charging Stations',
+    subtitle: 'Comprehensive construction and deployment of safe, high-speed Electric Vehicle charging networks.',
+    desc: 'JaiKisaan Solar delivers end-to-end EPC for EV charging stations, covering site selection, electrical load enhancement, civil foundations, transformer integration, and network communication. We offer AC slow chargers and DC ultra-fast chargers for commercial hubs, highway transit corridors, fleet operators, and green logistics parks.',
+    image: '/assets/images/6ccdbd44a5f0faac8c8df2e0e92602d653ab6e54.jpg',
+    icon: Battery,
+    stats: [
+      { metric: 'AC & DC', label: 'Fast Charging Protocols' },
+      { metric: 'IoT Cloud', label: 'Automated Billing & Telemetry' },
+      { metric: '99.8%', label: 'Station Uptime SLA' },
+    ],
+    features: [
+      'Comprehensive site assessment, layout optimization, and civil works',
+      'Dedicated power transformer, switchgear, and protective enclosures',
+      'Municipal construction permits and DISCOM load enhancement approvals',
+      'Network hardware and OCPP-compliant backend software integration',
+      'Solar canopy integration with optional BESS battery buffer',
+      'Testing, load balancing, commissioning, and staff operation training',
+    ],
+    ctaLabel: 'Plan EV Infrastructure',
+  },
+  {
+    id: 'street-lights',
+    eyebrow: 'Public Infrastructure & Rural Lighting',
+    title: 'Solar Street Lights',
+    subtitle: 'Illuminating streets, pathways, and public spaces with eco-friendly and cost-effective solar illumination.',
+    desc: 'Jaikisaan Solar is committed to illuminating public spaces, highways, industrial corridors, and rural village pathways with durable, weather-proof solar street lights. Featuring dusk-to-dawn automatic sensors, high-efficiency LEDs, and smart lithium battery storage, our systems guarantee uninterrupted nighttime illumination with zero electricity bills.',
+    image: '/assets/images/d051cf5fc13615be3fba2903ec3803486f48d58e.jpg',
+    icon: Sun,
+    stats: [
+      { metric: '100%', label: 'Solar-Powered (Zero Grid Cost)' },
+      { metric: 'IP65/IP66', label: 'All-Weather Durable Rating' },
+      { metric: '5+ Years', label: 'Long Battery Lifecycle' },
+    ],
+    features: [
+      'Standalone, Smart All-in-One, and Hybrid solar street light models',
+      'Monocrystalline solar panels for maximum photon conversion',
+      'Built-in Lithium Iron Phosphate (LiFePO4) battery storage',
+      'Smart motion sensors and adaptive brightness dimming control',
+      'Dusk-to-dawn automatic on/off operation without manual intervention',
+      'Corrosion-resistant hot-dip galvanized poles and tamper-proof fixtures',
+    ],
+    ctaLabel: 'Order Street Light Survey',
+  },
+  {
+    id: 'agri-pumps',
+    eyebrow: 'PM-KUSUM Component B & C',
+    title: 'Solar Agricultural Pumps',
+    subtitle: 'Subsidized solar pumping systems empowering small and marginal farmers with zero-diesel irrigation.',
+    desc: 'Empaneled under PM-KUSUM and state renewable agencies, JaiKisaan Solar delivers 3 HP to 15 HP standalone (Component B) and grid-connected (Component C) solar agricultural pumps. We manage the entire lifecycle — DPR feasibility, boring inspection, DISCOM subsidy clearance, Tier-1 hardware installation, and 5-year comprehensive on-site AMC.',
+    image: '/assets/images/8cf9afdfdade266942ddb840b554b0834187be15.jpg',
+    icon: Droplets,
+    stats: [
+      { metric: '60–90%', label: 'Combined Government Subsidy' },
+      { metric: '₹0', label: 'Daytime Pumping Energy Cost' },
+      { metric: '5 Years', label: 'Comprehensive On-Site AMC' },
+    ],
+    features: [
+      'MNRE-empanelled and compliant with state nodal agencies (UPNEDA, RRECL)',
+      'High-discharge submersible AC/DC pumps with dynamic solar VFD controllers',
+      'Heavy hot-dip galvanized mounting structures with manual dual-axis tracking',
+      'Water yield optimization even during severe summer groundwater dips',
+      'Complete subsidy liaison — farmer pays only the subsidized balance',
+      'IoT-enabled remote telemetry and automated dry-run protection',
+    ],
+    ctaLabel: 'Check Subsidy Eligibility',
   },
 ];
 
@@ -170,13 +219,13 @@ const Solutions: React.FC = () => (
         <div className="absolute inset-0 bg-gradient-to-b from-surface-dark/60 to-surface-dark" />
       </div>
       <div className="relative z-10 max-w-container mx-auto px-6">
-        <div className="max-w-3xl flex flex-col gap-6">
+        <div className="max-w-3xl flex flex-col items-start gap-6">
           <Badge variant="dark">Our Solutions</Badge>
           <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-text-onDark leading-tight">
             Powering Every Possibility.
           </h1>
           <p className="font-body text-lg text-text-onDarkMuted leading-relaxed max-w-2xl">
-            From 3 HP agricultural pump sets to 10 MWp industrial captive plants — JaiKisaan Solar delivers bankable, MNRE-certified solar solutions engineered for India&apos;s diverse energy needs.
+            From decentralized agricultural solar pumps to 120 MWp utility-scale infrastructure — JaiKisaan Solar delivers bankable, MNRE-certified solar solutions engineered for India&apos;s diverse energy needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-2">
             <Link
@@ -200,14 +249,14 @@ const Solutions: React.FC = () => (
     </section>
 
     {/* Stats bar */}
-    <section className="bg-surface-dark border-t border-border-darkSubtle py-8">
+    <section className="bg-surface-dark border-t border-b border-border-darkSubtle py-8">
       <div className="max-w-container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { metric: '28.4 MWp', label: 'Installed Capacity' },
-            { metric: '1,420+', label: 'Farm Installations' },
-            { metric: '42', label: 'Cold Storages Energized' },
-            { metric: '99.2%', label: 'System Uptime' },
+            { metric: '120 MWp', label: 'Contracted & Pipeline Capacity' },
+            { metric: '300+', label: 'Delivered Projects Across India' },
+            { metric: '10+ Yrs', label: 'Solar EPC Experience (Est. 2015)' },
+            { metric: '99.4%', label: 'Average Fleet Grid Sync' },
           ].map((s) => (
             <div key={s.metric} className="text-center">
               <div className="font-heading font-bold text-2xl text-brand-lime">{s.metric}</div>
@@ -217,6 +266,29 @@ const Solutions: React.FC = () => (
         </div>
       </div>
     </section>
+
+    {/* Quick Service Anchor Navigation */}
+    <nav className="sticky top-20 z-30 bg-[#17231D]/95 backdrop-blur-md border-b border-border-darkSubtle py-3 px-6 shadow-md">
+      <div className="max-w-container mx-auto flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar">
+        {SOLUTIONS.map((s) => (
+          <button
+            key={s.id}
+            type="button"
+            onClick={() => {
+              const el = document.getElementById(s.id);
+              if (el) {
+                const yOffset = -100;
+                const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+              }
+            }}
+            className="px-3.5 py-1.5 rounded-full text-xs font-heading font-medium text-text-onDark hover:text-brand-lime hover:bg-white/10 transition-colors whitespace-nowrap flex-shrink-0"
+          >
+            {s.title}
+          </button>
+        ))}
+      </div>
+    </nav>
 
     {/* Solutions detail sections */}
     {SOLUTIONS.map((sol, idx) => {
