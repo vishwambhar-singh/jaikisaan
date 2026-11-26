@@ -153,7 +153,8 @@ const About: React.FC = () => {
   return (
     <>
       {/* ─── 1. Hero Section (Matching Figma light spatial editorial hero) ────── */}
-      <section className="bg-[#F9FAF4] pt-24 pb-16 md:py-28 border-b border-[#E8EAE3]">
+      <div className="bg-[#17231D]">
+      <section className="bg-[#F9FAF4] pt-20 pb-16 md:pt-24 md:pb-28 border-b border-[#E8EAE3]">
         <div className="max-w-[1248px] mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Column (7 cols) */}
@@ -219,6 +220,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+      </div>
 
       {/* ─── 2. Engineering Renewable Sovereignty + 4 Stats ───────────────────── */}
       <section id="heritage" className="bg-white py-20 md:py-24 border-b border-[#E8EAE3]">

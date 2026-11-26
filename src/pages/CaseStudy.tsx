@@ -171,7 +171,8 @@ const CaseStudy: React.FC = () => {
   return (
     <>
       {/* ─── 1. Light Hero: Breadcrumb + Title + CTAs + Metrics ──────────────── */}
-      <section className="bg-[#F9FAF4] pt-8 pb-0 border-b border-[#E8EAE3]">
+      <div className="bg-[#17231D]">
+      <section className="bg-[#F9FAF4] pt-20 pb-0 border-b border-[#E8EAE3]">
         <div className="max-w-[1248px] mx-auto px-6">
 
           {/* Breadcrumb */}
@@ -348,6 +349,7 @@ const CaseStudy: React.FC = () => {
           </div>
         </div>
       </section>
+      </div>
 
       {/* 3+4 Main Content Sections */}
       <section className="bg-surface-page py-16 md:py-24">

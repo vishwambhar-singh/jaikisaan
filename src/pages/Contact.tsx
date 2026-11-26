@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
   return (
     <>
       {/* ─── 1. Dark Hero: Telemetry & Headline (Matching Frame 7) ────────────── */}
-      <section className="bg-[#17231D] text-white pt-24 pb-16 md:py-24 border-b border-[#2B4234]">
+      <section className="bg-[#17231D] text-white pt-28 pb-16 md:py-24 border-b border-[#2B4234]">
         <div className="max-w-[1248px] mx-auto px-6">
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
             <div className="max-w-2xl">

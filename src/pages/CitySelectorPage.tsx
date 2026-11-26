@@ -41,7 +41,8 @@ const CitySelectorPage: React.FC = () => {
   return (
     <>
       {/* ─── 1. Hero: Foundations and City Selector Architecture ─────────────── */}
-      <section className="bg-white pt-24 pb-12 md:pt-28 md:pb-16 border-b border-[#E8EAE3]">
+      <div className="bg-[#17231D]">
+      <section className="bg-white pt-20 pb-12 md:pt-24 md:pb-16 border-b border-[#E8EAE3]">
         <div className="max-w-[1248px] mx-auto px-6">
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-3">
@@ -115,6 +116,7 @@ const CitySelectorPage: React.FC = () => {
           </div>
         </div>
       </section>
+      </div>
 
       {/* ─── 2. Design Tokens: The 27 Exact Manrope Typographic Tokens ───────── */}
       <section className="bg-[#F9FAF4] py-16 md:py-20 border-b border-[#E8EAE3]">

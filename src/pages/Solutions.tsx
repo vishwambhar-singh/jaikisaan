@@ -209,7 +209,7 @@ const FAQS = [
 const Solutions: React.FC = () => (
   <>
     {/* Hero */}
-    <section className="relative bg-surface-dark py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-surface-dark pt-28 pb-24 md:pb-32 overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img
           src={asset('/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg')}

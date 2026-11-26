@@ -204,7 +204,7 @@ const HeroSection: React.FC = () => {
 
   return (
     <section
-      className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#17231D] pt-24 pb-16"
+      className="relative min-h-[92vh] flex items-center overflow-hidden bg-[#17231D] pt-28 pb-16"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

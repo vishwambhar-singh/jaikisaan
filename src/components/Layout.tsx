@@ -6,7 +6,7 @@ import CityModal from './CityModal';
 
 const Layout: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-surface-page">
+    <div className="flex flex-col min-h-screen bg-[#17231D]">
       <CityModal />
       <Header />
       <main className="flex-1">
