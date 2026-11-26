@@ -35,7 +35,7 @@ const Header: React.FC = () => {
     <>
       <header
         className={cn(
-          'fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-[1248px] px-3 sm:px-4 transition-all duration-300'
+          'fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-[1248px] px-3 sm:px-4 pt-2 sm:pt-4 transition-all duration-300'
         )}
       >
         <nav
