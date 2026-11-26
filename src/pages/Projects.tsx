@@ -184,8 +184,7 @@ const Projects: React.FC = () => {
   return (
     <>
       {/* ─── 1. Inner Hero: Light Spatial Editorial matching Figma Frame 4 ────── */}
-      <div className="bg-[#17231D]">
-      <section className="bg-[#F9FAF4] pt-20 pb-16 md:pt-24 md:pb-28 border-b border-[#E8EAE3]">
+      <section className="bg-[#F9FAF4] pt-24 pb-16 md:py-28 border-b border-[#E8EAE3]">
         <div className="max-w-[1248px] mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Column (7 cols) */}
@@ -251,7 +250,6 @@ const Projects: React.FC = () => {
           </div>
         </div>
       </section>
-      </div>
 
       {/* ─── 2. Interactive Regional GIS & Installation Footprint Summary ────── */}
       <section className="bg-white py-12 border-b border-[#E8EAE3]">

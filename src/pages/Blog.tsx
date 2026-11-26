@@ -143,8 +143,7 @@ const Blog: React.FC = () => {
   return (
     <>
       {/* ─── 1. Header: Clean Energy Intelligence & Solar Engineering Insights ── */}
-      <div className="bg-[#17231D]">
-      <section className="bg-white pt-20 pb-12 md:pt-24 md:pb-14 border-b border-[#E8EAE3]">
+      <section className="bg-white pt-24 pb-12 md:pt-28 md:pb-14 border-b border-[#E8EAE3]">
         <div className="max-w-[1248px] mx-auto px-6">
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 pb-10">
             <div>
@@ -211,7 +210,6 @@ const Blog: React.FC = () => {
           </div>
         </div>
       </section>
-      </div>
 
       {/* ─── 2. Spotlight Briefing Card (Matching Frame 8) ────────────────────── */}
       <section className="bg-[#F9FAF4] py-10 md:py-16 border-b border-[#E8EAE3]">
