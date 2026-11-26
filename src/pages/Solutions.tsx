@@ -209,7 +209,7 @@ const FAQS = [
 const Solutions: React.FC = () => (
   <>
     {/* Hero */}
-    <section className="relative bg-surface-dark pt-32 pb-24 md:pb-32 overflow-hidden">
+    <section className="relative bg-surface-dark min-h-screen flex items-center pt-28 pb-16 overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img
           src={asset('/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg')}
@@ -218,7 +218,7 @@ const Solutions: React.FC = () => (
         />
         <div className="absolute inset-0 bg-gradient-to-b from-surface-dark/60 to-surface-dark" />
       </div>
-      <div className="relative z-10 max-w-container mx-auto px-6">
+      <div className="relative z-10 max-w-container mx-auto px-6 w-full">
         <div className="max-w-3xl flex flex-col items-start gap-6">
           <Badge variant="dark">Our Solutions</Badge>
           <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-text-onDark leading-tight">

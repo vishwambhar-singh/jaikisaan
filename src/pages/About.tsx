@@ -153,8 +153,8 @@ const About: React.FC = () => {
   return (
     <>
       {/* ─── 1. Hero Section (Matching Figma light spatial editorial hero) ────── */}
-      <section className="bg-[#F9FAF4] pt-24 pb-16 md:py-28 border-b border-[#E8EAE3]">
-        <div className="max-w-[1248px] mx-auto px-6">
+      <section className="bg-[#F9FAF4] min-h-screen flex items-center pt-28 pb-16 border-b border-[#E8EAE3]">
+        <div className="max-w-[1248px] mx-auto px-6 w-full">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Column (7 cols) */}
             <div className="lg:col-span-7 flex flex-col gap-6">

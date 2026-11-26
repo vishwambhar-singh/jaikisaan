@@ -143,8 +143,8 @@ const Blog: React.FC = () => {
   return (
     <>
       {/* ─── 1. Header: Clean Energy Intelligence & Solar Engineering Insights ── */}
-      <section className="bg-white pt-24 pb-12 md:pt-28 md:pb-14 border-b border-[#E8EAE3]">
-        <div className="max-w-[1248px] mx-auto px-6">
+      <section className="bg-white min-h-screen flex items-center pt-28 pb-16 border-b border-[#E8EAE3]">
+        <div className="max-w-[1248px] mx-auto px-6 w-full">
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-8 pb-10">
             <div>
               <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#17231D] tracking-tight leading-tight">

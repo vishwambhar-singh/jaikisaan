@@ -171,8 +171,8 @@ const CaseStudy: React.FC = () => {
   return (
     <>
       {/* ─── 1. Light Hero: Breadcrumb + Title + CTAs + Metrics ──────────────── */}
-      <section className="bg-[#F9FAF4] pt-24 pb-0 border-b border-[#E8EAE3]">
-        <div className="max-w-[1248px] mx-auto px-6">
+      <section className="bg-[#F9FAF4] min-h-screen flex flex-col justify-center pt-28 pb-12 border-b border-[#E8EAE3]">
+        <div className="max-w-[1248px] mx-auto px-6 w-full">
 
           {/* Breadcrumb */}
           <nav className="flex items-center gap-1.5 text-xs font-mono text-[#6E776F] mb-5">

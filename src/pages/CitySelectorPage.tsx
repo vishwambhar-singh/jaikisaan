@@ -41,8 +41,8 @@ const CitySelectorPage: React.FC = () => {
   return (
     <>
       {/* ─── 1. Hero: Foundations and City Selector Architecture ─────────────── */}
-      <section className="bg-white pt-24 pb-12 md:pt-28 md:pb-16 border-b border-[#E8EAE3]">
-        <div className="max-w-[1248px] mx-auto px-6">
+      <section className="bg-white min-h-screen flex items-center pt-28 pb-16 border-b border-[#E8EAE3]">
+        <div className="max-w-[1248px] mx-auto px-6 w-full">
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-3">
             <span className="w-2 h-2 rounded-full bg-[#F59E0B]"></span>
