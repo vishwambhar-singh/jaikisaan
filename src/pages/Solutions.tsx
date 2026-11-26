@@ -208,17 +208,19 @@ const FAQS = [
 
 const Solutions: React.FC = () => (
   <>
-    {/* Hero */}
-    <section className="relative bg-surface-dark pt-28 pb-16 md:pt-32 md:pb-20 overflow-hidden">
+    {/* Hero + Stats Banner: exact 100vh banner */}
+    <div className="relative bg-surface-dark min-h-[calc(100vh-52px)] min-h-[calc(100dvh-52px)] flex flex-col justify-between overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img
           src={asset('/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg')}
           alt="Solar farm panorama"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-surface-dark/60 to-surface-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-dark/60 via-surface-dark/80 to-surface-dark" />
       </div>
-      <div className="relative z-10 max-w-container mx-auto px-6">
+
+      {/* Main Hero Content (vertically centered) */}
+      <section className="relative z-10 max-w-container mx-auto px-6 w-full pt-28 sm:pt-32 pb-8 my-auto">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           <div className="lg:col-span-7 flex flex-col items-start gap-6">
             <Badge variant="dark">Our Solutions</Badge>
@@ -276,30 +278,30 @@ const Solutions: React.FC = () => (
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Stats bar */}
-    <section className="bg-surface-dark border-t border-b border-border-darkSubtle py-8">
-      <div className="max-w-container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { metric: '120 MWp', label: 'Contracted & Pipeline Capacity' },
-            { metric: '300+', label: 'Delivered Projects Across India' },
-            { metric: '10+ Yrs', label: 'Solar EPC Experience (Est. 2015)' },
-            { metric: '99.4%', label: 'Average Fleet Grid Sync' },
-          ].map((s) => (
-            <div key={s.metric} className="text-center">
-              <div className="font-heading font-bold text-2xl text-brand-lime">{s.metric}</div>
-              <div className="font-body text-xs text-text-onDarkMuted mt-1">{s.label}</div>
-            </div>
-          ))}
+      {/* Stats bar anchored at bottom of banner */}
+      <section className="relative z-10 bg-surface-dark border-t border-border-darkSubtle py-6 sm:py-7">
+        <div className="max-w-container mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { metric: '120 MWp', label: 'Contracted & Pipeline Capacity' },
+              { metric: '300+', label: 'Delivered Projects Across India' },
+              { metric: '10+ Yrs', label: 'Solar EPC Experience (Est. 2015)' },
+              { metric: '99.4%', label: 'Average Fleet Grid Sync' },
+            ].map((s) => (
+              <div key={s.metric} className="text-center">
+                <div className="font-heading font-bold text-2xl text-brand-lime">{s.metric}</div>
+                <div className="font-body text-xs text-text-onDarkMuted mt-1">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     {/* Quick Service Anchor Navigation */}
-    <nav className="sticky top-20 z-30 bg-[#17231D]/95 backdrop-blur-md border-b border-border-darkSubtle py-3 px-6 shadow-md">
+    <nav className="sticky top-16 sm:top-20 z-30 bg-[#17231D]/95 backdrop-blur-md border-t border-b border-border-darkSubtle py-3 px-6 shadow-md">
       <div className="max-w-container mx-auto flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar">
         {SOLUTIONS.map((s) => (
           <button
