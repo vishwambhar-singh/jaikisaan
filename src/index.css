@@ -9,8 +9,8 @@
     width: 100%;
     -webkit-text-size-adjust: 100%;
   }
-  html, body {
-    background-color: transparent;
+  body {
+    background-color: #F9FAF4;
     color: #1A1C19;
     font-family: 'DM Sans', sans-serif;
     overflow-x: hidden;

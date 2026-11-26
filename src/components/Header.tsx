@@ -32,12 +32,11 @@ const Header: React.FC = () => {
   }, [location]);
 
   return (
-    <>
-      <header
-        className={cn(
-          'fixed top-0 left-1/2 -translate-x-1/2 z-50 w-full max-w-[1248px] px-3 sm:px-4 pt-2 sm:pt-4 transition-all duration-300'
-        )}
-      >
+    <header
+      className={cn(
+        'fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-[1248px] px-3 sm:px-4 transition-all duration-300'
+      )}
+    >
         <nav
           className={cn(
             'flex items-center justify-between px-4 sm:px-6 py-2.5 sm:py-3 rounded-2xl border transition-all duration-300',
@@ -206,10 +205,6 @@ const Header: React.FC = () => {
           </div>
         )}
       </header>
-
-      {/* Spacer */}
-      <div className="h-20" />
-    </>
   );
 };
 
