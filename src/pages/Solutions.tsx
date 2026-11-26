@@ -208,82 +208,145 @@ const FAQS = [
 
 const Solutions: React.FC = () => (
   <>
-    {/* Hero + Stats Banner: exact 100vh banner */}
+    {/* Distinct Solutions Hero Banner (100vh) */}
     <div className="relative bg-surface-dark min-h-[calc(100vh-52px)] min-h-[calc(100dvh-52px)] flex flex-col justify-between overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
+      {/* Background with panoramic solar array and ambient lighting */}
+      <div className="absolute inset-0 opacity-25">
         <img
           src={asset('/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg')}
           alt="Solar farm panorama"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-surface-dark/60 via-surface-dark/80 to-surface-dark" />
+        <div className="absolute inset-0 bg-gradient-to-b from-surface-dark/70 via-surface-dark/85 to-surface-dark" />
       </div>
 
-      {/* Main Hero Content (vertically centered) */}
-      <section className="relative z-10 max-w-container mx-auto px-6 w-full pt-28 sm:pt-32 pb-8 my-auto">
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          <div className="lg:col-span-7 flex flex-col items-start gap-6">
-            <Badge variant="dark">Our Solutions</Badge>
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-text-onDark leading-tight">
-              Powering Every Possibility.
-            </h1>
-            <p className="font-body text-base md:text-lg text-text-onDarkMuted leading-relaxed max-w-xl">
-              From decentralized agricultural solar pumps to 120 MWp utility-scale infrastructure — JaiKisaan Solar delivers bankable, MNRE-certified solar solutions engineered for India&apos;s diverse energy needs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 pt-1 w-full sm:w-auto">
-              <Link
-                to="/contact"
-                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-brand-forest text-white font-body font-semibold text-sm hover:bg-brand-forestLight transition-colors border border-brand-forest w-full sm:w-auto"
-              >
-                Get Free Feasibility Report <ArrowRight size={15} />
-              </Link>
-              <a
-                href="https://wa.me/917239992778"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 h-12 px-6 rounded-xl bg-brand-lime text-text-primary font-body font-semibold text-sm hover:bg-brand-limeHover transition-colors w-full sm:w-auto"
-              >
-                <MessageCircle size={15} />
-                WhatsApp Us
-              </a>
-            </div>
-          </div>
+      {/* Decorative clean energy ambient glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-brand-lime/5 rounded-full blur-[120px] pointer-events-none" />
 
-          {/* Right Column: Turnkey Capability Matrix */}
-          <div className="lg:col-span-5">
-            <div className="bg-[#1E2D26]/90 border border-[#2B4234] rounded-3xl p-6 sm:p-7 backdrop-blur-md shadow-elevated">
-              <div className="flex items-center justify-between pb-3.5 border-b border-white/10 text-xs font-mono">
-                <span className="text-brand-lime uppercase font-bold tracking-wider">● 6 EPC TRACKS</span>
-                <span className="text-[#A3B3AA]">Turnkey Delivery</span>
-              </div>
-              <div className="grid grid-cols-2 gap-2.5 pt-4">
-                {[
-                  { name: 'Rooftop Solar', sub: 'Res & C&I Net Metering' },
-                  { name: 'Utility-Scale', sub: 'MW Solar Power Parks' },
-                  { name: 'Substations', sub: '11kV / 33kV Interconnect' },
-                  { name: 'EV Charging', sub: 'Fleet & Depot Infra' },
-                  { name: 'Street Lights', sub: 'All-in-One Solar' },
-                  { name: 'PM-KUSUM', sub: 'Solar Agri Pumps' },
-                ].map((track, idx) => (
-                  <div key={idx} className="bg-black/25 border border-white/5 rounded-xl p-3 hover:border-brand-lime/30 transition-colors">
-                    <div className="text-white font-heading font-bold text-xs">{track.name}</div>
-                    <div className="text-[10px] font-mono text-[#A3B3AA] mt-0.5">{track.sub}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4 pt-3.5 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#A3B3AA]">
-                <span>MNRE &amp; DISCOM Approved</span>
-                <span className="text-brand-lime font-bold">25-Yr Linear Warranty</span>
-              </div>
-            </div>
+      {/* Main Hero Content */}
+      <section className="relative z-10 max-w-[1248px] mx-auto px-4 sm:px-6 w-full pt-28 sm:pt-32 pb-6 my-auto">
+        {/* Header Block */}
+        <div className="text-center max-w-3xl mx-auto mb-7 sm:mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-lime/10 border border-brand-lime/25 text-brand-lime text-[11px] font-mono font-semibold uppercase tracking-widest mb-3.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-brand-lime animate-pulse" />
+            MNRE Empaneled · Turnkey EPC Solutions
           </div>
+          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl text-white tracking-tight leading-tight">
+            Engineered for High-Yield Performance.
+            <span className="block text-brand-lime font-bold mt-1">From 3 HP to 120 MWp.</span>
+          </h1>
+          <p className="font-body text-xs sm:text-sm md:text-base text-text-onDarkMuted mt-3 max-w-2xl mx-auto leading-relaxed">
+            Bankable solar architecture designed for extreme heat, verified generation, and regulatory compliance under PM Surya Ghar and PM-KUSUM.
+          </p>
+        </div>
+
+        {/* 6 Interactive Solution Sector Cards (Distinct 3x2 / 6-col Grid) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-3.5 mb-6">
+          {[
+            {
+              id: 'rooftop',
+              icon: HomeIcon,
+              title: 'Rooftop Solar',
+              tag: 'Res & C&I',
+              highlight: 'Up to ₹78k Subsidy',
+            },
+            {
+              id: 'utility',
+              icon: Building2,
+              title: 'Utility-Scale',
+              tag: 'MW Solar Parks',
+              highlight: '21%+ Project IRR',
+            },
+            {
+              id: 'transmission',
+              icon: Zap,
+              title: 'Substations',
+              tag: '11kV / 33kV Lines',
+              highlight: 'CEIG Approved',
+            },
+            {
+              id: 'ev-charging',
+              icon: Battery,
+              title: 'EV Charging',
+              tag: 'Commercial Depots',
+              highlight: 'Solar-Coupled DC',
+            },
+            {
+              id: 'street-lights',
+              icon: Sun,
+              title: 'Street Lighting',
+              tag: 'Smart All-in-One',
+              highlight: 'LiFePO4 Storage',
+            },
+            {
+              id: 'agri-pumps',
+              icon: Droplets,
+              title: 'Agri Pumps',
+              tag: 'PM-KUSUM B & C',
+              highlight: 'Up to 60% DBT',
+            },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => {
+                  const el = document.getElementById(item.id);
+                  if (el) {
+                    const yOffset = -100;
+                    const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                  }
+                }}
+                className="group p-3.5 sm:p-4 rounded-2xl bg-[#1E2D26]/80 hover:bg-[#253930] border border-[#2B4234] hover:border-brand-lime/60 transition-all duration-300 text-left flex flex-col justify-between shadow-card hover:shadow-glow-lime/20"
+              >
+                <div>
+                  <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-brand-forest/60 group-hover:bg-brand-lime group-hover:text-[#17231D] text-brand-lime flex items-center justify-center transition-colors mb-2.5">
+                    <Icon size={17} />
+                  </div>
+                  <div className="font-heading font-bold text-xs sm:text-sm text-white group-hover:text-brand-lime transition-colors leading-snug">
+                    {item.title}
+                  </div>
+                  <div className="font-body text-[11px] text-text-onDarkMuted mt-0.5">
+                    {item.tag}
+                  </div>
+                </div>
+                <div className="mt-3 pt-2.5 border-t border-white/5 flex items-center justify-between">
+                  <span className="text-[10px] font-mono font-medium text-brand-lime/90 group-hover:text-brand-lime">
+                    {item.highlight}
+                  </span>
+                  <ArrowRight size={11} className="text-[#A3B3AA] group-hover:text-brand-lime group-hover:translate-x-0.5 transition-all" />
+                </div>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Action Buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-xl bg-brand-lime text-text-primary font-heading font-bold text-xs uppercase tracking-wider hover:bg-brand-limeHover transition-all shadow-glow-lime"
+          >
+            Request Technical Feasibility <ArrowRight size={14} />
+          </Link>
+          <a
+            href="https://wa.me/917239992778"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 h-11 px-6 rounded-xl bg-white/10 hover:bg-white/15 text-white font-heading font-semibold text-xs uppercase tracking-wider transition-colors border border-white/15"
+          >
+            <MessageCircle size={14} />
+            Instant WhatsApp Helpline
+          </a>
         </div>
       </section>
 
       {/* Stats bar anchored at bottom of banner */}
-      <section className="relative z-10 bg-surface-dark border-t border-border-darkSubtle py-6 sm:py-7">
+      <section className="relative z-10 bg-black/30 backdrop-blur-md border-t border-border-darkSubtle py-4 sm:py-5">
         <div className="max-w-container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {[
               { metric: '120 MWp', label: 'Contracted & Pipeline Capacity' },
               { metric: '300+', label: 'Delivered Projects Across India' },
@@ -291,8 +354,8 @@ const Solutions: React.FC = () => (
               { metric: '99.4%', label: 'Average Fleet Grid Sync' },
             ].map((s) => (
               <div key={s.metric} className="text-center">
-                <div className="font-heading font-bold text-2xl text-brand-lime">{s.metric}</div>
-                <div className="font-body text-xs text-text-onDarkMuted mt-1">{s.label}</div>
+                <div className="font-heading font-bold text-xl sm:text-2xl text-brand-lime">{s.metric}</div>
+                <div className="font-body text-[11px] sm:text-xs text-text-onDarkMuted mt-0.5">{s.label}</div>
               </div>
             ))}
           </div>
@@ -301,7 +364,7 @@ const Solutions: React.FC = () => (
     </div>
 
     {/* Quick Service Anchor Navigation */}
-    <nav className="sticky top-16 sm:top-20 z-30 bg-[#17231D]/95 backdrop-blur-md border-t border-b border-border-darkSubtle py-3 px-6 shadow-md">
+    <nav className="sticky top-16 sm:top-20 z-30 bg-[#17231D]/95 backdrop-blur-md border-t border-b border-border-darkSubtle py-2.5 px-6 shadow-md">
       <div className="max-w-container mx-auto flex items-center justify-start sm:justify-center gap-2 overflow-x-auto no-scrollbar">
         {SOLUTIONS.map((s) => (
           <button
