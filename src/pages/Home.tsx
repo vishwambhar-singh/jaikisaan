@@ -7,176 +7,58 @@ import {
   ChevronRight, ChevronLeft, Leaf, Phone, Mail, MapPin, Star, Building2, Battery, Cpu
 } from 'lucide-react';
 
-// ─── Section 01: Hero Slideshow Section ────────────────────────────────────────
+// ─── Section 01: Hero Section (Powering a Brighter Bharat) ───────────────────
 interface HeroSlide {
   id: string;
   image: string;
-  eyebrow: string;
-  headlineFirst: string;
-  headlineHighlight: string;
-  subhead: string;
-  hubTag: string;
-  peakValue: string;
-  peakUnit: string;
-  waveD: string;
-  scada: {
-    activeExport: string;
-    efficiency: string;
-    yield: string;
-    co2: string;
-    discom: string;
-    status: string;
-  };
-  metrics: {
-    val1: string;
-    label1: string;
-    val2: string;
-    label2: string;
-    val3: string;
-    label3: string;
-  };
+  alt: string;
+  kicker: string;
+  title: string;
+  desc: string;
+  tag: string;
+  highlight: string;
 }
 
 const HERO_SLIDES: HeroSlide[] = [
   {
-    id: 'sovereign',
-    image: '/assets/images/hero_solar_panels_dusk.jpg',
-    eyebrow: "ENGINEERED FOR INDIA'S AGRICULTURAL & INDUSTRIAL BACKBONE",
-    headlineFirst: "Powering Today.",
-    headlineHighlight: "Sustaining Tomorrow.",
-    subhead: "Delivering utility-scale solar EPC, decentralized agricultural pumping, and heavy industrial microgrids across India. Built for extreme heat, verified generation, and uncompromised grid security.",
-    hubTag: "Jodhpur Hub 500 kWp",
-    peakValue: "480",
-    peakUnit: "kW",
-    waveD: "M0,36 Q15,32 25,22 T50,6 T75,18 T100,32",
-    scada: {
-      activeExport: "412 kW Inverter",
-      efficiency: "98.4% Sync",
-      yield: "2,410 kWh Yield",
-      co2: "1.8t CO₂ Mitigated",
-      discom: "DISCOM: JVVNL / RRECL",
-      status: "● 50.02 Hz Stable"
-    },
-    metrics: {
-      val1: "50 MW+",
-      label1: "Installed Capacity",
-      val2: "1,420+",
-      label2: "Projects Delivered",
-      val3: "₹18 Cr+",
-      label3: "Monthly Savings"
-    }
+    id: 'residential',
+    image: '/assets/images/hero_slide_1.webp',
+    alt: 'Residential rooftop solar canopy installation',
+    kicker: 'Residential Solar',
+    title: 'Smart rooftop solar for modern homes',
+    desc: 'Clean residential rooftop installation with a premium, trustworthy look for the homepage banner.',
+    tag: 'Rooftop Solar',
+    highlight: 'Up to 90% Bill Offset'
   },
   {
-    id: 'utility',
-    image: '/assets/images/91fff17c130fbfe7684a3e0e7fe83e3d5ca439c3.jpg',
-    eyebrow: "50 MWP UTILITY GROUND-MOUNT ARRAY · RAJASTHAN",
-    headlineFirst: "Utility-Scale EPC.",
-    headlineHighlight: "Extreme Heat Resilience.",
-    subhead: "Massive 50 MWp ground-mount solar infrastructure engineered for high-irradiance desert zones with bifacial tracker arrays and high-voltage grid synchronization.",
-    hubTag: "Churu 132kV Substation",
-    peakValue: "48.2",
-    peakUnit: "MW",
-    waveD: "M0,38 Q20,30 35,16 T60,4 T85,14 T100,28",
-    scada: {
-      activeExport: "46.8 MW Active Export",
-      efficiency: "99.2% Sync",
-      yield: "210,000 kWh Yield",
-      co2: "162t CO₂ Mitigated",
-      discom: "DISCOM: JVVNL High Tension",
-      status: "● 50.01 Hz Stable"
-    },
-    metrics: {
-      val1: "481k MWh",
-      label1: "Lifetime Evacuation",
-      val2: "132 kV",
-      label2: "Substation Link",
-      val3: "25 Years",
-      label3: "Linear Guarantee"
-    }
+    id: 'urban',
+    image: '/assets/images/hero_slide_2.webp',
+    alt: 'Large rooftop solar array over dense cityscape',
+    kicker: 'Urban Rooftop Solar',
+    title: 'High-performance systems across the city',
+    desc: 'Showcase beautifully executed rooftop solar arrays designed for households and commercial spaces.',
+    tag: 'Urban Rooftop Solar',
+    highlight: 'Net-Metered Banking'
   },
   {
     id: 'industrial',
-    image: '/assets/images/aa80d82cedafbd1508c328b9e5f2754a3eb14919.jpg',
-    eyebrow: "120 KWP INDUSTRIAL COLD STORAGE DECARBONIZATION",
-    headlineFirst: "Slashing Peak Tariffs.",
-    headlineHighlight: "Heavy Industry Power.",
-    subhead: "Heavy C&I solar engineering offsetting up to 70% daytime grid power for cold storage warehouses, textile mills, and manufacturing plants with 1:1 net metering.",
-    hubTag: "Jaipur NH-48 Hub",
-    peakValue: "118",
-    peakUnit: "kW",
-    waveD: "M0,35 Q18,28 30,18 T55,8 T80,20 T100,34",
-    scada: {
-      activeExport: "110 kW String Inverter",
-      efficiency: "98.7% Sync",
-      yield: "580 kWh Yield",
-      co2: "0.45t CO₂ Mitigated",
-      discom: "DISCOM: JVVNL Net-Metered",
-      status: "● 50.00 Hz Stable"
-    },
-    metrics: {
-      val1: "68%",
-      label1: "Peak Bill Reduction",
-      val2: "₹2.6L",
-      label2: "Monthly Cost Shaved",
-      val3: "3.2 Yrs",
-      label3: "Capex Payback"
-    }
+    image: '/assets/images/hero_slide_3.webp',
+    alt: 'Industrial solar rooftop installation on blue warehouse',
+    kicker: 'Industrial Solar EPC',
+    title: 'Industrial rooftops engineered for efficiency',
+    desc: 'Highlight large-scale commercial and industrial solar capability with a polished professional visual.',
+    tag: 'Industrial EPC',
+    highlight: 'Heavy Load Management'
   },
   {
-    id: 'agriculture',
-    image: '/assets/images/8cf9afdfdade266942ddb840b554b0834187be15.jpg',
-    eyebrow: "PM-KUSUM DECENTRALIZED AGRI SOLAR PUMPING",
-    headlineFirst: "Empowering Bharat.",
-    headlineHighlight: "Zero-Diesel Agriculture.",
-    subhead: "Decentralized solar feeder plants and high-discharge submersible water pumps under PM-KUSUM Component A & C, powering farmers with reliable daytime 3-phase energy.",
-    hubTag: "Chomu Rural Feeder",
-    peakValue: "14.2",
-    peakUnit: "kW",
-    waveD: "M0,36 Q22,32 38,15 T62,7 T82,19 T100,30",
-    scada: {
-      activeExport: "15 HP VFD Drive",
-      efficiency: "97.9% Efficiency",
-      yield: "12,000 L / hr Water",
-      co2: "0.12t CO₂ Mitigated",
-      discom: "Decentralized Agro Feeder",
-      status: "● Continuous Flow"
-    },
-    metrics: {
-      val1: "100%",
-      label1: "Zero Diesel Dependency",
-      val2: "12,000 L",
-      label2: "Hourly Water Yield",
-      val3: "5 Years",
-      label3: "Comprehensive AMC"
-    }
-  },
-  {
-    id: 'residential',
-    image: '/assets/images/9232e3c12d228af8636d84a34e8fdea09b42a4b1.jpg',
-    eyebrow: "85 KWP NET-METERED RESIDENTIAL COMMUNITY ROOFTOP",
-    headlineFirst: "Smart Solar Living.",
-    headlineHighlight: "Direct PM Surya Subsidy.",
-    subhead: "Grid-connected solar rooftop systems for high-rise gated societies and luxury villas, integrating PM Surya Ghar Muft Bijli Yojana subsidies and net metering.",
-    hubTag: "Lucknow Operational Hub",
-    peakValue: "82",
-    peakUnit: "kW",
-    waveD: "M0,37 Q15,30 28,19 T52,9 T78,22 T100,35",
-    scada: {
-      activeExport: "80 kW Inverter Bank",
-      efficiency: "98.9% Sync",
-      yield: "390 kWh Yield",
-      co2: "0.32t CO₂ Mitigated",
-      discom: "DISCOM: MVVNL 1:1 Banking",
-      status: "● 50.02 Hz Stable"
-    },
-    metrics: {
-      val1: "₹1.4L / mo",
-      label1: "Society Savings",
-      val2: "₹78,000",
-      label2: "Central DBT Subsidy",
-      val3: "90%",
-      label3: "Common Area Offset"
-    }
+    id: 'execution',
+    image: '/assets/images/hero_slide_4.webp',
+    alt: 'Modern rooftop canopy solar installation',
+    kicker: 'Project Execution',
+    title: 'Reliable installations. Long-term energy value.',
+    desc: 'Feature clean canopy structures and professionally installed panels with a strong premium feel.',
+    tag: 'Turnkey Delivery',
+    highlight: '25-Year Linear Warranty'
   }
 ];
 
@@ -188,7 +70,7 @@ const HeroSection: React.FC = () => {
     if (isPaused) return;
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % HERO_SLIDES.length);
-    }, 5500);
+    }, 5000);
     return () => clearInterval(timer);
   }, [isPaused]);
 
@@ -213,18 +95,19 @@ const HeroSection: React.FC = () => {
         {HERO_SLIDES.map((s, idx) => (
           <div
             key={s.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${idx === currentSlide ? 'opacity-40 scale-100' : 'opacity-0 scale-105 pointer-events-none'
-              } transform transition-transform duration-[6000ms]`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              idx === currentSlide ? 'opacity-35 scale-100' : 'opacity-0 scale-105 pointer-events-none'
+            } transform transition-transform duration-[6000ms]`}
           >
             <img
               src={asset(s.image)}
-              alt={s.headlineFirst}
+              alt={s.alt}
               className="w-full h-full object-cover"
             />
           </div>
         ))}
-        {/* Spatial Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#17231D] via-[#17231D]/80 to-[#17231D]/40" />
+        {/* Spatial Gradients extending behind navbar */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#17231D] via-[#17231D]/85 to-[#17231D]/45" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#17231D] via-transparent to-black/30" />
       </div>
 
@@ -232,26 +115,26 @@ const HeroSection: React.FC = () => {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column (7 cols) */}
           <div className="lg:col-span-7 flex flex-col gap-5 sm:gap-6">
-            {/* Eyebrow badge */}
+            {/* Eyebrow badge from Jaikisaanfinal.txt */}
             <div className="flex items-center gap-2">
               <span className="text-[10px] sm:text-[11px] font-mono tracking-wider sm:tracking-widest text-brand-lime uppercase bg-brand-lime/10 border border-brand-lime/25 px-2.5 sm:px-3 py-1 rounded-full leading-snug flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand-lime animate-pulse" />
-                {slide.eyebrow}
+                POWERING A BRIGHTER BHARAT
               </span>
             </div>
 
-            {/* Headline with smooth text rendering */}
-            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-[3.85rem] leading-[1.1] sm:leading-[1.08] text-white tracking-tight min-h-[4.2rem] sm:min-h-[7.5rem] transition-all duration-500">
-              {slide.headlineFirst}<br />
-              <span className="text-brand-lime">{slide.headlineHighlight}</span>
+            {/* Headline from Jaikisaanfinal.txt */}
+            <h1 className="font-heading font-extrabold text-3xl sm:text-5xl lg:text-[3.9rem] leading-[1.1] sm:leading-[1.08] text-white tracking-tight">
+              Smarter energy.<br />
+              <span className="text-brand-lime">Stronger tomorrow.</span>
             </h1>
 
-            {/* Subhead */}
-            <p className="font-body text-sm sm:text-base md:text-lg text-[#A3B3AA] leading-relaxed max-w-xl min-h-[4rem] sm:min-h-[4.8rem] transition-all duration-500">
-              {slide.subhead}
+            {/* Subhead from Jaikisaanfinal.txt */}
+            <p className="font-body text-sm sm:text-base md:text-lg text-[#C8D9CF] leading-relaxed max-w-xl">
+              Jai Kisaan Solar provides rooftop solar, engineering and renewable-energy solutions for homes, businesses and larger infrastructure. Explore your options, calculate potential savings and speak to our team.
             </p>
 
-            {/* CTAs and Slide Nav Controls */}
+            {/* CTAs from Jaikisaanfinal.txt */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
               <a
                 href="#calculator"
@@ -261,14 +144,30 @@ const HeroSection: React.FC = () => {
                 }}
                 className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-brand-lime hover:bg-brand-limeHover text-[#17231D] font-heading font-bold text-xs sm:text-sm tracking-wide transition-all shadow-glow-lime text-center"
               >
-                Calculate Solar Savings <ArrowRight size={16} />
+                Book a Free Solar Consultation <ArrowRight size={16} />
               </a>
               <Link
                 to="/solutions"
                 className="inline-flex items-center justify-center gap-2 h-12 px-7 rounded-xl bg-transparent hover:bg-white/8 text-white font-heading font-semibold text-xs sm:text-sm tracking-wide transition-colors border border-white/20 text-center"
               >
-                Explore Specifications
+                Explore Our Solutions
               </Link>
+            </div>
+
+            {/* Hero Bullets from Jaikisaanfinal.txt */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs sm:text-sm text-[#D4E2D4] pt-1">
+              <span className="flex items-center gap-2">
+                <CheckCircle size={15} className="text-brand-lime flex-shrink-0" />
+                Residential &amp; Rooftop
+              </span>
+              <span className="flex items-center gap-2">
+                <CheckCircle size={15} className="text-brand-lime flex-shrink-0" />
+                Commercial &amp; Industrial
+              </span>
+              <span className="flex items-center gap-2">
+                <CheckCircle size={15} className="text-brand-lime flex-shrink-0" />
+                Utility-scale EPC
+              </span>
             </div>
 
             {/* Slideshow Progress Bar & Dots */}
@@ -300,8 +199,9 @@ const HeroSection: React.FC = () => {
                     type="button"
                     onClick={() => setCurrentSlide(idx)}
                     aria-label={`Go to slide ${idx + 1}`}
-                    className={`h-2 rounded-full transition-all duration-300 ${idx === currentSlide ? 'w-8 bg-brand-lime' : 'w-2 bg-white/20 hover:bg-white/40'
-                      }`}
+                    className={`h-2 rounded-full transition-all duration-300 ${
+                      idx === currentSlide ? 'w-8 bg-brand-lime' : 'w-2 bg-white/20 hover:bg-white/40'
+                    }`}
                   />
                 ))}
               </div>
@@ -312,120 +212,76 @@ const HeroSection: React.FC = () => {
               </span>
             </div>
 
-            {/* Telemetry quick metrics strip (Dynamic per slide) */}
+            {/* Telemetry quick metrics strip from Jaikisaanfinal.txt */}
             <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-4 border-t border-white/10 max-w-lg">
               <div>
-                <div className="font-heading font-bold text-xl sm:text-2xl text-white transition-all duration-300">
-                  {slide.metrics.val1}
+                <div className="font-heading font-bold text-xl sm:text-2xl text-white">
+                  120 MWp+
                 </div>
                 <div className="text-[9px] sm:text-[11px] font-mono text-[#A3B3AA] uppercase mt-0.5 leading-tight">
-                  {slide.metrics.label1}
+                  Installed Capacity
                 </div>
               </div>
               <div>
-                <div className="font-heading font-bold text-xl sm:text-2xl text-brand-lime transition-all duration-300">
-                  {slide.metrics.val2}
+                <div className="font-heading font-bold text-xl sm:text-2xl text-brand-lime">
+                  300+
                 </div>
                 <div className="text-[9px] sm:text-[11px] font-mono text-[#A3B3AA] uppercase mt-0.5 leading-tight">
-                  {slide.metrics.label2}
+                  Projects Delivered
                 </div>
               </div>
               <div>
-                <div className="font-heading font-bold text-xl sm:text-2xl text-white transition-all duration-300">
-                  {slide.metrics.val3}
+                <div className="font-heading font-bold text-xl sm:text-2xl text-white">
+                  10+ Yrs
                 </div>
                 <div className="text-[9px] sm:text-[11px] font-mono text-[#A3B3AA] uppercase mt-0.5 leading-tight">
-                  {slide.metrics.label3}
+                  Solar EPC (Est. 2015)
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Floating SCADA Telemetry Widget (Dynamic per slide) */}
+          {/* Right Column: Hero Slider Showcase Card */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="w-full max-w-[420px] rounded-2xl p-4 sm:p-6 bg-[#1A2820]/95 backdrop-blur-md border border-[#2B4234] shadow-elevated relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-brand-lime/10 rounded-full blur-2xl pointer-events-none" />
-
-              {/* Header */}
-              <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-brand-lime animate-pulse" />
-                  <span className="text-[10px] sm:text-[11px] font-mono font-semibold text-white uppercase tracking-wider">
-                    LIVE SCADA TELEMETRY
-                  </span>
-                </div>
-                <span className="text-[10px] sm:text-[11px] font-mono text-brand-lime px-2 py-0.5 rounded bg-brand-lime/10 border border-brand-lime/25 transition-all duration-300">
-                  {slide.hubTag}
-                </span>
-              </div>
-
-              {/* Peak generation display */}
-              <div className="flex items-baseline gap-2 mb-3">
-                <span className="font-heading font-extrabold text-4xl sm:text-5xl text-brand-lime transition-all duration-300">
-                  {slide.peakValue}
-                </span>
-                <span className="font-heading font-semibold text-xl sm:text-2xl text-white">
-                  {slide.peakUnit}
-                </span>
-                <span className="text-[11px] sm:text-xs font-mono text-[#A3B3AA] ml-auto">Real-Time Output</span>
-              </div>
-
-              {/* SVG Generation Waveform Curve */}
-              <div className="relative h-20 mb-4 bg-black/25 rounded-xl p-2 flex items-end overflow-hidden border border-white/8">
-                <svg className="w-full h-full overflow-visible" viewBox="0 0 100 40" preserveAspectRatio="none">
-                  <defs>
-                    <linearGradient id="scadaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#C5F176" stopOpacity="0.5" />
-                      <stop offset="100%" stopColor="#C5F176" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    d={`${slide.waveD} L100,40 L0,40 Z`}
-                    fill="url(#scadaGrad)"
-                    className="transition-all duration-700"
+            <div className="w-full max-w-[450px] rounded-3xl overflow-hidden bg-[#1A2820]/95 backdrop-blur-md border border-[#2B4234] shadow-elevated relative flex flex-col">
+              {/* Photo Viewport */}
+              <div className="relative h-64 sm:h-72 overflow-hidden bg-black/40">
+                {HERO_SLIDES.map((s, idx) => (
+                  <img
+                    key={s.id}
+                    src={asset(s.image)}
+                    alt={s.alt}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                      idx === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
+                    }`}
                   />
-                  <path
-                    d={slide.waveD}
-                    fill="none"
-                    stroke="#C5F176"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    className="transition-all duration-700"
-                  />
-                </svg>
-              </div>
-
-              {/* 4 Telemetry Metrics */}
-              <div className="grid grid-cols-2 gap-2.5 pt-1">
-                <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
-                  <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Active Grid Export</span>
-                  <span className="font-heading font-bold text-sm text-brand-lime transition-all duration-300">
-                    {slide.scada.activeExport}
-                  </span>
+                ))}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A2820] via-black/20 to-transparent" />
+                <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-md border border-white/15 px-3 py-1 rounded-full text-[10px] font-mono font-bold text-brand-lime uppercase tracking-wider">
+                  {slide.kicker}
                 </div>
-                <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
-                  <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Grid Sync Efficiency</span>
-                  <span className="font-heading font-bold text-sm text-white transition-all duration-300">
-                    {slide.scada.efficiency}
-                  </span>
-                </div>
-                <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
-                  <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Daily Generation</span>
-                  <span className="font-heading font-bold text-sm text-brand-lime transition-all duration-300">
-                    {slide.scada.yield}
-                  </span>
-                </div>
-                <div className="flex flex-col p-2.5 rounded-xl bg-white/5 border border-white/8">
-                  <span className="text-[10px] font-mono text-[#A3B3AA] uppercase">Carbon Offset</span>
-                  <span className="font-heading font-bold text-sm text-white transition-all duration-300">
-                    {slide.scada.co2}
-                  </span>
+                <div className="absolute top-4 right-4 bg-brand-forest/80 backdrop-blur-md border border-brand-lime/30 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold text-white">
+                  {slide.tag}
                 </div>
               </div>
 
-              <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-[#A3B3AA]">
-                <span className="transition-all duration-300">{slide.scada.discom}</span>
-                <span className="text-brand-lime font-medium transition-all duration-300">{slide.scada.status}</span>
+              {/* Card Body */}
+              <div className="p-5 sm:p-6 flex flex-col gap-3 relative z-10">
+                <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-white leading-tight">
+                  {slide.title}
+                </h3>
+                <p className="font-body text-xs sm:text-sm text-[#C8D9CF] leading-relaxed">
+                  {slide.desc}
+                </p>
+
+                {/* Floating Institutional Badge */}
+                <div className="mt-2 pt-3 border-t border-white/10 flex items-center justify-between text-[11px] font-mono">
+                  <span className="text-brand-lime font-semibold flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-lime animate-pulse" />
+                    {slide.highlight}
+                  </span>
+                  <span className="text-[#A3B3AA]">MNRE &amp; DISCOM Approved</span>
+                </div>
               </div>
             </div>
           </div>
@@ -434,6 +290,50 @@ const HeroSection: React.FC = () => {
     </section>
   );
 };
+
+// ─── Section 01.5: Feature Strip (from Jaikisaanfinal.txt) ────────────────────
+const FeatureStrip: React.FC = () => (
+  <div className="bg-[#12241A] border-y border-white/10 text-white py-6">
+    <div className="max-w-[1248px] mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="flex items-center gap-3.5">
+        <div className="w-11 h-11 rounded-xl bg-brand-lime/10 text-brand-lime flex items-center justify-center font-bold text-xl flex-shrink-0 border border-brand-lime/20">
+          ☀
+        </div>
+        <div>
+          <div className="font-heading font-bold text-sm text-white">Solar for every need</div>
+          <div className="text-xs text-[#A3B3AA] mt-0.5">Homes, farms and industry</div>
+        </div>
+      </div>
+      <div className="flex items-center gap-3.5">
+        <div className="w-11 h-11 rounded-xl bg-brand-lime/10 text-brand-lime flex items-center justify-center font-bold text-xl flex-shrink-0 border border-brand-lime/20">
+          ⌂
+        </div>
+        <div>
+          <div className="font-heading font-bold text-sm text-white">Site-first approach</div>
+          <div className="text-xs text-[#A3B3AA] mt-0.5">Assess before proposing</div>
+        </div>
+      </div>
+      <div className="flex items-center gap-3.5">
+        <div className="w-11 h-11 rounded-xl bg-brand-lime/10 text-brand-lime flex items-center justify-center font-bold text-xl flex-shrink-0 border border-brand-lime/20">
+          ₹
+        </div>
+        <div>
+          <div className="font-heading font-bold text-sm text-white">Subsidy assistance</div>
+          <div className="text-xs text-[#A3B3AA] mt-0.5">Guidance for eligible rooftops</div>
+        </div>
+      </div>
+      <div className="flex items-center gap-3.5">
+        <div className="w-11 h-11 rounded-xl bg-brand-lime/10 text-brand-lime flex items-center justify-center font-bold text-xl flex-shrink-0 border border-brand-lime/20">
+          ⏱
+        </div>
+        <div>
+          <div className="font-heading font-bold text-sm text-white">Lifetime service</div>
+          <div className="text-xs text-[#A3B3AA] mt-0.5">Support after commissioning</div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
 
 // ─── Section 02: About Jai Kisaan (Meet Pure Energy) ─────────────────────────
 const AboutSection: React.FC = () => (
@@ -444,8 +344,8 @@ const AboutSection: React.FC = () => (
         <div className="lg:col-span-6 flex flex-col gap-6">
           <div className="relative rounded-3xl overflow-hidden shadow-card border border-[#E8EAE3] h-80 sm:h-96">
             <img
-              src={asset('/assets/images/eb57feb6758b7ceae7f59bfdbdb688bdafb6b005.jpg')}
-              alt="JaiKisaan Solar modern commercial installation"
+              src={asset('/assets/images/final_engineer.webp')}
+              alt="Jai Kisaan Solar engineer reviewing installation"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -481,7 +381,7 @@ const AboutSection: React.FC = () => (
               MORE THAN ENERGY
             </span>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#1A1C19] mt-2 leading-tight">
-              A Commitment to Tomorrow.
+              Not just panels. A partner in progress.
             </h2>
           </div>
           <p className="font-body text-base text-[#3F4942] leading-relaxed">
@@ -529,7 +429,7 @@ const SOLUTIONS_CARDS = [
     title: 'Residential Rooftop Solar',
     desc: 'High-efficiency on-grid net-metered rooftop solar systems engineered for independent villas, residential societies, and urban housing complexes. Maximizes self-consumption, captures up to ₹78,000 in Central DBT subsidies, and reduces monthly grid bills by up to 90%.',
     bullets: ['Up to ₹78,000 Central DBT Subsidy', '1:1 Net-Metering Banking with State DISCOMs', 'Waaree / Adani Bifacial Panels', '25-Year Linear Output Guarantee'],
-    image: '/assets/images/9232e3c12d228af8636d84a34e8fdea09b42a4b1.jpg',
+    image: '/assets/images/final_residential.webp',
     tag: 'Payback: 3.2 – 3.8 Yrs',
   },
   {
@@ -538,7 +438,7 @@ const SOLUTIONS_CARDS = [
     title: 'Commercial & Industrial Solar',
     desc: 'High-yield rooftop and captive solar arrays purpose-engineered for commercial cold storages, textile mills, manufacturing plants, and educational campuses. Structured for Section 32 40% accelerated depreciation, slashing high daytime peak tariffs.',
     bullets: ['100 kWp to 10 MWp System Sizing', 'Section 32 40% Accelerated Tax Depreciation', 'High-Surge Ammonia Load Management', 'CEIG & HT Interconnection Clearances'],
-    image: '/assets/images/709f7acc5449a720085baaeae6b5d101de5ffa01.jpg',
+    image: '/assets/images/final_commercial.webp',
     tag: 'Payback: 2.8 – 3.4 Yrs',
   },
   {
@@ -547,7 +447,7 @@ const SOLUTIONS_CARDS = [
     title: 'Utility-Scale Solar EPC',
     desc: 'Ground-mount megawatt solar power plants engineered for captive open access, group captive wheeling, and high-voltage grid substation evacuation across Rajasthan, UP, and Gujarat. Fully bankable DPR documentation with guaranteed performance ratios.',
     bullets: ['33kV / 132kV Substation Interconnection', 'Group Captive & Third-Party Wheeling', 'Turnkey Land Acquisition & Fencing', 'P50/P90 Generation Modeling & 25-Yr O&M'],
-    image: '/assets/images/86f4a949d08f6296a12f8e095d8f906c5f5481b1.jpg',
+    image: '/assets/images/final_utility.webp',
     tag: 'Project IRR: 21%+',
   },
   {
@@ -556,7 +456,7 @@ const SOLUTIONS_CARDS = [
     title: 'EV Charging & Smart Microgrids',
     desc: 'Bespoke solar canopy architectures integrated with dynamic fast EV chargers, Lithium-Iron-Phosphate (LFP) Battery Energy Storage Systems (BESS), and intelligent peak-shaving controllers for fleet operators, transit corridors, and green logistics hubs.',
     bullets: ['Solar Canopy & Highway Corridor EPC', 'Behind-the-Meter BESS Battery Buffer', 'Peak Demand Charge Mitigation', 'Cloud SCADA Telemetry & Billing Integration'],
-    image: '/assets/images/6ccdbd44a5f0faac8c8df2e0e92602d653ab6e54.jpg',
+    image: '/assets/images/final_engineer.webp',
     tag: 'Uptime: 99.8% Guarantee',
   },
 ];
@@ -754,8 +654,8 @@ const ProjectShowcaseSection: React.FC = () => {
           <div className="lg:col-span-7 rounded-3xl overflow-hidden bg-white border border-[#E8EAE3] shadow-card hover:shadow-elevated transition-shadow flex flex-col group">
             <div className="h-80 sm:h-96 lg:h-[460px] relative overflow-hidden">
               <img
-                src={asset('/assets/images/91fff17c130fbfe7684a3e0e7fe83e3d5ca439c3.jpg')}
-                alt="SunScope Agro-Park 50 MWp"
+                src={asset('/assets/images/final_utility.webp')}
+                alt="Mr. Vikas Data 220 kW Large Rooftop Solar"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -764,7 +664,7 @@ const ProjectShowcaseSection: React.FC = () => {
               </div>
               <div className="absolute bottom-6 left-6 right-6 text-white">
                 <span className="text-xs font-mono text-brand-lime uppercase">Sardarshahar, Churu, Rajasthan</span>
-                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl mt-1">SunScope Agro-Park</h3>
+                <h3 className="font-heading font-extrabold text-2xl sm:text-3xl mt-1">Mr. Vikas Data — Large Solar Rooftop</h3>
                 <p className="font-body text-xs sm:text-sm text-gray-200 mt-2 line-clamp-2">
                   50 MWp ground-mount bifacial solar park evacuating directly into JVVNL 132kV grid substation, powering 1,200+ agricultural pumping stations across arid Rajasthan.
                 </p>
@@ -787,8 +687,8 @@ const ProjectShowcaseSection: React.FC = () => {
             <div className="rounded-3xl overflow-hidden bg-white border border-[#E8EAE3] shadow-card hover:shadow-elevated transition-shadow flex flex-col group flex-1">
               <div className="h-48 sm:h-56 relative overflow-hidden">
                 <img
-                  src={asset('/assets/images/aa80d82cedafbd1508c328b9e5f2754a3eb14919.jpg')}
-                  alt="Commercial Cold Storage Complex 120 kWp"
+                  src={asset('/assets/images/hero_slide_3.webp')}
+                  alt="Deepak Enterprises Business Rooftop Solar 40 kW"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-3 left-3 bg-[#17231D]/90 text-brand-lime text-[11px] font-mono font-bold px-2.5 py-1 rounded-full">
@@ -799,7 +699,7 @@ const ProjectShowcaseSection: React.FC = () => {
                 <div>
                   <span className="text-[11px] font-mono text-[#4B6D00] uppercase">Jaipur, Rajasthan · Vikas Cold Storage</span>
                   <h4 className="font-heading font-bold text-lg text-[#1A1C19] mt-0.5">
-                    Commercial Cold Storage Complex 120 kWp
+                    Deepak Enterprises — Business Rooftop 40 kW
                   </h4>
                   <p className="font-body text-xs text-[#3F4942] mt-1">
                     Mitigating ammonia compressor peak charges; slashed monthly grid bill from ₹3.8L to ₹1.2L with 68% savings.
@@ -818,8 +718,8 @@ const ProjectShowcaseSection: React.FC = () => {
             <div className="rounded-3xl overflow-hidden bg-white border border-[#E8EAE3] shadow-card hover:shadow-elevated transition-shadow flex flex-col group flex-1">
               <div className="h-48 sm:h-56 relative overflow-hidden">
                 <img
-                  src={asset('/assets/images/9232e3c12d228af8636d84a34e8fdea09b42a4b1.jpg')}
-                  alt="EcoHeights Luxury Township 85 kWp"
+                  src={asset('/assets/images/hero_slide_1.webp')}
+                  alt="Mr. Kapil Agrawal Residential Rooftop Solar 12 kW"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute top-3 left-3 bg-[#17231D]/90 text-brand-lime text-[11px] font-mono font-bold px-2.5 py-1 rounded-full">
@@ -830,7 +730,7 @@ const ProjectShowcaseSection: React.FC = () => {
                 <div>
                   <span className="text-[11px] font-mono text-[#4B6D00] uppercase">Jaipur, Rajasthan · Residential Rooftop</span>
                   <h4 className="font-heading font-bold text-lg text-[#1A1C19] mt-0.5">
-                    EcoHeights Luxury Township 85 kWp
+                    Mr. Kapil Agrawal — Residential Rooftop 12 kW
                   </h4>
                   <p className="font-body text-xs text-[#3F4942] mt-1">
                     Multi-building residential community capturing PM Surya Ghar benefits with centralized SCADA monitoring.
@@ -918,8 +818,8 @@ const CEOSection: React.FC = () => (
           <div className="lg:col-span-5 flex flex-col gap-4">
             <div className="relative rounded-2xl overflow-hidden shadow-elevated h-96 sm:h-[440px]">
               <img
-                src={asset('/assets/images/a6038c0baabb8acaa28c36ba0b8fed83d553aaea.jpg')}
-                alt="Sanjeev Kumar — Founder & CEO"
+                src={asset('/assets/images/sanjeev-kumar-ceo.jpg')}
+                alt="Sanjeev Kumar — Chief Executive Officer"
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
@@ -978,25 +878,25 @@ const CEOSection: React.FC = () => (
 // ─── Section 09: Solar Insights & Knowledge (3 Whitepaper Cards) ──────────────
 const WHITEPAPERS = [
   {
-    tag: 'POLICY & SUBSIDY',
-    date: 'Updated Jan 2025',
-    title: 'National Rooftop Solar Subsidies 2025: Eligibility & Application Roadmap',
-    desc: 'A step-by-step regulatory walkthrough explaining direct benefit transfer (DBT), PM Surya Ghar state portal compliance, and DISCOM meter testing timelines.',
-    image: '/assets/images/b245012ab6275fcf193594590a5bfdb579881d07.jpg',
+    tag: 'SAVINGS & ROI',
+    date: '09 Jun 2026',
+    title: 'How Much Can You Save With Solar Panels in Mohali Homes & Businesses?',
+    desc: 'A comprehensive guide to evaluating residential and business solar savings, net-metering benefits, and payback periods.',
+    image: '/assets/images/hero_slide_1.webp',
   },
   {
-    tag: 'FINANCIAL MODELING',
-    date: 'Updated Jan 2025',
-    title: 'C&I Solar Payback Calculator: Modeling OPEX vs CAPEX for Heavy Industry',
-    desc: 'Comparing internal rate of return, tax depreciation offsets, and open-access tariff structures for cold chains and manufacturing complexes.',
-    image: '/assets/images/041b0b41d4ba4d7cdb31074d9ef7d96101bca018.jpg',
+    tag: 'INDUSTRIAL EPC',
+    date: '19 Mar 2026',
+    title: 'Solar Panel Installation in Factories: Save Electricity & Plan ROI',
+    desc: 'Factors behind industrial solar feasibility, heavy machinery load management, and commercial project economics.',
+    image: '/assets/images/hero_slide_3.webp',
   },
   {
-    tag: 'ENGINEERING',
-    date: 'Updated Jan 2025',
-    title: 'Battery Storage & Smart Inverters: Mitigating Peak Demand Charges',
-    desc: 'How behind-the-meter battery energy storage systems (BESS) stabilise fluctuating loads, shave Time-of-Day penalties, and eliminate diesel generator reliance.',
-    image: '/assets/images/4bb4436fda7c0f69c46e53acc7f3be717b2b1624.jpg',
+    tag: 'MAINTENANCE & CARE',
+    date: '06 Feb 2026',
+    title: 'Maintenance Tips After Solar Panel Installation',
+    desc: 'Helpful advice for keeping an installed system in optimal condition, routine cleaning schedules, and inverter monitoring.',
+    image: '/assets/images/final_engineer.webp',
   },
 ];
 
@@ -1351,6 +1251,7 @@ const ConversionSection: React.FC = () => {
 const Home: React.FC = () => (
   <>
     <HeroSection />
+    <FeatureStrip />
     <AboutSection />
     <SolutionsSection />
     <WhyChooseUsSection />

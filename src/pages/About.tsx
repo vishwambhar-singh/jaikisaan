@@ -114,7 +114,7 @@ const LEADERSHIP = [
     name: 'Sanjeev Kumar',
     role: 'Group CEO, SunScope Group',
     bio: 'Leads SunScope Group of Companies (eSunScope, Jai Kisaan Solar, CityScene Global). Directs corporate strategy, process intelligence, and green hydrogen innovations.',
-    image: '/assets/images/f439653e2658caf4155cc9059936c76b64dfc801.jpg',
+    image: '/assets/images/sanjeev-kumar-ceo.jpg',
   },
   {
     name: 'Rajesh Varma',
@@ -477,7 +477,7 @@ const About: React.FC = () => {
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               <div className="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-elevated h-96 sm:h-[460px]">
                 <img
-                  src={asset('/assets/images/a6038c0baabb8acaa28c36ba0b8fed83d553aaea.jpg')}
+                  src={asset('/assets/images/sanjeev-kumar-ceo.jpg')}
                   alt="Sanjeev Kumar — Founder & CEO"
                   className="w-full h-full object-cover object-top"
                 />
