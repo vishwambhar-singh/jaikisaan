@@ -335,6 +335,60 @@ const FeatureStrip: React.FC = () => (
   </div>
 );
 
+// ─── Section 01.6: CEO Video Broadcast Banner (from Jaikisaanfinal.txt) ───────
+const CEOMessageBanner: React.FC = () => (
+  <section className="bg-[#0E281D] py-16 md:py-20 border-b border-white/10" id="ceo-message">
+    <div className="max-w-[1248px] mx-auto px-6">
+      <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        {/* Left Column: Copy */}
+        <div className="lg:col-span-6 flex flex-col gap-4">
+          <span className="text-xs font-mono font-semibold text-brand-lime uppercase tracking-widest">
+            MESSAGE FROM OUR CEO
+          </span>
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight">
+            Building a brighter future, together.
+          </h2>
+          <p className="font-body text-base text-[#BFD0C3] leading-relaxed">
+            Hear the Jai Kisaan Solar leadership's perspective on renewable energy, solar projects and our vision for a more sustainable future.
+          </p>
+          <p className="text-xs font-mono text-[#8EA395]">
+            Watch the CEO message · YouTube video
+          </p>
+          <div className="flex flex-wrap gap-3.5 pt-2">
+            <Link
+              to="/founder"
+              className="inline-flex items-center gap-2 bg-brand-lime text-brand-forest font-heading font-bold text-sm px-6 py-3 rounded-xl hover:bg-lime-400 transition-colors shadow-sm"
+            >
+              Read Founder's Message ↗
+            </Link>
+            <a
+              href="https://youtu.be/Ij_OQRmgdpE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-white text-[#123B2A] font-heading font-bold text-sm px-6 py-3 rounded-xl hover:bg-gray-100 transition-colors shadow-sm"
+            >
+              Watch on YouTube ↗
+            </a>
+          </div>
+        </div>
+
+        {/* Right Column: 16:9 Video Embed Card */}
+        <div className="lg:col-span-6">
+          <div className="relative aspect-video rounded-2xl md:rounded-3xl overflow-hidden border border-white/20 bg-black shadow-2xl">
+            <iframe
+              src="https://www.youtube.com/embed/Ij_OQRmgdpE?rel=0"
+              title="Sanjeev Kumar - Jai Kisaan Solar Leadership Message"
+              className="w-full h-full border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
 // ─── Section 02: About Jai Kisaan (Meet Pure Energy) ─────────────────────────
 const AboutSection: React.FC = () => (
   <section className="bg-[#F9FAF4] py-20 md:py-28 border-b border-[#E8EAE3]">
@@ -816,13 +870,13 @@ const CEOSection: React.FC = () => (
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Portrait */}
           <div className="lg:col-span-5 flex flex-col gap-4">
-            <div className="relative rounded-2xl overflow-hidden shadow-elevated h-96 sm:h-[440px]">
+            <div className="relative rounded-2xl overflow-hidden shadow-elevated h-96 sm:h-[440px] bg-neutral-100">
               <img
-                src={asset('/assets/images/sanjeev-kumar-ceo.jpg')}
+                src={asset('/assets/images/sanjeev-kumar-portrait.jpg')}
                 alt="Sanjeev Kumar — Chief Executive Officer"
-                className="w-full h-full object-cover object-top"
+                className="w-full h-full object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
               <div className="absolute bottom-5 left-5 right-5 text-white">
                 <div className="font-heading font-extrabold text-xl">Sanjeev Kumar</div>
                 <div className="text-xs font-mono text-brand-lime">Founder &amp; Group CEO</div>
@@ -855,18 +909,6 @@ const CEOSection: React.FC = () => (
               <p>
                 Delivering quality with the highest professional standards is at the core of everything we do. We are committed to excellence in every aspect of our operations—from design and execution to service delivery and stakeholder engagement. Our approach is built on precision, reliability, and continuous improvement.
               </p>
-            </div>
-            {/* Video embed */}
-            <div className="rounded-2xl overflow-hidden bg-black shadow-elevated">
-              <div className="relative aspect-video">
-                <iframe
-                  src="https://www.youtube.com/embed/Ij_OQRmgdpE?rel=0"
-                  title="Sanjeev Kumar - Leadership Message"
-                  className="w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
             </div>
 
             <div className="pt-4 border-t border-[#E8EAE3] flex flex-wrap items-center justify-between gap-3">
@@ -905,14 +947,14 @@ const WHITEPAPERS = [
     date: '09 Jun 2026',
     title: 'How Much Can You Save With Solar Panels in Mohali Homes & Businesses?',
     desc: 'A comprehensive guide to evaluating residential and business solar savings, net-metering benefits, and payback periods.',
-    image: '/assets/images/hero_slide_1.webp',
+    image: '/assets/images/8cf9afdfdade266942ddb840b554b0834187be15.jpg',
   },
   {
     tag: 'INDUSTRIAL EPC',
     date: '19 Mar 2026',
     title: 'Solar Panel Installation in Factories: Save Electricity & Plan ROI',
     desc: 'Factors behind industrial solar feasibility, heavy machinery load management, and commercial project economics.',
-    image: '/assets/images/hero_slide_3.webp',
+    image: '/assets/images/8d3210a274b9a82f6bc7b88ce3706382e20c9bb7.jpg',
   },
   {
     tag: 'MAINTENANCE & CARE',
@@ -1275,6 +1317,7 @@ const Home: React.FC = () => (
   <>
     <HeroSection />
     <FeatureStrip />
+    <CEOMessageBanner />
     <AboutSection />
     <SolutionsSection />
     <WhyChooseUsSection />

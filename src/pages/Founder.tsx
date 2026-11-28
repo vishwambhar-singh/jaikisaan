@@ -65,41 +65,46 @@ const Founder: React.FC = () => (
       <div className="max-w-[1248px] mx-auto px-6 flex flex-col gap-12">
 
         {/* ─── Executive Profile Banner ─────────────────────────────────────── */}
-        <div className="rounded-3xl overflow-hidden border border-[#E8EAE3] shadow-card bg-white">
-          {/* Photo */}
-          <div className="w-full aspect-video relative overflow-hidden max-h-[520px]">
+        <div className="rounded-3xl overflow-hidden border border-[#E8EAE3] shadow-card bg-white grid md:grid-cols-12 items-center">
+          {/* Portrait Column */}
+          <div className="md:col-span-5 h-[400px] sm:h-[460px] relative overflow-hidden bg-neutral-100">
             <img
-              src={asset('/assets/images/sanjeev-kumar-ceo.jpg')}
+              src={asset('/assets/images/sanjeev-kumar-portrait.jpg')}
               alt="Sanjeev Kumar - CEO, SunScope Group of Companies"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent md:hidden" />
           </div>
-          {/* Info bar */}
-          <div className="p-7 md:p-9 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-5 border-t border-[#E8EAE3]">
+          {/* Info & CTAs Column */}
+          <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-center gap-6">
             <div>
               <span className="text-xs font-mono font-semibold text-[#4B6D00] uppercase tracking-widest">
                 LEADERSHIP PROFILE
               </span>
-              <h2 className="font-heading font-extrabold text-2xl text-[#1A1C19] mt-1">
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#1A1C19] mt-2">
                 Sanjeev Kumar
               </h2>
-              <p className="font-body text-sm text-[#3F4942] mt-0.5 font-semibold">
+              <p className="font-body text-base text-[#3F4942] mt-1 font-semibold">
                 Chief Executive Officer, SunScope Group of Companies · Jai Kisaan Solar
               </p>
             </div>
-            <div className="flex gap-3 flex-wrap">
+
+            <p className="font-body text-sm text-[#556A5C] leading-relaxed">
+              Leading the national clean energy transition through distributed solar engineering, agricultural solarization, and sustainable industrial microgrids across India.
+            </p>
+
+            <div className="flex gap-3 flex-wrap pt-2">
               <a
                 href="https://youtu.be/Ij_OQRmgdpE"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-brand-lime text-brand-forest font-heading font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-lime-400 transition-colors"
+                className="inline-flex items-center gap-2 bg-brand-lime text-brand-forest font-heading font-bold text-sm px-6 py-3 rounded-xl hover:bg-lime-400 transition-colors shadow-sm"
               >
                 ▶ Watch Video Message
               </a>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 border border-brand-forest text-brand-forest font-heading font-bold text-sm px-5 py-2.5 rounded-xl hover:bg-brand-forest hover:text-white transition-colors"
+                className="inline-flex items-center gap-2 border border-brand-forest text-brand-forest font-heading font-bold text-sm px-6 py-3 rounded-xl hover:bg-brand-forest hover:text-white transition-colors"
               >
                 Connect with Our Team ↗
               </Link>

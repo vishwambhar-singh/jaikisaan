@@ -23,7 +23,7 @@ const ARTICLES: Article[] = [
     title: 'How Much Can You Save With Solar Panels in Mohali Homes & Businesses?',
     excerpt: 'A comprehensive guide to evaluating residential and business solar savings, net-metering structures, and payback timelines for homes and offices.',
     category: 'Residential & Rooftop',
-    image: '/assets/images/hero_slide_1.webp',
+    image: '/assets/images/8cf9afdfdade266942ddb840b554b0834187be15.jpg',
   },
   {
     tag: 'C&I SOLAR',
@@ -32,7 +32,7 @@ const ARTICLES: Article[] = [
     title: 'Solar Panel Installation in Factories: Save Electricity & Plan ROI',
     excerpt: 'Key factors behind industrial solar feasibility, heavy machine load profiling, Section 32 tax depreciation benefits, and project economics.',
     category: 'Commercial & Industrial',
-    image: '/assets/images/hero_slide_3.webp',
+    image: '/assets/images/8d3210a274b9a82f6bc7b88ce3706382e20c9bb7.jpg',
   },
   {
     tag: 'O&M & CARE',
@@ -50,7 +50,7 @@ const ARTICLES: Article[] = [
     title: 'Do Solar Panels Work on Cloudy Days or at Night?',
     excerpt: 'Understand generation under changing daylight conditions, diffuse irradiance physics, and battery backup storage architectures.',
     category: 'O&M & Tech Guide',
-    image: '/assets/images/hero_slide_2.webp',
+    image: '/assets/images/hero_solar_panels_dusk.jpg',
   },
   {
     tag: 'SYSTEM SITING',

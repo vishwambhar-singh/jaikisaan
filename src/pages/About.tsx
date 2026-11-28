@@ -114,7 +114,7 @@ const LEADERSHIP = [
     name: 'Sanjeev Kumar',
     role: 'Group CEO, SunScope Group',
     bio: 'Leads SunScope Group of Companies (eSunScope, Jai Kisaan Solar, CityScene Global). Directs corporate strategy, process intelligence, and green hydrogen innovations.',
-    image: '/assets/images/sanjeev-kumar-ceo.jpg',
+    image: '/assets/images/sanjeev-kumar-portrait.jpg',
   },
   {
     name: 'Rajesh Varma',
@@ -475,13 +475,13 @@ const About: React.FC = () => {
         <div className="max-w-[1248px] mx-auto px-6">
           <div className="rounded-3xl bg-white border border-[#E8EAE3] p-8 md:p-14 shadow-card">
             <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-elevated h-96 sm:h-[460px]">
+              <div className="lg:col-span-5 relative rounded-2xl overflow-hidden shadow-elevated h-96 sm:h-[460px] bg-neutral-100">
                 <img
-                  src={asset('/assets/images/sanjeev-kumar-ceo.jpg')}
+                  src={asset('/assets/images/sanjeev-kumar-portrait.jpg')}
                   alt="Sanjeev Kumar — Founder & CEO"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
                 <div className="absolute bottom-5 left-5 right-5 text-white">
                   <div className="font-heading font-extrabold text-xl">Sanjeev Kumar</div>
                   <div className="text-xs font-mono text-brand-lime">Founder &amp; Chief Executive Officer</div>
