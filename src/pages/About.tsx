@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { asset } from '../lib/assets';
 import { 
   ArrowRight, Award, Shield, TrendingUp, Users, Sun, CheckCircle, Zap, Leaf, 
-  Atom, Gauge, Wrench, Factory, Cpu, Phone, Mail, MapPin, MessageCircle, Star 
+  Atom, Gauge, Wrench, Factory, Cpu, Phone, Mail, MapPin, MessageCircle, Star,
+  ChevronLeft, ChevronRight
 } from 'lucide-react';
 
 // ─── 1. Evolution Phases (5-phase progressive flow, Phase 5 highlighted dark) ─
@@ -136,6 +137,34 @@ const LEADERSHIP = [
   },
 ];
 
+// ─── 4.5 Team Moments & People Behind the Journey ────────────────────────────
+const TEAM_MOMENTS = [
+  {
+    image: '/assets/images/team_slide_1.webp',
+    title: 'Outdoor Field Engineering Team',
+    subtitle: 'Turnkey solar array commissioning & site survey operations',
+    caption: 'Our field engineers executing high-precision solar module alignments across North India.',
+  },
+  {
+    image: '/assets/images/team_slide_2.webp',
+    title: 'Corporate Headquarters & Operations',
+    subtitle: 'System designers, electrical engineers & project coordinators',
+    caption: 'Cross-functional teams collaborating on DPR feasibility studies and CAD layouts in Jaipur.',
+  },
+  {
+    image: '/assets/images/team_slide_3.webp',
+    title: 'Leadership & Strategic Operations',
+    subtitle: 'Unified direction across SunScope Group divisions',
+    caption: 'Strategic alignment sessions driving innovation, safety standards, and project velocity.',
+  },
+  {
+    image: '/assets/images/team_slide_4.webp',
+    title: 'Team Celebration & Milestone Achievement',
+    subtitle: 'Honoring dedication, shared progress & clean energy milestones',
+    caption: 'Celebrating our people whose passion and integrity power our clean energy journey.',
+  },
+];
+
 // ─── 5. Certifications (8 Tiles matching Image 9) ─────────────────────────────
 const CERTIFICATIONS = [
   { name: 'PM Surya Ghar', code: 'National Rooftop Solar Portal empanelment for direct consumer DBT' },
@@ -150,6 +179,17 @@ const CERTIFICATIONS = [
 
 // ─── Master About Us Page Component (Matching Node 117:3408) ──────────────────
 const About: React.FC = () => {
+  const [teamSlide, setTeamSlide] = useState(0);
+  const [isTeamPaused, setIsTeamPaused] = useState(false);
+
+  useEffect(() => {
+    if (isTeamPaused) return;
+    const timer = setInterval(() => {
+      setTeamSlide((prev) => (prev + 1) % TEAM_MOMENTS.length);
+    }, 4200);
+    return () => clearInterval(timer);
+  }, [isTeamPaused]);
+
   return (
     <>
       {/* ─── 1. Hero Section (Matching Figma light spatial editorial hero) ────── */}
@@ -583,6 +623,121 @@ const About: React.FC = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 8.5 People Behind the Journey · Team Moments ───────────────────── */}
+      <section className="bg-[#F9FAF4] py-20 md:py-28 border-b border-[#E8EAE3]">
+        <div className="max-w-[1248px] mx-auto px-6">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Left: Team Photo Slider */}
+            <div 
+              className="lg:col-span-7 relative rounded-3xl overflow-hidden shadow-elevated border border-[#E8EAE3] bg-neutral-900 aspect-[4/3] group"
+              onMouseEnter={() => setIsTeamPaused(true)}
+              onMouseLeave={() => setIsTeamPaused(false)}
+            >
+              {TEAM_MOMENTS.map((item, idx) => (
+                <div
+                  key={item.title}
+                  className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
+                    idx === teamSlide ? 'opacity-100 z-10' : 'opacity-0 z-0 pointer-events-none'
+                  }`}
+                >
+                  <img
+                    src={asset(item.image)}
+                    alt={item.title}
+                    className="w-full h-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <span className="text-[10px] font-mono uppercase bg-brand-forest text-brand-lime px-2.5 py-1 rounded-full font-bold">
+                      TEAM MOMENTS · 0{idx + 1} / 0{TEAM_MOMENTS.length}
+                    </span>
+                    <h4 className="font-heading font-extrabold text-xl sm:text-2xl mt-2 text-white">
+                      {item.title}
+                    </h4>
+                    <p className="font-body text-xs sm:text-sm text-gray-200 mt-1 max-w-lg">
+                      {item.caption}
+                    </p>
+                  </div>
+                </div>
+              ))}
+
+              {/* Slider Controls */}
+              <div className="absolute bottom-6 right-6 z-20 flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setTeamSlide((prev) => (prev - 1 + TEAM_MOMENTS.length) % TEAM_MOMENTS.length)}
+                  className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-colors border border-white/20 backdrop-blur-sm"
+                  aria-label="Previous team slide"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+                <div className="flex gap-1.5 px-2 py-1.5 rounded-full bg-black/50 backdrop-blur-sm border border-white/10">
+                  {TEAM_MOMENTS.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setTeamSlide(i)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        i === teamSlide ? 'w-6 bg-brand-lime' : 'w-2 bg-white/40 hover:bg-white/70'
+                      }`}
+                      aria-label={`Go to slide ${i + 1}`}
+                    />
+                  ))}
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setTeamSlide((prev) => (prev + 1) % TEAM_MOMENTS.length)}
+                  className="w-9 h-9 rounded-full bg-black/60 hover:bg-black/90 text-white flex items-center justify-center transition-colors border border-white/20 backdrop-blur-sm"
+                  aria-label="Next team slide"
+                >
+                  <ChevronRight size={18} />
+                </button>
+              </div>
+            </div>
+
+            {/* Right: Team Culture Copy */}
+            <div className="lg:col-span-5 flex flex-col gap-5">
+              <span className="text-xs font-mono font-semibold text-[#4B6D00] uppercase tracking-widest">
+                PEOPLE BEHIND THE JOURNEY
+              </span>
+              <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-[#1A1C19] leading-tight">
+                Our People Are the Driving Force Behind Our Success
+              </h2>
+              <div className="flex flex-col gap-3.5 text-sm font-body text-[#3F4942] leading-relaxed">
+                <p>
+                  At Jai Kisaan Solar, we recognize that our team members are the backbone of everything we achieve. We are deeply committed to fostering a culture of continuous growth, mutual respect, and leadership development.
+                </p>
+                <p>
+                  Every team member goes through a structured career progression plan to ensure we build their bright future while delivering reliable clean power to businesses and communities across Bharat.
+                </p>
+              </div>
+
+              <div className="flex flex-col gap-3 pt-2">
+                {[
+                  'Certified field technicians trained in high-voltage solar electrical safety',
+                  'In-house DISCOM regulatory liaisons ensuring swift net metering turnaround',
+                  'Dedicated SCADA & monitoring engineers stationed across regional hubs',
+                  'Transparent career growth pathways fostering homegrown leadership',
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle size={16} className="text-brand-forest flex-shrink-0 mt-0.5" />
+                    <span className="font-body text-xs sm:text-sm text-[#3F4942] leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="pt-2">
+                <Link
+                  to="/careers"
+                  className="inline-flex items-center gap-2 h-11 px-6 rounded-xl bg-brand-forest hover:bg-brand-forestLight text-white font-heading font-semibold text-xs uppercase tracking-wider transition-colors shadow-card"
+                >
+                  Explore Careers with Us <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

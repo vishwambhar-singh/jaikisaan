@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, CheckCircle, Zap, Sun, Battery, Droplets, Building2, 
@@ -179,34 +179,125 @@ const PROCESS_STEPS = [
   },
 ];
 
-const FAQS = [
+interface FAQItem {
+  question: string;
+  answer: string;
+  category: string;
+}
+
+const FAQ_CATEGORIES = [
+  'All (16)',
+  'General Solar',
+  'Cost & Installation',
+  'System Types',
+  'Subsidy & Net Metering',
+  'Commercial & Industrial',
+  'Maintenance & Support',
+];
+
+const ALL_FAQS: FAQItem[] = [
+  // General Solar Questions
   {
-    question: 'How to Choose the Best Solar Panel Technology for Your Rooftop?',
-    answer: 'JaiKisaan provides expert advice to help you select the most suitable solar panels: Monocrystalline Panels are known for their high efficiency and are perfect for rooftops with limited space — while they come at a higher cost, they deliver maximum energy output. Polycrystalline Panels are a budget-friendly option that work well for installations with abundant space and ample sunlight.',
+    category: 'General Solar',
+    question: 'What is solar energy?',
+    answer: 'Solar energy is clean, renewable energy generated from sunlight using solar panels. The photovoltaic panels convert sunlight into direct current (DC) electricity, which is converted to alternating current (AC) by an inverter for your home or business.',
   },
   {
-    question: 'What is the Difference Between On-Grid and Off-Grid Solar Systems?',
-    answer: 'On-Grid Systems are connected to the utility grid, enabling you to export surplus energy and earn credits through net metering. However, they do not offer power backup during outages. Off-Grid Systems operate independently from the grid using battery banks for energy storage, ensuring power availability during outages — but they require regular maintenance and are more expensive due to battery costs.',
+    category: 'General Solar',
+    question: 'Can solar panels reduce my electricity bill?',
+    answer: 'Yes, solar panels can reduce your monthly electricity expenses by 70% to 90% by substituting expensive grid power with free solar electricity and banking surplus power via net metering.',
   },
   {
-    question: 'What Is the Difference Between Net Metering, Net Billing, and Gross Metering?',
-    answer: 'Net Metering: Excess electricity is exported to the grid and adjusted against your consumption. A bidirectional meter records both import and export. Gross Metering: All electricity generated is exported to the grid at a fixed feed-in tariff, and you pay the utility for consumed electricity at retail rates. Net Billing: Similar to net metering, but the utility pays you for surplus energy at a fixed rate (usually lower than what you pay for grid electricity).',
+    category: 'General Solar',
+    question: 'Do solar panels work on cloudy days?',
+    answer: 'Yes, solar panels continue to generate electricity using diffuse daylight on overcast or cloudy days, though generation is lower (approx. 15% to 30% of peak sunny yield).',
   },
   {
-    question: 'Do Solar Panels Work on Cloudy Days or at Night?',
-    answer: 'On cloudy days, panels can still generate power using diffused sunlight, though output may drop by 10–25%. At night, panels do not generate electricity, but hybrid systems with batteries can supply stored energy throughout the night.',
+    category: 'General Solar',
+    question: 'How long do solar panels last?',
+    answer: 'Most quality Tier-1 solar panels (Waaree, Adani) are designed to last 25 to 30 years or more, backed by a 25-year linear performance warranty guaranteeing over 80% generation efficiency.',
+  },
+
+  // Cost, Installation and Savings
+  {
+    category: 'Cost & Installation',
+    question: 'How much does a solar system cost?',
+    answer: 'The cost depends on your electricity consumption, sanctioned load, system capacity, and mounting roof requirements. Sizable subsidies under PM Surya Ghar (up to ₹78,000) significantly lower net capital investment.',
   },
   {
-    question: 'How Much Can You Save with a Solar System?',
-    answer: 'Your savings depend on factors like system size and electricity rates. For example, a 1kW on-grid system generating 120 units per month at a tariff of ₹7.5/unit can save you approximately ₹900 monthly. Larger commercial and industrial systems can save significantly more.',
+    category: 'Cost & Installation',
+    question: 'How much rooftop space is required?',
+    answer: 'As a general planning benchmark, approximately 8 to 10 square metres (80 to 100 sq.ft) of shadow-free rooftop area is required for every 1 kW of installed solar capacity.',
   },
   {
-    question: 'How to Avail Subsidies from the Government?',
-    answer: 'Subsidies are offered for residential solar installations up to 10kW, subject to state policies. Under PM Surya Ghar Muft Bijli Yojana, households can receive up to ₹78,000 direct bank transfer subsidy. Under PM-KUSUM for agricultural pumps, up to 60% subsidy (30% central + 30% state) is available. JaiKisaan handles the entire application and documentation process.',
+    category: 'Cost & Installation',
+    question: 'Can solar panels work at night?',
+    answer: 'No. Solar panels generate power during daylight hours. At night, your facility seamlessly draws power from the utility grid or from an integrated battery energy storage system (BESS).',
+  },
+
+  // Types of Solar Systems
+  {
+    category: 'System Types',
+    question: 'What is an on-grid solar system?',
+    answer: 'An on-grid solar system is directly synchronized with the utility electricity grid, enabling automatic export of daytime surplus power for monthly bill credits via a bidirectional net meter.',
+  },
+  {
+    category: 'System Types',
+    question: 'What is an off-grid solar system?',
+    answer: 'An off-grid system functions independently from the DISCOM grid using a battery bank (LiFePO4/Lead-Acid) to store solar electricity, making it ideal for rural farms and remote sites.',
+  },
+  {
+    category: 'System Types',
+    question: 'What is a hybrid solar system?',
+    answer: 'A hybrid system combines the cost-efficiency of grid synchronization (net metering) with a dedicated battery buffer, guaranteeing seamless power continuity even during grid power cuts.',
+  },
+
+  // Subsidy and Net Metering
+  {
+    category: 'Subsidy & Net Metering',
+    question: 'Is government subsidy available for solar installation?',
+    answer: 'Yes. Eligible residential customers receive direct bank transfer subsidies up to ₹78,000 under the central PM Surya Ghar Muft Bijli Yojana. Farmers receive up to 60% combined subsidy under PM-KUSUM.',
+  },
+  {
+    category: 'Subsidy & Net Metering',
+    question: 'What is net metering?',
+    answer: 'Net metering is a DISCOM billing mechanism allowing solar owners to export surplus daytime power to the grid and receive full kWh credits against electricity consumed at night.',
+  },
+
+  // Commercial and Industrial Solar
+  {
+    category: 'Commercial & Industrial',
+    question: 'Can solar panels be installed in factories and offices?',
+    answer: 'Yes. Commercial rooftop solar is ideal for factories, warehouses, cold storages, campuses, and corporate buildings to offset expensive daytime commercial tariffs and claim 40% accelerated depreciation under Section 32.',
+  },
+  {
+    category: 'Commercial & Industrial',
+    question: 'What is the payback period for commercial solar?',
+    answer: 'Most commercial and industrial solar installations deliver complete capital payback within 3 to 4 years, delivering an attractive equity IRR exceeding 21% over a 25-year asset lifecycle.',
+  },
+
+  // Maintenance and Support
+  {
+    category: 'Maintenance & Support',
+    question: 'Do solar panels require regular maintenance?',
+    answer: 'Solar panels have no moving parts and require only periodic washing with clean water every 2 to 3 weeks. Jai Kisaan Solar provides 5-year comprehensive AMC with automated SCADA health alerts.',
+  },
+  {
+    category: 'Maintenance & Support',
+    question: 'How can I get a solar installation quotation?',
+    answer: 'Contact Jai Kisaan Solar via our website consultation form or message our engineering desk on WhatsApp at +91 72399 92778. Share your latest electricity bill for a free same-day aerial feasibility study.',
   },
 ];
 
-const Solutions: React.FC = () => (
+const Solutions: React.FC = () => {
+  const [activeFaqCategory, setActiveFaqCategory] = useState('All (16)');
+
+  const filteredFaqs = ALL_FAQS.filter((faq) => {
+    if (activeFaqCategory === 'All (16)') return true;
+    return faq.category === activeFaqCategory;
+  });
+
+  return (
   <>
     {/* Distinct Solutions Hero Banner (100vh) */}
     <div className="relative bg-surface-dark min-h-[calc(100vh-52px)] min-h-[calc(100dvh-52px)] flex flex-col justify-between overflow-hidden">
@@ -483,31 +574,55 @@ const Solutions: React.FC = () => (
     </section>
 
     {/* FAQ section */}
-    <section className="bg-surface-dark py-20 md:py-28">
+    <section id="solar-faq" className="bg-surface-dark py-20 md:py-28">
       <div className="max-w-container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div>
+        <div className="grid lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-5">
             <SectionHeading
               eyebrow="Frequently Asked Questions"
               title="Common Questions About Solar"
               dark
-              className="mb-8"
+              className="mb-6"
             />
             <p className="font-body text-sm text-text-onDarkMuted leading-relaxed">
-              Can&apos;t find what you&apos;re looking for? Our engineering team is available on WhatsApp for instant answers.
+              Have questions regarding system sizing, net metering, subsidy documentation or commercial payback? Our engineering team is also available directly on WhatsApp.
             </p>
-            <a
-              href="https://wa.me/917239992778"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 h-11 px-5 rounded-xl bg-brand-lime text-text-primary font-body font-semibold text-sm hover:bg-brand-limeHover transition-colors"
-            >
-              <MessageCircle size={14} />
-              Ask on WhatsApp
-            </a>
+            <div className="flex flex-col gap-2 mt-6">
+              <span className="text-xs font-mono text-brand-lime font-bold uppercase tracking-wider">
+                Filter by Category:
+              </span>
+              <div className="flex flex-wrap gap-2 pt-1">
+                {FAQ_CATEGORIES.map((cat) => (
+                  <button
+                    key={cat}
+                    type="button"
+                    onClick={() => setActiveFaqCategory(cat)}
+                    className={`text-xs px-3 py-1.5 rounded-lg font-heading transition-colors ${
+                      activeFaqCategory === cat
+                        ? 'bg-brand-lime text-text-primary font-bold'
+                        : 'bg-white/10 hover:bg-white/20 text-white/80'
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="pt-6">
+              <a
+                href="https://wa.me/917239992778"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 h-11 px-5 rounded-xl bg-brand-lime text-text-primary font-body font-semibold text-sm hover:bg-brand-limeHover transition-colors shadow-glow-lime"
+              >
+                <MessageCircle size={14} />
+                Ask Engineers on WhatsApp
+              </a>
+            </div>
           </div>
-          <div>
-            <FAQAccordion items={FAQS} dark />
+          <div className="lg:col-span-7">
+            <FAQAccordion items={filteredFaqs} dark />
           </div>
         </div>
       </div>
@@ -540,7 +655,8 @@ const Solutions: React.FC = () => (
       </div>
     </section>
   </>
-);
+  );
+};
 
 export default Solutions;
 
