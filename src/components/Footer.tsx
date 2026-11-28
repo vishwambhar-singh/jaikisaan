@@ -60,10 +60,11 @@ const Footer: React.FC = () => {
             <ul className="flex flex-col gap-2.5 text-sm font-body">
               {[
                 { label: 'About SunScope Group', href: '/about' },
-                { label: 'Leadership Journal', href: '/about' },
-                { label: 'Sustainability Impact', href: '/projects' },
+                { label: "Founder's Message", href: '/founder' },
+                { label: 'Our Partners', href: '/partners' },
+                { label: 'Investor Relations', href: '/investors' },
                 { label: 'Past EPC Showcase', href: '/projects' },
-                { label: 'Careers & Culture', href: '/about' },
+                { label: 'Careers & Culture', href: '/careers' },
               ].map((item) => (
                 <li key={item.label}>
                   <Link to={item.href} className="text-[#A3B3AA] hover:text-brand-lime transition-colors">
@@ -109,8 +110,8 @@ const Footer: React.FC = () => {
         <div className="max-w-[1248px] mx-auto px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-3 text-xs font-body text-[#7C8F83]">
           <p className="text-center md:text-left">© {new Date().getFullYear()} Jai Kisaan Solar (A SunScope Group Company). All rights reserved.</p>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-center">
-            <Link to="/about" className="hover:text-brand-lime transition-colors">Privacy Policy</Link>
-            <Link to="/solutions" className="hover:text-brand-lime transition-colors">Terms of Transmission</Link>
+            <Link to="/privacy" className="hover:text-brand-lime transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-brand-lime transition-colors">Terms &amp; Conditions</Link>
             <Link to="/about" className="hover:text-brand-lime transition-colors">ESG Disclosure</Link>
           </div>
         </div>

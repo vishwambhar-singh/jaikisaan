@@ -123,10 +123,37 @@ const HUBS: Hub[] = [
     phone: '+91 81309 60888',
     state: 'Punjab & Delhi NCR',
   },
+  {
+    badge: 'Associate Location',
+    name: 'Sunrise Solar · Jaipur',
+    division: 'Regional Associate',
+    address: '08, Ganesh Nagar, Benar Road, Jaipur, Rajasthan, India',
+    phoneLabel: 'Directory Direct:',
+    phone: '+91 7239992778',
+    state: 'Rajasthan',
+  },
+  {
+    badge: 'Associate Location',
+    name: 'Sungrid Solar · Bayana',
+    division: 'Eastern Rajasthan Associate',
+    address: 'Upadhyay Tower, Bayana, Bharatpur, Rajasthan, India',
+    phoneLabel: 'Directory Direct:',
+    phone: '+91 7239992778',
+    state: 'Rajasthan',
+  },
+  {
+    badge: 'Associate Location',
+    name: 'Satnaara Solar · Jaipur',
+    division: 'Urban Jaipur Associate',
+    address: 'Agrasen Tower, Vidyadhar Nagar, Jaipur, Rajasthan, India',
+    phoneLabel: 'Directory Direct:',
+    phone: '+91 7239992778',
+    state: 'Rajasthan',
+  },
 ];
 
 const FILTER_TABS = [
-  'All Hubs (11 Displayed)',
+  'All Hubs (14 Displayed)',
   'Rajasthan',
   'Uttar Pradesh',
   'Madhya Pradesh',
@@ -135,7 +162,7 @@ const FILTER_TABS = [
 ];
 
 const Contact: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState('All Hubs (11 Displayed)');
+  const [activeFilter, setActiveFilter] = useState('All Hubs (14 Displayed)');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',

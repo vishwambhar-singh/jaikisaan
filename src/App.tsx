@@ -12,6 +12,11 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import CitySelectorPage from './pages/CitySelectorPage';
 import Founder from './pages/Founder';
+import Partners from './pages/Partners';
+import Investors from './pages/Investors';
+import Careers from './pages/Careers';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
 const App: React.FC = () => {
   return (
@@ -31,17 +36,22 @@ const App: React.FC = () => {
           <Route path="/city-spec" element={<CitySelectorPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/founder" element={<Founder />} />
+          <Route path="/partners" element={<Partners />} />
+          <Route path="/investors" element={<Investors />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
 
           {/* Legacy & Alternative URL Aliases to prevent 404s */}
           <Route path="/services" element={<Navigate to="/solutions" replace />} />
           <Route path="/services/*" element={<Navigate to="/solutions" replace />} />
           <Route path="/faqs" element={<Navigate to="/solutions" replace />} />
           <Route path="/faq" element={<Navigate to="/solutions" replace />} />
-          <Route path="/careers" element={<Navigate to="/about" replace />} />
-          <Route path="/career" element={<Navigate to="/about" replace />} />
+          <Route path="/career" element={<Navigate to="/careers" replace />} />
           <Route path="/founders" element={<Navigate to="/founder" replace />} />
           <Route path="/founders-message" element={<Navigate to="/founder" replace />} />
-          <Route path="/founder" element={<Founder />} />
+          <Route path="/impact" element={<Navigate to="/projects" replace />} />
           <Route path="/rooftop" element={<Navigate to="/solutions" replace />} />
           <Route path="/utility" element={<Navigate to="/solutions" replace />} />
           <Route path="/transmission" element={<Navigate to="/solutions" replace />} />
