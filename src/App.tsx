@@ -11,6 +11,7 @@ import CaseStudy from './pages/CaseStudy';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import CitySelectorPage from './pages/CitySelectorPage';
+import Founder from './pages/Founder';
 
 const App: React.FC = () => {
   return (
@@ -38,8 +39,9 @@ const App: React.FC = () => {
           <Route path="/faq" element={<Navigate to="/solutions" replace />} />
           <Route path="/careers" element={<Navigate to="/about" replace />} />
           <Route path="/career" element={<Navigate to="/about" replace />} />
-          <Route path="/founders" element={<Navigate to="/about" replace />} />
-          <Route path="/founder" element={<Navigate to="/about" replace />} />
+          <Route path="/founders" element={<Navigate to="/founder" replace />} />
+          <Route path="/founders-message" element={<Navigate to="/founder" replace />} />
+          <Route path="/founder" element={<Founder />} />
           <Route path="/rooftop" element={<Navigate to="/solutions" replace />} />
           <Route path="/utility" element={<Navigate to="/solutions" replace />} />
           <Route path="/transmission" element={<Navigate to="/solutions" replace />} />

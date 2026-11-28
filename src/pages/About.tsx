@@ -511,6 +511,37 @@ const About: React.FC = () => {
                   <div className="font-heading font-bold text-[#1A1C19] italic">— Sanjeev Kumar</div>
                   <div className="font-body text-xs text-[#3F4942] mt-0.5">Group CEO, SunScope Group of Companies</div>
                 </div>
+
+                {/* Video embed */}
+                <div className="rounded-2xl overflow-hidden bg-black shadow-elevated mt-2">
+                  <div className="relative aspect-video">
+                    <iframe
+                      src="https://www.youtube.com/embed/Ij_OQRmgdpE?rel=0"
+                      title="Sanjeev Kumar - Leadership Message"
+                      className="w-full h-full border-0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    />
+                  </div>
+                </div>
+
+                {/* CTA links */}
+                <div className="flex flex-wrap gap-4 pt-2">
+                  <a
+                    href="https://youtu.be/Ij_OQRmgdpE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-heading font-semibold text-brand-forest hover:underline"
+                  >
+                    ▶ Watch Video Message
+                  </a>
+                  <Link
+                    to="/founder"
+                    className="text-xs font-heading font-semibold text-brand-forest hover:underline"
+                  >
+                    Read Full Founder's Message →
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

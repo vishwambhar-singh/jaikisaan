@@ -856,17 +856,40 @@ const CEOSection: React.FC = () => (
                 Delivering quality with the highest professional standards is at the core of everything we do. We are committed to excellence in every aspect of our operations—from design and execution to service delivery and stakeholder engagement. Our approach is built on precision, reliability, and continuous improvement.
               </p>
             </div>
-            <div className="pt-4 border-t border-[#E8EAE3] flex items-center justify-between">
+            {/* Video embed */}
+            <div className="rounded-2xl overflow-hidden bg-black shadow-elevated">
+              <div className="relative aspect-video">
+                <iframe
+                  src="https://www.youtube.com/embed/Ij_OQRmgdpE?rel=0"
+                  title="Sanjeev Kumar - Leadership Message"
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+
+            <div className="pt-4 border-t border-[#E8EAE3] flex flex-wrap items-center justify-between gap-3">
               <div>
                 <div className="font-heading font-bold text-sm text-[#1A1C19]">Sanjeev Kumar</div>
                 <div className="text-xs font-body text-[#3F4942]">Group CEO, SunScope Group of Companies</div>
               </div>
-              <Link
-                to="/about"
-                className="text-xs font-heading font-semibold text-brand-forest hover:underline"
-              >
-                Read full leadership letter →
-              </Link>
+              <div className="flex items-center gap-4">
+                <a
+                  href="https://youtu.be/Ij_OQRmgdpE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-heading font-semibold text-brand-forest hover:underline"
+                >
+                  ▶ Watch Video Address
+                </a>
+                <Link
+                  to="/founder"
+                  className="text-xs font-heading font-semibold text-brand-forest hover:underline"
+                >
+                  Read full founder's message →
+                </Link>
+              </div>
             </div>
           </div>
         </div>
