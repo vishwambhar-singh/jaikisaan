@@ -175,7 +175,7 @@ const Contact: React.FC = () => {
   });
 
   const filteredHubs = HUBS.filter((hub) => {
-    if (activeFilter === 'All Hubs (11 Displayed)') return true;
+    if (activeFilter.startsWith('All Hubs')) return true;
     return hub.state === activeFilter;
   });
 
@@ -202,7 +202,7 @@ const Contact: React.FC = () => {
                 <span className="text-[#C5F176]">Jai Kisaan Solar</span>
               </h1>
               <p className="font-body text-sm md:text-base text-[#A3B3AA] mt-4 leading-relaxed max-w-xl">
-                Take the leap to sovereign clean energy. From decentralized farming microgrids to multi-megawatt commercial cold chains, our engineering teams across 13 regional hubs are ready to assist you.
+                Take the leap to sovereign clean energy. From decentralized farming microgrids to multi-megawatt commercial cold chains, our engineering teams across 14 regional hubs are ready to assist you.
               </p>
             </div>
 
@@ -218,7 +218,7 @@ const Contact: React.FC = () => {
                   <div className="text-[11px] font-mono text-[#A3B3AA] mt-0.5">Avg. Response Time</div>
                 </div>
                 <div>
-                  <div className="font-heading font-extrabold text-2xl text-[#C5F176]">13 Hubs</div>
+                  <div className="font-heading font-extrabold text-2xl text-[#C5F176]">14 Hubs</div>
                   <div className="text-[11px] font-mono text-[#A3B3AA] mt-0.5">Active Across India</div>
                 </div>
               </div>
@@ -512,7 +512,7 @@ const Contact: React.FC = () => {
                 </span>
               </div>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-[#17231D] tracking-tight">
-                Visit Us Across 13 Operational Hubs
+                Visit Us Across 14 Operational Hubs &amp; Regional Offices
               </h2>
               <p className="font-body text-xs sm:text-sm text-[#4E564F] mt-2 max-w-2xl leading-relaxed">
                 Fully staffed project command centres, customer liaison lounges, and EPC logistics depots across sovereign states.
