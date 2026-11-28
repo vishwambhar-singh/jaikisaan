@@ -1317,8 +1317,8 @@ const Home: React.FC = () => (
   <>
     <HeroSection />
     <FeatureStrip />
-    <CEOMessageBanner />
     <AboutSection />
+    <CEOMessageBanner />
     <SolutionsSection />
     <WhyChooseUsSection />
     <ProjectShowcaseSection />
